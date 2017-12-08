@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15756A621FDA759C00D864DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15756A611FDA759B00D864DF /* Constants.swift */; };
+		15C5AB2E1FDA95C200A81E0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2C1FDA95C200A81E0E /* Constants.swift */; };
+		15C5AB2F1FDA95C200A81E0E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2D1FDA95C200A81E0E /* Extension.swift */; };
+		15C5AB321FDA96D000A81E0E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB301FDA96D000A81E0E /* RateViewController.swift */; };
+		15C5AB331FDA96D000A81E0E /* RateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C5AB311FDA96D000A81E0E /* RateViewController.xib */; };
 		15E726051FD3085500F6C7A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E726041FD3085500F6C7A9 /* AppDelegate.swift */; };
 		15E726071FD3085500F6C7A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E726061FD3085500F6C7A9 /* ViewController.swift */; };
 		15E7260A1FD3085500F6C7A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E726081FD3085500F6C7A9 /* Main.storyboard */; };
@@ -35,7 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15756A611FDA759B00D864DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		15C5AB2C1FDA95C200A81E0E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		15C5AB2D1FDA95C200A81E0E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		15C5AB301FDA96D000A81E0E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
+		15C5AB311FDA96D000A81E0E /* RateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateViewController.xib; sourceTree = "<group>"; };
 		15E726011FD3085500F6C7A9 /* ExchangeRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E726041FD3085500F6C7A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15E726061FD3085500F6C7A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +82,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1536E1DA1FDA8AF8009EA015 /* Rate */ = {
+			isa = PBXGroup;
+			children = (
+				15C5AB301FDA96D000A81E0E /* RateViewController.swift */,
+				15C5AB311FDA96D000A81E0E /* RateViewController.xib */,
+			);
+			path = Rate;
+			sourceTree = "<group>";
+		};
+		15C5AB241FDA8BA100A81E0E /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		15C5AB2B1FDA95C200A81E0E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				15C5AB2C1FDA95C200A81E0E /* Constants.swift */,
+				15C5AB2D1FDA95C200A81E0E /* Extension.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		15E725F81FD3085500F6C7A9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +130,15 @@
 		15E726031FD3085500F6C7A9 /* ExchangeRate */ = {
 			isa = PBXGroup;
 			children = (
+				15C5AB2B1FDA95C200A81E0E /* Util */,
+				15C5AB241FDA8BA100A81E0E /* Calculator */,
+				1536E1DA1FDA8AF8009EA015 /* Rate */,
 				15E726041FD3085500F6C7A9 /* AppDelegate.swift */,
 				15E726061FD3085500F6C7A9 /* ViewController.swift */,
 				15E726081FD3085500F6C7A9 /* Main.storyboard */,
 				15E7260B1FD3085500F6C7A9 /* Assets.xcassets */,
 				15E7260D1FD3085500F6C7A9 /* LaunchScreen.storyboard */,
 				15E726101FD3085500F6C7A9 /* Info.plist */,
-				15756A611FDA759B00D864DF /* Constants.swift */,
 			);
 			path = ExchangeRate;
 			sourceTree = "<group>";
@@ -237,6 +270,7 @@
 			files = (
 				15E7260F1FD3085500F6C7A9 /* LaunchScreen.storyboard in Resources */,
 				15E7260C1FD3085500F6C7A9 /* Assets.xcassets in Resources */,
+				15C5AB331FDA96D000A81E0E /* RateViewController.xib in Resources */,
 				15E7260A1FD3085500F6C7A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,9 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15C5AB2E1FDA95C200A81E0E /* Constants.swift in Sources */,
 				15E726071FD3085500F6C7A9 /* ViewController.swift in Sources */,
+				15C5AB2F1FDA95C200A81E0E /* Extension.swift in Sources */,
+				15C5AB321FDA96D000A81E0E /* RateViewController.swift in Sources */,
 				15E726051FD3085500F6C7A9 /* AppDelegate.swift in Sources */,
-				15756A621FDA759C00D864DF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

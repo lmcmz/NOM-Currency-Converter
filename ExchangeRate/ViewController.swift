@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ViewController: UIViewController, UIScrollViewDelegate {
 
   
@@ -18,39 +17,44 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   @IBOutlet var contentWidth: NSLayoutConstraint!
   
   @IBOutlet var calendarImage: UIImageView!
-  @IBOutlet var calculator: UIImageView!
+  @IBOutlet var calculatorImage: UIImageView!
   @IBOutlet var rateImage: UIImageView!
   
-  func setUpView() {
-    let view1 = UIView()
-    view1.frame = CGRect(x: 0, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.SCREEN_HEIGHT)
-    view1.backgroundColor = UIColor.blue
-    let view2 = UIView()
-    view2.frame = CGRect(x: Constants.SCREEN_WIDTH, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.SCREEN_HEIGHT)
-    view2.backgroundColor = UIColor.red
-    
+  func initView() {
     contentWidth.constant = Constants.SCREEN_WIDTH * 3
-    contentHeight.constant = Constants.SCREEN_HEIGHT
-    contentView.addSubview(view1)
-    contentView.addSubview(view2)
+    contentHeight.constant = Constants.HomePageVCHeight
+    
+    let rateVC = RateViewController()
+    rateVC.view.frame = CGRect(x: Constants.SCREEN_WIDTH, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.HomePageVCHeight - 112)
+    self.addChildViewController(rateVC)
+    contentView.addSubview(rateVC.view)
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setUpView()
+    initView()
   }
   
 
   // MARK: ScrollView Delegate
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    var distance = scrollView.contentOffset.x
-    var page = floor(distance/Constants.SCREEN_WIDTH)
+    let distance = scrollView.contentOffset.x
+    let page = floor(distance/Constants.SCREEN_WIDTH)
+    
+    calendarImage.isHighlighted = false
+    calculatorImage.isHighlighted = false
+    rateImage.isHighlighted = false
+    
     switch page {
+    case 0:
+      self.calculatorImage.isHighlighted = true
     case 1:
-      self.calculator.isHighlighted
+      self.rateImage.isHighlighted = true
+    case 2:
+      self.calendarImage.isHighlighted = true
     default:
-      <#code#>
+      self.calculatorImage.isHighlighted = true
     }
   }
 
