@@ -23,6 +23,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateViewController" customModule="ExchangeRate" customModuleProvider="target">
             <connections>
+                <outlet property="chartView" destination="XXd-9B-D4K" id="o3i-6L-IXT"/>
+                <outlet property="country1" destination="jkH-nB-JMR" id="HMp-dh-SfQ"/>
+                <outlet property="country1_image" destination="20t-iA-crf" id="02n-g7-fB2"/>
+                <outlet property="country1_label" destination="03p-3o-S1f" id="flA-bi-Fdo"/>
+                <outlet property="country2" destination="Cc8-jI-2hN" id="FVj-2s-92k"/>
+                <outlet property="country2_image" destination="j6r-bX-efk" id="Svf-MR-5o9"/>
+                <outlet property="country2_label" destination="NKK-wO-yvm" id="H7V-kV-bhK"/>
+                <outlet property="daily_rate_label" destination="cR2-pR-ibB" id="zY6-HF-fTQ"/>
+                <outlet property="date_label" destination="X4F-N5-tvl" id="1al-qL-L0d"/>
+                <outlet property="exchangeButton" destination="zf6-Dn-zgs" id="vIb-WL-IPK"/>
+                <outlet property="up_down_image" destination="G2G-hF-9Xv" id="d5r-7x-CwY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,7 +42,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR2-pR-ibB">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR2-pR-ibB">
                     <rect key="frame" x="91" y="19" width="156" height="95.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="80"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,22 +56,39 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ8-9d-19M">
                     <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXd-9B-D4K" customClass="LineChartView" customModule="Charts">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.20042273116438356" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="XXd-9B-D4K" secondAttribute="bottom" id="121-jE-XKZ"/>
+                        <constraint firstItem="XXd-9B-D4K" firstAttribute="top" secondItem="pJ8-9d-19M" secondAttribute="top" id="CIr-w7-fMk"/>
+                        <constraint firstItem="XXd-9B-D4K" firstAttribute="leading" secondItem="pJ8-9d-19M" secondAttribute="leading" id="KaC-2h-4PF"/>
+                        <constraint firstAttribute="trailing" secondItem="XXd-9B-D4K" secondAttribute="trailing" id="ugh-Mu-jX0"/>
+                    </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rate-up-blue" translatesAutoresizingMaskIntoConstraints="NO" id="G2G-hF-9Xv">
                     <rect key="frame" x="259" y="49.5" width="30" height="35"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc8-jI-2hN">
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc8-jI-2hN" customClass="UIControl">
                     <rect key="frame" x="241.5" y="168.5" width="108.5" height="108"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001-mauritius" translatesAutoresizingMaskIntoConstraints="NO" id="j6r-bX-efk">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="034-china" translatesAutoresizingMaskIntoConstraints="NO" id="j6r-bX-efk">
                             <rect key="frame" x="17" y="10.5" width="75.5" height="76"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKK-wO-yvm">
                             <rect key="frame" x="35.5" y="94.5" width="37" height="21"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                     <constraints>
@@ -71,14 +99,20 @@
                         <constraint firstItem="j6r-bX-efk" firstAttribute="centerX" secondItem="Cc8-jI-2hN" secondAttribute="centerX" id="roL-xl-7jf"/>
                         <constraint firstItem="NKK-wO-yvm" firstAttribute="centerX" secondItem="Cc8-jI-2hN" secondAttribute="centerX" id="zqm-wb-G2L"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="countryButtonClick" destination="-1" eventType="touchUpInside" id="TrL-ER-hu3"/>
+                    </connections>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkH-nB-JMR">
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkH-nB-JMR" customClass="UIControl">
                     <rect key="frame" x="25" y="168.5" width="108.5" height="108"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="010-slovenia" translatesAutoresizingMaskIntoConstraints="NO" id="20t-iA-crf">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="234-australia" translatesAutoresizingMaskIntoConstraints="NO" id="20t-iA-crf">
                             <rect key="frame" x="16.5" y="10.5" width="75.5" height="76"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03p-3o-S1f">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03p-3o-S1f">
                             <rect key="frame" x="36" y="94.5" width="37" height="21"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,19 +127,29 @@
                         <constraint firstItem="20t-iA-crf" firstAttribute="height" secondItem="jkH-nB-JMR" secondAttribute="height" multiplier="0.7" id="l57-Ru-OOT"/>
                         <constraint firstItem="03p-3o-S1f" firstAttribute="top" secondItem="20t-iA-crf" secondAttribute="bottom" constant="8" id="rWT-GN-rWH"/>
                     </constraints>
+                    <connections>
+                        <action selector="countryButtonClick" destination="-1" eventType="touchUpInside" id="3u7-dK-bwn"/>
+                    </connections>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zf6-Dn-zgs">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zf6-Dn-zgs" customClass="UIControl">
                     <rect key="frame" x="133.5" y="168.5" width="108" height="108"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-exchange-blue" translatesAutoresizingMaskIntoConstraints="NO" id="3zT-xe-SJl">
-                            <rect key="frame" x="18" y="18" width="72" height="72"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-exchange-button" translatesAutoresizingMaskIntoConstraints="NO" id="3zT-xe-SJl">
+                            <rect key="frame" x="21.5" y="24.5" width="65" height="59"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3zT-xe-SJl" secondAttribute="height" multiplier="102:93" id="TME-cz-u2N"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="3zT-xe-SJl" firstAttribute="centerY" secondItem="zf6-Dn-zgs" secondAttribute="centerY" id="IHu-sX-T08"/>
                         <constraint firstAttribute="width" secondItem="zf6-Dn-zgs" secondAttribute="height" multiplier="1:1" id="Xla-Jl-atB"/>
+                        <constraint firstItem="3zT-xe-SJl" firstAttribute="width" secondItem="zf6-Dn-zgs" secondAttribute="width" multiplier="0.6" id="dfE-gY-SAg"/>
                         <constraint firstItem="3zT-xe-SJl" firstAttribute="centerX" secondItem="zf6-Dn-zgs" secondAttribute="centerX" id="jay-IV-QFa"/>
                     </constraints>
+                    <connections>
+                        <action selector="exchangeButtonClicked" destination="-1" eventType="touchUpInside" id="JdU-4w-YDU"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4B-tC-bgT">
                     <rect key="frame" x="0.0" y="308.5" width="375" height="25"/>
@@ -154,13 +198,16 @@
                 <constraint firstItem="Cc8-jI-2hN" firstAttribute="width" secondItem="jkH-nB-JMR" secondAttribute="width" id="yc5-2b-R5X"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
     <resources>
-        <image name="001-mauritius" width="512" height="512"/>
-        <image name="010-slovenia" width="512" height="512"/>
-        <image name="home-exchange-blue" width="72" height="72"/>
+        <image name="034-china" width="512" height="512"/>
+        <image name="234-australia" width="512" height="512"/>
+        <image name="home-exchange-button" width="102" height="93"/>
         <image name="rate-up-blue" width="30" height="35"/>
     </resources>
 </document>

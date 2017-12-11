@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1568B12E1FDAD61600C180B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B12D1FDAD61600C180B4 /* BaseViewController.swift */; };
+		1568B1341FDC239100C180B4 /* ExchangeRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B1331FDC239100C180B4 /* ExchangeRateAPI.swift */; };
+		1568B1391FDD1E1500C180B4 /* FixerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B1381FDD1E1500C180B4 /* FixerModel.swift */; };
+		1568B13B1FDD289B00C180B4 /* Moya+HandySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B13A1FDD289B00C180B4 /* Moya+HandySwift.swift */; };
+		1568B13E1FDD475A00C180B4 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B13C1FDD475A00C180B4 /* CalculatorViewController.swift */; };
+		1568B13F1FDD475A00C180B4 /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1568B13D1FDD475A00C180B4 /* CalculatorViewController.xib */; };
+		1568B1421FDD87F700C180B4 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B1401FDD87F700C180B4 /* CountryViewController.swift */; };
+		1568B1431FDD87F700C180B4 /* CountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1568B1411FDD87F700C180B4 /* CountryViewController.xib */; };
+		1568B1481FDD9DF400C180B4 /* CurrencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B1461FDD9DF400C180B4 /* CurrencyCollectionViewCell.swift */; };
+		1568B1491FDD9DF400C180B4 /* CurrencyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1568B1471FDD9DF400C180B4 /* CurrencyCollectionViewCell.xib */; };
+		1568B14D1FDDA84B00C180B4 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B14B1FDDA84B00C180B4 /* CurrencyTableViewCell.swift */; };
+		1568B14E1FDDA84B00C180B4 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1568B14C1FDDA84B00C180B4 /* CurrencyTableViewCell.xib */; };
+		1568B1511FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B14F1FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.swift */; };
+		1568B1521FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1568B1501FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib */; };
 		15C5AB2E1FDA95C200A81E0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2C1FDA95C200A81E0E /* Constants.swift */; };
 		15C5AB2F1FDA95C200A81E0E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2D1FDA95C200A81E0E /* Extension.swift */; };
 		15C5AB321FDA96D000A81E0E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB301FDA96D000A81E0E /* RateViewController.swift */; };
@@ -18,6 +32,7 @@
 		15E7260F1FD3085500F6C7A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E7260D1FD3085500F6C7A9 /* LaunchScreen.storyboard */; };
 		15E7261A1FD3085500F6C7A9 /* ExchangeRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E726191FD3085500F6C7A9 /* ExchangeRateTests.swift */; };
 		15E726251FD3085500F6C7A9 /* ExchangeRateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E726241FD3085500F6C7A9 /* ExchangeRateUITests.swift */; };
+		6B730E41A1251FB1C3BD5E61 /* Pods_ExchangeRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B729D768221C0AF2D43999 /* Pods_ExchangeRate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +53,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06B550CAFF5D03023676E075 /* Pods-ExchangeRate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate.debug.xcconfig"; sourceTree = "<group>"; };
+		1568B12D1FDAD61600C180B4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1568B1331FDC239100C180B4 /* ExchangeRateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateAPI.swift; sourceTree = "<group>"; };
+		1568B1381FDD1E1500C180B4 /* FixerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerModel.swift; sourceTree = "<group>"; };
+		1568B13A1FDD289B00C180B4 /* Moya+HandySwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+HandySwift.swift"; sourceTree = "<group>"; };
+		1568B13C1FDD475A00C180B4 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		1568B13D1FDD475A00C180B4 /* CalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
+		1568B1401FDD87F700C180B4 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
+		1568B1411FDD87F700C180B4 /* CountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryViewController.xib; sourceTree = "<group>"; };
+		1568B1461FDD9DF400C180B4 /* CurrencyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCollectionViewCell.swift; sourceTree = "<group>"; };
+		1568B1471FDD9DF400C180B4 /* CurrencyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCollectionViewCell.xib; sourceTree = "<group>"; };
+		1568B14B1FDDA84B00C180B4 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		1568B14C1FDDA84B00C180B4 /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
+		1568B14F1FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCollectionViewLongCell.swift; sourceTree = "<group>"; };
+		1568B1501FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCollectionViewLongCell.xib; sourceTree = "<group>"; };
 		15C5AB2C1FDA95C200A81E0E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		15C5AB2D1FDA95C200A81E0E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		15C5AB301FDA96D000A81E0E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +85,8 @@
 		15E726201FD3085500F6C7A9 /* ExchangeRateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeRateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E726241FD3085500F6C7A9 /* ExchangeRateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateUITests.swift; sourceTree = "<group>"; };
 		15E726261FD3085500F6C7A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59581399B871DD4F00D854AA /* Pods-ExchangeRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRate.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate.release.xcconfig"; sourceTree = "<group>"; };
+		F8B729D768221C0AF2D43999 /* Pods_ExchangeRate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeRate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B730E41A1251FB1C3BD5E61 /* Pods_ExchangeRate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,13 +120,73 @@
 			children = (
 				15C5AB301FDA96D000A81E0E /* RateViewController.swift */,
 				15C5AB311FDA96D000A81E0E /* RateViewController.xib */,
+				1568B1401FDD87F700C180B4 /* CountryViewController.swift */,
+				1568B1411FDD87F700C180B4 /* CountryViewController.xib */,
 			);
 			path = Rate;
+			sourceTree = "<group>";
+		};
+		1568B12C1FDAD60A00C180B4 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				1568B12D1FDAD61600C180B4 /* BaseViewController.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		1568B1301FDBC59600C180B4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1568B1331FDC239100C180B4 /* ExchangeRateAPI.swift */,
+			);
+			name = Network;
+			path = ExchangeRate/Network;
+			sourceTree = "<group>";
+		};
+		1568B1351FDD1DED00C180B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1568B1381FDD1E1500C180B4 /* FixerModel.swift */,
+			);
+			name = Model;
+			path = ExchangeRate/Model;
+			sourceTree = "<group>";
+		};
+		1568B1441FDD9DD200C180B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1568B14A1FDDA82D00C180B4 /* TableCell */,
+				1568B1451FDD9DD200C180B4 /* CollectionCell */,
+			);
+			name = View;
+			path = ExchangeRate/View;
+			sourceTree = "<group>";
+		};
+		1568B1451FDD9DD200C180B4 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				1568B1461FDD9DF400C180B4 /* CurrencyCollectionViewCell.swift */,
+				1568B1471FDD9DF400C180B4 /* CurrencyCollectionViewCell.xib */,
+				1568B14F1FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.swift */,
+				1568B1501FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		1568B14A1FDDA82D00C180B4 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				1568B14B1FDDA84B00C180B4 /* CurrencyTableViewCell.swift */,
+				1568B14C1FDDA84B00C180B4 /* CurrencyTableViewCell.xib */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 		15C5AB241FDA8BA100A81E0E /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				1568B13C1FDD475A00C180B4 /* CalculatorViewController.swift */,
+				1568B13D1FDD475A00C180B4 /* CalculatorViewController.xib */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -103,6 +196,7 @@
 			children = (
 				15C5AB2C1FDA95C200A81E0E /* Constants.swift */,
 				15C5AB2D1FDA95C200A81E0E /* Extension.swift */,
+				1568B13A1FDD289B00C180B4 /* Moya+HandySwift.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -110,10 +204,15 @@
 		15E725F81FD3085500F6C7A9 = {
 			isa = PBXGroup;
 			children = (
+				1568B1441FDD9DD200C180B4 /* View */,
+				1568B1351FDD1DED00C180B4 /* Model */,
+				1568B1301FDBC59600C180B4 /* Network */,
 				15E726031FD3085500F6C7A9 /* ExchangeRate */,
 				15E726181FD3085500F6C7A9 /* ExchangeRateTests */,
 				15E726231FD3085500F6C7A9 /* ExchangeRateUITests */,
 				15E726021FD3085500F6C7A9 /* Products */,
+				37FFE7EAAC34F1BB05B96426 /* Pods */,
+				962F1D6061533CAF0B6ACDA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +229,7 @@
 		15E726031FD3085500F6C7A9 /* ExchangeRate */ = {
 			isa = PBXGroup;
 			children = (
+				1568B12C1FDAD60A00C180B4 /* Basic */,
 				15C5AB2B1FDA95C200A81E0E /* Util */,
 				15C5AB241FDA8BA100A81E0E /* Calculator */,
 				1536E1DA1FDA8AF8009EA015 /* Rate */,
@@ -161,6 +261,23 @@
 			path = ExchangeRateUITests;
 			sourceTree = "<group>";
 		};
+		37FFE7EAAC34F1BB05B96426 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06B550CAFF5D03023676E075 /* Pods-ExchangeRate.debug.xcconfig */,
+				59581399B871DD4F00D854AA /* Pods-ExchangeRate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		962F1D6061533CAF0B6ACDA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8B729D768221C0AF2D43999 /* Pods_ExchangeRate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,9 +285,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15E726291FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "ExchangeRate" */;
 			buildPhases = (
+				A80F3C832A5FF3F19F6BC5B6 /* [CP] Check Pods Manifest.lock */,
 				15E725FD1FD3085500F6C7A9 /* Sources */,
 				15E725FE1FD3085500F6C7A9 /* Frameworks */,
 				15E725FF1FD3085500F6C7A9 /* Resources */,
+				D1A64B6B05D0267B95F87C2C /* [CP] Embed Pods Frameworks */,
+				2A6A3D32179D37802EB8C136 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,10 +388,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1568B1521FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib in Resources */,
+				1568B14E1FDDA84B00C180B4 /* CurrencyTableViewCell.xib in Resources */,
 				15E7260F1FD3085500F6C7A9 /* LaunchScreen.storyboard in Resources */,
 				15E7260C1FD3085500F6C7A9 /* Assets.xcassets in Resources */,
 				15C5AB331FDA96D000A81E0E /* RateViewController.xib in Resources */,
 				15E7260A1FD3085500F6C7A9 /* Main.storyboard in Resources */,
+				1568B13F1FDD475A00C180B4 /* CalculatorViewController.xib in Resources */,
+				1568B1431FDD87F700C180B4 /* CountryViewController.xib in Resources */,
+				1568B1491FDD9DF400C180B4 /* CurrencyCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,16 +416,91 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A6A3D32179D37802EB8C136 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A80F3C832A5FF3F19F6BC5B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExchangeRate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1A64B6B05D0267B95F87C2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		15E725FD1FD3085500F6C7A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1568B13E1FDD475A00C180B4 /* CalculatorViewController.swift in Sources */,
 				15C5AB2E1FDA95C200A81E0E /* Constants.swift in Sources */,
+				1568B1421FDD87F700C180B4 /* CountryViewController.swift in Sources */,
+				1568B13B1FDD289B00C180B4 /* Moya+HandySwift.swift in Sources */,
 				15E726071FD3085500F6C7A9 /* ViewController.swift in Sources */,
+				1568B14D1FDDA84B00C180B4 /* CurrencyTableViewCell.swift in Sources */,
+				1568B1391FDD1E1500C180B4 /* FixerModel.swift in Sources */,
+				1568B1481FDD9DF400C180B4 /* CurrencyCollectionViewCell.swift in Sources */,
 				15C5AB2F1FDA95C200A81E0E /* Extension.swift in Sources */,
 				15C5AB321FDA96D000A81E0E /* RateViewController.swift in Sources */,
+				1568B1341FDC239100C180B4 /* ExchangeRateAPI.swift in Sources */,
 				15E726051FD3085500F6C7A9 /* AppDelegate.swift in Sources */,
+				1568B12E1FDAD61600C180B4 /* BaseViewController.swift in Sources */,
+				1568B1511FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +664,7 @@
 		};
 		15E7262A1FD3085500F6C7A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06B550CAFF5D03023676E075 /* Pods-ExchangeRate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -479,6 +680,7 @@
 		};
 		15E7262B1FD3085500F6C7A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59581399B871DD4F00D854AA /* Pods-ExchangeRate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

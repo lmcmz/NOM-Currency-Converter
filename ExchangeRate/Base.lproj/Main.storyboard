@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,17 +9,28 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExchangeRate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lmcmz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoK-01-MPY">
+                                <rect key="frame" x="162" y="8" width="50.666666666666657" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6P-Iz-b7S">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="684"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oX6-oc-rBb">
                                         <rect key="frame" x="0.0" y="0.0" width="1125" height="570"/>
@@ -41,13 +52,13 @@
                                 </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArK-Gz-XJt">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54U-3Y-24i" customClass="UIControl">
                                         <rect key="frame" x="125" y="0.0" width="125" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rate-home-small" highlightedImage="rate-home-small-highlight" translatesAutoresizingMaskIntoConstraints="NO" id="sQm-rN-Pth">
-                                                <rect key="frame" x="52.5" y="17" width="19" height="16"/>
+                                                <rect key="frame" x="52.666666666666657" y="17" width="19" height="16"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -59,7 +70,7 @@
                                         <rect key="frame" x="250" y="0.0" width="125" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-home-small" highlightedImage="calendar-home-small-highlight" translatesAutoresizingMaskIntoConstraints="NO" id="CFK-hS-oqS">
-                                                <rect key="frame" x="53.5" y="16" width="18" height="18"/>
+                                                <rect key="frame" x="53.666666666666686" y="16" width="18" height="18"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -71,7 +82,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calculator-home-small" highlightedImage="calculator-home-small-highlight" translatesAutoresizingMaskIntoConstraints="NO" id="3hD-82-RwJ">
-                                                <rect key="frame" x="55" y="15.5" width="15" height="19"/>
+                                                <rect key="frame" x="55" y="15.666666666666664" width="15" height="19"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -102,9 +113,11 @@
                         <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ArK-Gz-XJt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Ox-QN-7dw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="hoK-01-MPY" secondAttribute="bottom" constant="16" id="5Pl-zg-haI"/>
                             <constraint firstItem="ArK-Gz-XJt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Pu-7U-dN8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j6P-Iz-b7S" secondAttribute="trailing" id="HZH-BM-nSz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ArK-Gz-XJt" secondAttribute="trailing" id="L8j-rq-gen"/>
+                            <constraint firstItem="hoK-01-MPY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lar-Kl-DED"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="j6P-Iz-b7S" secondAttribute="bottom" id="et1-ja-0sO"/>
                             <constraint firstItem="j6P-Iz-b7S" firstAttribute="top" secondItem="ArK-Gz-XJt" secondAttribute="bottom" id="gLw-mp-UiD"/>
                             <constraint firstItem="j6P-Iz-b7S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kIK-l5-Jpa"/>
