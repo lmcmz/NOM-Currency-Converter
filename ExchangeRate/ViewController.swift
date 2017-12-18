@@ -25,11 +25,21 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
         contentWidth.constant = Constants.SCREEN_WIDTH * 3
         contentHeight.constant = Constants.HomePageVCHeight
         
+        let calculatorVC = CalculatorViewController()
+        calculatorVC.view.frame = CGRect(x: 0, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.HomePageVCHeight - 112)
+        self.addChildViewController(calculatorVC)
+        contentView.addSubview(calculatorVC.view)
+        
         //    scrollView.panGestureRecognizer.delegate = self
         let rateVC = RateViewController()
         rateVC.view.frame = CGRect(x: Constants.SCREEN_WIDTH, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.HomePageVCHeight - 112)
         self.addChildViewController(rateVC)
         contentView.addSubview(rateVC.view)
+        
+        let timeTableVC = TimeTableViewController()
+        timeTableVC.view.frame = CGRect(x: Constants.SCREEN_WIDTH*2, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.HomePageVCHeight - 112)
+        self.addChildViewController(timeTableVC)
+        contentView.addSubview(timeTableVC.view)
         
         DispatchQueue.main.async {
             self.scrollView.setContentOffset(CGPoint(x: Constants.SCREEN_WIDTH, y: 0), animated: false)

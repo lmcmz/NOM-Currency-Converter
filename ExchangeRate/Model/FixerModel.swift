@@ -9,17 +9,6 @@
 import Foundation
 import HandyJSON
 
-enum Currency: String, HandyJSONEnum {
-    case
-    AUD,BGN,BRL,CAD,CHF,
-    CNY,CZK,DKK,GBP,HKD,
-    HRK,HUF,IDR,ILS,INR,
-    JPY,KRW,MXN,MYR,NOK,
-    NZD,PHP,PLN,RON,RUB,
-    SEK,SGD,THB,TRY,USD,
-    ZAR,EUR
-}
-
 struct AllCurrency: HandyJSON {
     var AUD: Double?
     var BGN: Double?
@@ -64,6 +53,8 @@ class FixerModel: HandyJSON {
     
     func getValue(currency: Currency) -> Double? {
         switch currency {
+        case .AUD:
+            return self.rates?.AUD
         case .BGN:
             return self.rates?.BGN
         case .BRL:

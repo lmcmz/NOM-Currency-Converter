@@ -13,6 +13,7 @@ class CountryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     @IBOutlet var containerView: UIView!
     @IBOutlet var collectionView: UICollectionView!
     
+    
     class func showInController(controller: UIViewController) -> UIViewController?{
         
 //        guard let controller = controller else{
@@ -27,8 +28,23 @@ class CountryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib.init(nibName: CurrencyCollectionViewLongCell.nameOfClass, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: CurrencyCollectionViewLongCell.nameOfClass)
+        let nib = UINib.init(nibName: CurrencyCollectionViewCell.nameOfClass, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: CurrencyCollectionViewCell.nameOfClass)
+        
+        let layer  = CAGradientLayer()
+        layer.frame = CGRect(x: 0, y: 0, width: self.containerView.frame.width, height: self.containerView.frame.height)
+        
+        let color1 = UIColor(white: 0, alpha: 0.9)
+        let color2 = UIColor(white: 0, alpha: 0.7)
+        let color3 = UIColor.clear
+        
+        layer.colors = [color3.cgColor, color2.cgColor, color1.cgColor,
+                        color1.cgColor, color2.cgColor, color3.cgColor]
+        
+        layer.startPoint = CGPoint(x: 0.5, y: 0)
+        layer.endPoint = CGPoint(x: 0.5, y: 1)
+        layer.locations = [0.0, 0.2, 0.5, 0.5, 0.8, 1.0]
+        self.containerView.layer.mask = layer
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,13 +91,15 @@ class CountryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrencyCollectionViewLongCell.nameOfClass, for: indexPath) as! CurrencyCollectionViewLongCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrencyCollectionViewCell.nameOfClass, for: indexPath) as! CurrencyCollectionViewCell
+        let index = indexPath.item
+        cell.configure(currency: Currency.supportCurrency[index])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width
-        let height = 60 as CGFloat
-        return CGSize(width: width, height: height)
+        let width = collectionView.bounds.width / 2 - 1
+//        let height = 60 as CGFloat
+        return CGSize(width: width, height: width)
     }
 }

@@ -106,12 +106,13 @@ class RateViewController: BaseViewController, ChartViewDelegate {
     func switchData() {
         swap(&country1_image.image, &country2_image.image)
         swap(&country1_label.text, &country2_label.text)
+        let country1_currency = Currency(rawValue: country1_label.text!)
         let country2_currency = Currency(rawValue: country2_label.text!)
         if baseCountry.rawValue == country1_label.text {
             self.daily_rate_label.text = String(format:"%.2f",(self.repo.getValue(currency: country2_currency!))!)
             return
         }
-        self.daily_rate_label.text = String(format:"%.2f",1/(self.repo.getValue(currency: country2_currency!))!)
+        self.daily_rate_label.text = String(format:"%.2f",1/(self.repo.getValue(currency: country1_currency!))!)
     }
     
     // MARK: Action

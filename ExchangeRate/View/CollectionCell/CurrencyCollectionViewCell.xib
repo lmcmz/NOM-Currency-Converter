@@ -29,19 +29,40 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZg-M6-tgk">
                         <rect key="frame" x="0.0" y="0.0" width="164" height="170"/>
                         <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVN-9Y-vGw">
+                                <rect key="frame" x="56.5" y="8" width="98" height="99"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvM-9J-cpp">
+                                        <rect key="frame" x="62.5" y="26" width="22" height="46"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="38"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.68888300657272339" green="0.71366006135940552" blue="0.73448425531387329" alpha="0.25465539383561642" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="mvM-9J-cpp" firstAttribute="centerX" secondItem="HVN-9Y-vGw" secondAttribute="centerX" multiplier="1.5" id="6Aq-uC-BQF"/>
+                                    <constraint firstItem="mvM-9J-cpp" firstAttribute="centerY" secondItem="HVN-9Y-vGw" secondAttribute="centerY" id="Cgh-8I-x2w"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="034-china" translatesAutoresizingMaskIntoConstraints="NO" id="yUe-68-gXe">
-                                <rect key="frame" x="24.5" y="8" width="114.5" height="115"/>
+                                <rect key="frame" x="8.5" y="8" width="98" height="98.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yUe-68-gXe" secondAttribute="height" multiplier="1:1" id="bRv-9y-sBE"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-OB-aaJ">
-                                <rect key="frame" x="0.0" y="123" width="164" height="47"/>
+                                <rect key="frame" x="0.0" y="106.5" width="164" height="63.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQd-jf-mH4">
-                                        <rect key="frame" x="60.5" y="12" width="43" height="24"/>
+                                        <rect key="frame" x="60.5" y="20" width="43" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" red="0.16862745098039217" green="0.19607843137254902" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -53,12 +74,16 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="4eE-OB-aaJ" firstAttribute="leading" secondItem="FZg-M6-tgk" secondAttribute="leading" id="4rb-3V-GMI"/>
-                            <constraint firstItem="yUe-68-gXe" firstAttribute="centerX" secondItem="FZg-M6-tgk" secondAttribute="centerX" id="KUA-z9-YZH"/>
+                            <constraint firstItem="yUe-68-gXe" firstAttribute="centerX" secondItem="FZg-M6-tgk" secondAttribute="centerX" multiplier="0.7" id="KUA-z9-YZH"/>
                             <constraint firstItem="yUe-68-gXe" firstAttribute="top" secondItem="FZg-M6-tgk" secondAttribute="top" constant="8" id="NH5-HI-5w9"/>
-                            <constraint firstItem="yUe-68-gXe" firstAttribute="width" secondItem="FZg-M6-tgk" secondAttribute="width" multiplier="0.7" id="WXx-SL-Vbg"/>
+                            <constraint firstItem="yUe-68-gXe" firstAttribute="width" secondItem="FZg-M6-tgk" secondAttribute="width" multiplier="0.6" id="WXx-SL-Vbg"/>
                             <constraint firstAttribute="trailing" secondItem="4eE-OB-aaJ" secondAttribute="trailing" id="ab4-EM-9oL"/>
+                            <constraint firstItem="HVN-9Y-vGw" firstAttribute="height" secondItem="yUe-68-gXe" secondAttribute="height" id="big-rP-6uC"/>
+                            <constraint firstItem="HVN-9Y-vGw" firstAttribute="width" secondItem="yUe-68-gXe" secondAttribute="width" id="iod-ix-HfS"/>
                             <constraint firstAttribute="bottom" secondItem="4eE-OB-aaJ" secondAttribute="bottom" id="lHa-Wt-FGV"/>
                             <constraint firstItem="4eE-OB-aaJ" firstAttribute="top" secondItem="yUe-68-gXe" secondAttribute="bottom" id="ryh-Am-dGP"/>
+                            <constraint firstItem="HVN-9Y-vGw" firstAttribute="centerY" secondItem="yUe-68-gXe" secondAttribute="centerY" id="uBc-K7-aDV"/>
+                            <constraint firstItem="HVN-9Y-vGw" firstAttribute="trailing" secondItem="yUe-68-gXe" secondAttribute="trailing" multiplier="1.45" id="xx3-OH-8tN"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -71,6 +96,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="164" height="170"/>
+            <connections>
+                <outlet property="currencyLabel" destination="mvM-9J-cpp" id="1cD-ig-S9P"/>
+                <outlet property="imageView" destination="yUe-68-gXe" id="H1K-7z-xjy"/>
+                <outlet property="nameLabel" destination="YQd-jf-mH4" id="3kz-Ml-1ZW"/>
+            </connections>
             <point key="canvasLocation" x="82" y="112"/>
         </collectionViewCell>
     </objects>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153391F51FE81CBF00363B97 /* BaseUIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153391F41FE81CBF00363B97 /* BaseUIControl.swift */; };
 		1568B12E1FDAD61600C180B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B12D1FDAD61600C180B4 /* BaseViewController.swift */; };
 		1568B1341FDC239100C180B4 /* ExchangeRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B1331FDC239100C180B4 /* ExchangeRateAPI.swift */; };
 		1568B1391FDD1E1500C180B4 /* FixerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B1381FDD1E1500C180B4 /* FixerModel.swift */; };
@@ -21,6 +22,9 @@
 		1568B14E1FDDA84B00C180B4 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1568B14C1FDDA84B00C180B4 /* CurrencyTableViewCell.xib */; };
 		1568B1511FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B14F1FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.swift */; };
 		1568B1521FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1568B1501FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib */; };
+		156B28EA1FDED8B200E643A3 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B28E81FDED8B200E643A3 /* TimeTableViewController.swift */; };
+		156B28EB1FDED8B200E643A3 /* TimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 156B28E91FDED8B200E643A3 /* TimeTableViewController.xib */; };
+		15C237261FDE3EC500597106 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C237251FDE3EC500597106 /* Currency.swift */; };
 		15C5AB2E1FDA95C200A81E0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2C1FDA95C200A81E0E /* Constants.swift */; };
 		15C5AB2F1FDA95C200A81E0E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2D1FDA95C200A81E0E /* Extension.swift */; };
 		15C5AB321FDA96D000A81E0E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB301FDA96D000A81E0E /* RateViewController.swift */; };
@@ -54,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		06B550CAFF5D03023676E075 /* Pods-ExchangeRate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate.debug.xcconfig"; sourceTree = "<group>"; };
+		153391F41FE81CBF00363B97 /* BaseUIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIControl.swift; sourceTree = "<group>"; };
 		1568B12D1FDAD61600C180B4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1568B1331FDC239100C180B4 /* ExchangeRateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateAPI.swift; sourceTree = "<group>"; };
 		1568B1381FDD1E1500C180B4 /* FixerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerModel.swift; sourceTree = "<group>"; };
@@ -68,6 +73,9 @@
 		1568B14C1FDDA84B00C180B4 /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
 		1568B14F1FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCollectionViewLongCell.swift; sourceTree = "<group>"; };
 		1568B1501FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCollectionViewLongCell.xib; sourceTree = "<group>"; };
+		156B28E81FDED8B200E643A3 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
+		156B28E91FDED8B200E643A3 /* TimeTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewController.xib; sourceTree = "<group>"; };
+		15C237251FDE3EC500597106 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		15C5AB2C1FDA95C200A81E0E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		15C5AB2D1FDA95C200A81E0E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		15C5AB301FDA96D000A81E0E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				1568B12D1FDAD61600C180B4 /* BaseViewController.swift */,
+				153391F41FE81CBF00363B97 /* BaseUIControl.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				1568B1381FDD1E1500C180B4 /* FixerModel.swift */,
+				15C237251FDE3EC500597106 /* Currency.swift */,
 			);
 			name = Model;
 			path = ExchangeRate/Model;
@@ -180,6 +190,15 @@
 				1568B14C1FDDA84B00C180B4 /* CurrencyTableViewCell.xib */,
 			);
 			path = TableCell;
+			sourceTree = "<group>";
+		};
+		156B28E71FDED87400E643A3 /* TimeTable */ = {
+			isa = PBXGroup;
+			children = (
+				156B28E81FDED8B200E643A3 /* TimeTableViewController.swift */,
+				156B28E91FDED8B200E643A3 /* TimeTableViewController.xib */,
+			);
+			path = TimeTable;
 			sourceTree = "<group>";
 		};
 		15C5AB241FDA8BA100A81E0E /* Calculator */ = {
@@ -232,6 +251,7 @@
 				1568B12C1FDAD60A00C180B4 /* Basic */,
 				15C5AB2B1FDA95C200A81E0E /* Util */,
 				15C5AB241FDA8BA100A81E0E /* Calculator */,
+				156B28E71FDED87400E643A3 /* TimeTable */,
 				1536E1DA1FDA8AF8009EA015 /* Rate */,
 				15E726041FD3085500F6C7A9 /* AppDelegate.swift */,
 				15E726061FD3085500F6C7A9 /* ViewController.swift */,
@@ -396,6 +416,7 @@
 				15E7260A1FD3085500F6C7A9 /* Main.storyboard in Resources */,
 				1568B13F1FDD475A00C180B4 /* CalculatorViewController.xib in Resources */,
 				1568B1431FDD87F700C180B4 /* CountryViewController.xib in Resources */,
+				156B28EB1FDED8B200E643A3 /* TimeTableViewController.xib in Resources */,
 				1568B1491FDD9DF400C180B4 /* CurrencyCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,13 +514,16 @@
 				1568B13B1FDD289B00C180B4 /* Moya+HandySwift.swift in Sources */,
 				15E726071FD3085500F6C7A9 /* ViewController.swift in Sources */,
 				1568B14D1FDDA84B00C180B4 /* CurrencyTableViewCell.swift in Sources */,
+				15C237261FDE3EC500597106 /* Currency.swift in Sources */,
 				1568B1391FDD1E1500C180B4 /* FixerModel.swift in Sources */,
 				1568B1481FDD9DF400C180B4 /* CurrencyCollectionViewCell.swift in Sources */,
 				15C5AB2F1FDA95C200A81E0E /* Extension.swift in Sources */,
+				153391F51FE81CBF00363B97 /* BaseUIControl.swift in Sources */,
 				15C5AB321FDA96D000A81E0E /* RateViewController.swift in Sources */,
 				1568B1341FDC239100C180B4 /* ExchangeRateAPI.swift in Sources */,
 				15E726051FD3085500F6C7A9 /* AppDelegate.swift in Sources */,
 				1568B12E1FDAD61600C180B4 /* BaseViewController.swift in Sources */,
+				156B28EA1FDED8B200E643A3 /* TimeTableViewController.swift in Sources */,
 				1568B1511FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

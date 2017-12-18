@@ -14,9 +14,9 @@ class Constants {
     static let SCREEN_HEIGHT = UIScreen.main.bounds.height
     
     static let supportCurrency = 32 as Int
-    
     static let NavigationBarHeightX = 44
     static let BottomBarHeightX = 34
     
     static let HomePageVCHeight = UIScreen.main.bounds.height - 50 - 44 - 34
+    
 }
