@@ -14,6 +14,9 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var country2Label: UILabel!
     @IBOutlet var calculatorLabel: UILabel!
     
+    var country1_currency: Currency!
+    var country2_currency: Currency!
+    
     var haveOperation = true
     var recentOperation:Character = "+"
     var rate = 5.07

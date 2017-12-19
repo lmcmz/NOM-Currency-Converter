@@ -10,6 +10,7 @@ import UIKit
 
 class CountryViewController: UIViewController ,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    static let changeCurrencyNotification = "changeCurrencyNotification"
     @IBOutlet var containerView: UIView!
     @IBOutlet var collectionView: UICollectionView!
     
@@ -99,7 +100,14 @@ class CountryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width / 2 - 1
-//        let height = 60 as CGFloat
         return CGSize(width: width, height: width)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.item
+        let currency = Currency.supportCurrency[index]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: CountryViewController.changeCurrencyNotification), object: currency)
+        self.backButtonClick()
+    }
+    
 }

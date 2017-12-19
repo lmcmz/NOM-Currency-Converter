@@ -444,13 +444,13 @@ IB_DESIGNABLE @interface BEMSimpleLineGraphView : UIView <UIGestureRecognizerDel
 /** The optional suffix to append to the popup report.
  @param graph The graph object requesting the total number of points.
  @return The suffix to append to the popup report. */
-- (NSString *)popUpSuffixForlineGraph:(BEMSimpleLineGraphView *)graph;
+- (NSString *)popUpSuffixForlineGraph:(BEMSimpleLineGraphView *)graph atIndex:(NSUInteger)index;
 
 
 /** The optional prefix to append to the popup report.
  @param graph The graph object requesting the total number of points.
  @return The prefix to prepend to the popup report. */
-- (NSString *)popUpPrefixForlineGraph:(BEMSimpleLineGraphView *)graph;
+- (NSString *)popUpPrefixForlineGraph:(BEMSimpleLineGraphView *)graph atIndex:(NSUInteger)index;
 
 
 /** Optional method to always display some of the pop up labels on the graph.

@@ -25,14 +25,13 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     @IBOutlet var country1_label: UILabel!
     @IBOutlet var country2_label: UILabel!
     
-//    @IBOutlet var daily_rate_label: UILabel!
     @IBOutlet var date_label: UILabel!
-    @IBOutlet var up_down_image: UIImageView!
     @IBOutlet var daily_rate_label: MSNumberScrollAnimatedView!
     
     @IBOutlet var animationButton: VBFPopFlatButton!
     
-    var baseCountry: Currency!
+//    var baseCountry: Currency!
+    
     var gradient  : CGGradient?
     var lineGradient  : CGGradient?
     var repo: FixerModel!
@@ -40,6 +39,17 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     
     var gotFixerData: Bool = false
     var gotYahooData: Bool = false
+    var isMainCurrency: Bool = true
+    
+    var country1_currency: Currency!
+    var country2_currency: Currency!
+    
+//    static let sharedViewController = RateViewController()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateWithCurency(notification:)), name: NSNotification.Name(rawValue: CountryViewController.changeCurrencyNotification), object: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +69,7 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         let locations : [CGFloat] = [1.0, 0.0]
         
         let topColor1 = UIColor(hexString: "85D7E2", alpha: 0.1)
-        let bottomColor1 = UIColor(hexString: "85D7E2", alpha: 1.0)
+        let bottomColor1 = UIColor(hexString: "FFFFFF", alpha: 1.0)
         let gradientColors1 : [CGColor] = [topColor1.cgColor,bottomColor1.cgColor]
         let locations1 : [CGFloat] = [0.0, 1.0]
         
@@ -67,7 +77,7 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         self.lineGradient = CGGradient(colorsSpace: colorSpace, colors: gradientColors1 as CFArray, locations: locations1)
         
         chartView.gradientBottom = self.gradient!
-//        chartView.gradientLine = self.lineGradient!
+        chartView.gradientLine = self.lineGradient!
         
         
         chartView.enableTouchReport = true
@@ -84,44 +94,50 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         animationButton.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
         
         daily_rate_label.textColor = UIColor.white
-        daily_rate_label.font = UIFont(name: "HelveticaNeue-Bold", size: 70)
+        daily_rate_label.font = UIFont(name: "HelveticaNeue-Bold", size: 80)
         daily_rate_label.density = 3
-        daily_rate_label.minLength = 4
+        daily_rate_label.minLength = 3
         
         daily_rate_label.duration  = 0.8
         daily_rate_label.durationOffset = 0.2
         daily_rate_label.isAscending = true
-        daily_rate_label.number = NSNumber(value: 00.00)
+        daily_rate_label.number = NSNumber(value: 0.0)
 //        daily_rate_label.startAnimation()
     }
     
     func initData() {
+        country1_currency = Currency(rawValue: country1_label.text!)!
+        country2_currency = Currency(rawValue: country2_label.text!)!
         requestData()
     }
     
     func reloadData() {
         let model = self.repo
-        
         let date_rate = model?.date?.readDateFromString(formatter: "yyy-mm-dd")
-        self.date_label.text = date_rate?.printDateFromDate(formatter: "MMM.dd.yyyy")
-        let country2_currency = Currency(rawValue: country2_label.text!)
-        let value = String(format:"%.2f",(model?.getValue(currency: country2_currency!))!)
+        self.date_label.text = date_rate?.printDateFromDate(formatter: "yyyy-MM-dd")
+        
+        country1_label.text = country1_currency.rawValue
+        country1_image.image = Currency.image(currency: country1_currency)
+        
+        country2_label.text = country2_currency.rawValue
+        country2_image.image = Currency.image(currency: country2_currency)
+        
+        let rate1 = self.repo.getValue(currency: country1_currency!) == nil ? 1 : self.repo.getValue(currency: country1_currency!)
+        let rate2 = self.repo.getValue(currency: country2_currency!) == nil ? 1 : self.repo.getValue(currency: country2_currency!)
+        let value = String(format:"%.2f", rate2!/rate1!)
+        self.daily_rate_label.font = self.getFontSizeByCount(count: value.count)
         self.daily_rate_label.number = NSNumber(value: Double(value)!)
         self.daily_rate_label.startAnimation()
-//        self.daily_rate_label.text =
-        baseCountry = Currency(rawValue: (model?.base)!)
+        
     }
     
     func switchData() {
         swap(&country1_image.image, &country2_image.image)
         swap(&country1_label.text, &country2_label.text)
-        let country1_currency = Currency(rawValue: country1_label.text!)
-        let country2_currency = Currency(rawValue: country2_label.text!)
-        if baseCountry.rawValue == country1_label.text {
-//            self.daily_rate_label.text = String(format:"%.2f",(self.repo.getValue(currency: country2_currency!))!)
-            return
-        }
-//        self.daily_rate_label.text = String(format:"%.2f",1/(self.repo.getValue(currency: country1_currency!))!)
+        swap(&country1_currency, &country2_currency)
+        let type = self.animationButton.currentButtonType == FlatButtonType.buttonRewindType ? FlatButtonType.buttonFastForwardType : FlatButtonType.buttonRewindType
+        self.animationButton.animate(to: type)
+        reloadData()
     }
     
     func checkTrend(data:YahooChartModel) {
@@ -147,7 +163,9 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         swithAnimation()
     }
     
-    @IBAction func countryButtonClick() {
+    @IBAction func countryButtonClick(button: UIControl) {
+        let tag = button.tag
+        self.isMainCurrency = tag == 1
         CountryViewController.showInController(controller: self.parent!)
     }
     
@@ -218,8 +236,38 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         return CGFloat(self.chartsData.close![index].floatValue)
     }
     
-    func popUpSuffixForlineGraph(_ graph: BEMSimpleLineGraphView) -> String {
-        
-        return " Date"
+    func popUpSuffixForlineGraph(_ graph: BEMSimpleLineGraphView, at index: UInt) -> String {
+        let time = self.chartsData.timestamp![Int(index)]
+        let date = Date(timeIntervalSince1970: TimeInterval(time))
+        let string = date.printDateFromDate(formatter: "  yyyy-MM-dd")
+        return string
+    }
+    
+    
+    // MARK: Public
+    
+    @objc func updateWithCurency(notification: NSNotification) {
+        let currency = notification.object as! Currency
+        if self.isMainCurrency {
+            self.country1_currency = currency
+        } else {
+            self.country2_currency = currency
+        }
+        self.reloadData()
+    }
+    
+    
+    func getFontSizeByCount(count: Int) -> UIFont {
+        switch count {
+        case 0..<5:
+            return UIFont(name: "HelveticaNeue-Bold", size: 80)!
+        case 5:
+            return UIFont(name: "HelveticaNeue-Bold", size: 60)!
+        case 6:
+            return UIFont(name: "HelveticaNeue-Bold", size: 50)!
+            
+        default:
+            return UIFont(name: "HelveticaNeue-Bold", size: 88)!
+        }
     }
 }

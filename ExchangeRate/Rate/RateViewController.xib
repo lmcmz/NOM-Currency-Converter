@@ -108,7 +108,7 @@
                         <constraint firstAttribute="trailing" secondItem="XXd-9B-D4K" secondAttribute="trailing" id="ugh-Mu-jX0"/>
                     </constraints>
                 </view>
-                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc8-jI-2hN" customClass="UIControl">
+                <view opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc8-jI-2hN" customClass="UIControl">
                     <rect key="frame" x="241.5" y="168.5" width="108.5" height="108"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="034-china" translatesAutoresizingMaskIntoConstraints="NO" id="j6r-bX-efk">
@@ -139,10 +139,10 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="countryButtonClick" destination="-1" eventType="touchUpInside" id="TrL-ER-hu3"/>
+                        <action selector="countryButtonClickWithButton:" destination="-1" eventType="touchUpInside" id="7Kc-gQ-lax"/>
                     </connections>
                 </view>
-                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkH-nB-JMR" customClass="UIControl">
+                <view opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkH-nB-JMR" customClass="UIControl">
                     <rect key="frame" x="25" y="168.5" width="108.5" height="108"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="234-australia" translatesAutoresizingMaskIntoConstraints="NO" id="20t-iA-crf">
@@ -164,7 +164,7 @@
                         <constraint firstItem="03p-3o-S1f" firstAttribute="top" secondItem="20t-iA-crf" secondAttribute="bottom" constant="8" id="rWT-GN-rWH"/>
                     </constraints>
                     <connections>
-                        <action selector="countryButtonClick" destination="-1" eventType="touchUpInside" id="3u7-dK-bwn"/>
+                        <action selector="countryButtonClickWithButton:" destination="-1" eventType="touchUpInside" id="7mX-g5-eE2"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zf6-Dn-zgs" customClass="UIControl">
