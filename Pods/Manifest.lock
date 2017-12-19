@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - BEMSimpleLineGraph (4.1)
   - Charts (3.0.4):
     - Charts/Core (= 3.0.4)
   - Charts/Core (3.0.4)
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - BEMSimpleLineGraph
   - Charts (~> 3.0)
   - HandyJSON (~> 4.0.0-beta.1)
   - Hero
@@ -23,6 +25,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  BEMSimpleLineGraph: 44fd451f27f8e9cf96f2da5bea27603093576dd1
   Charts: 0705898046257443f0afbbc3179f4b67507b6e48
   HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
   Hero: cee286821578e170d8c0c9c9cda7897357401112
@@ -30,6 +33,6 @@ SPEC CHECKSUMS:
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SkeletonView: 933a9442b08c3550f61c2ae38a02456a74ad86f4
 
-PODFILE CHECKSUM: cd9912f80dbb993c23572161ea720a066cf19bc9
+PODFILE CHECKSUM: 22ddf00fb21fc2eb949a3e495ebf08f5cc4d8f51
 
 COCOAPODS: 1.3.1

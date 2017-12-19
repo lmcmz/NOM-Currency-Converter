@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import BEMSimpleLineGraph
 
 class RateViewController: BaseViewController, ChartViewDelegate {
   
@@ -29,6 +30,13 @@ class RateViewController: BaseViewController, ChartViewDelegate {
     var baseCountry: Currency!
     
     var repo: FixerModel!
+    var chartsData: YahooChartModel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initData()
+        initView()
+    }
     
     func initView() {
         chartView.delegate = self
@@ -49,7 +57,7 @@ class RateViewController: BaseViewController, ChartViewDelegate {
         chartView.animate(xAxisDuration: 0, yAxisDuration: 1.0)
         chartView.data?.highlightEnabled = true
         
-        setDataCount(10, range: 20)
+//        setDataCount(10, range: 20)
     }
     
     func initData() {
@@ -61,17 +69,13 @@ class RateViewController: BaseViewController, ChartViewDelegate {
         
         let date_rate = model?.date?.readDateFromString(formatter: "yyy-mm-dd")
         self.date_label.text = date_rate?.printDateFromDate(formatter: "MMM.dd.yyyy")
-        
         let country2_currency = Currency(rawValue: country2_label.text!)
         self.daily_rate_label.text = String(format:"%.2f",(model?.getValue(currency: country2_currency!))!)
         baseCountry = Currency(rawValue: (model?.base)!)
     }
     
-    func setDataCount(_ count: Int, range: UInt32) {
-        let values = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(range) + 3)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
+    func setDataCount(data: YahooChartModel) {
+        let values = data.changeToChartsData()
         
         let set1 = LineChartDataSet(values: values, label: nil)
         set1.setColor(ChartColorTemplates.colorFromString("#7FCFDC"))
@@ -85,10 +89,14 @@ class RateViewController: BaseViewController, ChartViewDelegate {
         set1.drawCircleHoleEnabled = true
         set1.drawIconsEnabled = false
         set1.drawHorizontalHighlightIndicatorEnabled = false
-        set1.drawValuesEnabled = true
+        set1.drawValuesEnabled = false
         set1.valueTextColor = .white
         set1.highlightEnabled = true
         set1.highlightLineDashLengths = [5, 2.5]
+        
+                
+//        set1.setDrawHighlightIndicators(true)
+//        set1.
         
         let gradientColors = [ChartColorTemplates.colorFromString("#353D60").cgColor,
                               ChartColorTemplates.colorFromString("#8AD5E2").cgColor]
@@ -150,25 +158,35 @@ class RateViewController: BaseViewController, ChartViewDelegate {
     // MARK: Request
     
     func requestData() {
+//        yahooProvider.request(Yahoo.currency) { (result) in
+//            if case let .success(response) = result {
+//                let model = response.mapObject(YahooAllResponseModel.self)
+//                self.repo = model?.list?.getResourceByCurrency(currency: "USDCNY")
+//
+//            }
+//        }
+        weak var weakSelf = self
+        yahooProvider.request(Yahoo.chart("AUDCNY", "1mo")) { (result) in
+            if case let .success(response) = result {
+                let model = response.mapObject(YahooChartResponseModel.self)
+                let data = model?.makeModel()
+                weakSelf?.chartsData = data
+                weakSelf?.setDataCount(data: data!)
+            }
+        }
+        
         fixerProvider.request(fixer.latest(self.country1_label.text!)) { result in
-            do {
+//            do {
                 if case let .success(response) = result {
-                    let model = try response.mapObject(FixerModel.self) as FixerModel!
+                    let model = response.mapObject(FixerModel.self) as FixerModel!
                     self.repo = model
                     self.reloadData()
                 }
-            }
-            catch {
-                let printableError = error as CustomStringConvertible
-                print(printableError)
-            }
+//            }
+//            catch {
+//                let printableError = error as CustomStringConvertible
+//                print(printableError)
+//            }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initData()
-        initView()
-    }
-
 }

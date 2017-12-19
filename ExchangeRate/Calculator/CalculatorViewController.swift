@@ -16,10 +16,12 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
     
     var haveOperation = true
     var recentOperation:Character = "+"
+    var rate = 5.07
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.country1Label.text = "1"
+        self.country2Label.text = rate.clean
     }
     
     
@@ -42,6 +44,11 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
             string = ""
         }
         self.country1Label.text = string! + String(tag)
+        let country1String = self.country1Label.text
+        let country1Num = Double(country1String!)
+        let exchange = country1Num! * rate
+        self.country2Label.text = exchange.clean
+        
     }
     
     func notNumberButtonClick(tag:Int){
@@ -85,6 +92,9 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
         let string = self.calculatorLabel.text
         var stringArray = string?.split(separator: self.recentOperation)
         if stringArray?.count != 2 {
+            let number1 = Double(stringArray![0])
+            let exchange = number1! * rate
+            self.country2Label.text = exchange.clean
             return
         }
         
@@ -106,12 +116,8 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
         }
         
         self.country1Label.text = result.clean
-        
-    }
-    
-    func appendString(label:UILabel, string:String) {
-        let old = label.text
-        label.text = old! + string
+        let exchange = result * rate
+        self.country2Label.text = exchange.clean
     }
 
 }

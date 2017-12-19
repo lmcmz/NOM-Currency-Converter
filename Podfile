@@ -9,4 +9,5 @@ target 'ExchangeRate' do
 	pod "SkeletonView"
 	pod "Hero"
 	pod 'HandyJSON', '~> 4.0.0-beta.1'
+    pod 'BEMSimpleLineGraph'
 end

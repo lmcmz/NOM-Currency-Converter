@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		153391F51FE81CBF00363B97 /* BaseUIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153391F41FE81CBF00363B97 /* BaseUIControl.swift */; };
+		155D8D7A1FE8CB4600C17300 /* YahooRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155D8D791FE8CB4600C17300 /* YahooRateAPI.swift */; };
+		155D8D7E1FE8CD1100C17300 /* YahooModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155D8D7D1FE8CD1100C17300 /* YahooModel.swift */; };
+		155D8D801FE8E4A700C17300 /* YahooChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155D8D7F1FE8E4A700C17300 /* YahooChartModel.swift */; };
 		1568B12E1FDAD61600C180B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B12D1FDAD61600C180B4 /* BaseViewController.swift */; };
 		1568B1341FDC239100C180B4 /* ExchangeRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B1331FDC239100C180B4 /* ExchangeRateAPI.swift */; };
 		1568B1391FDD1E1500C180B4 /* FixerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B1381FDD1E1500C180B4 /* FixerModel.swift */; };
@@ -59,6 +62,10 @@
 /* Begin PBXFileReference section */
 		06B550CAFF5D03023676E075 /* Pods-ExchangeRate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate.debug.xcconfig"; sourceTree = "<group>"; };
 		153391F41FE81CBF00363B97 /* BaseUIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIControl.swift; sourceTree = "<group>"; };
+		155D8D791FE8CB4600C17300 /* YahooRateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooRateAPI.swift; sourceTree = "<group>"; };
+		155D8D7D1FE8CD1100C17300 /* YahooModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooModel.swift; sourceTree = "<group>"; };
+		155D8D7F1FE8E4A700C17300 /* YahooChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooChartModel.swift; sourceTree = "<group>"; };
+		155D8D831FE8F91200C17300 /* ExchangeRate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExchangeRate-Bridging-Header.h"; sourceTree = "<group>"; };
 		1568B12D1FDAD61600C180B4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1568B1331FDC239100C180B4 /* ExchangeRateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateAPI.swift; sourceTree = "<group>"; };
 		1568B1381FDD1E1500C180B4 /* FixerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerModel.swift; sourceTree = "<group>"; };
@@ -134,6 +141,13 @@
 			path = Rate;
 			sourceTree = "<group>";
 		};
+		155D8D811FE8F1FC00C17300 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		1568B12C1FDAD60A00C180B4 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,9 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				1568B1331FDC239100C180B4 /* ExchangeRateAPI.swift */,
+				155D8D791FE8CB4600C17300 /* YahooRateAPI.swift */,
 			);
-			name = Network;
-			path = ExchangeRate/Network;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		1568B1351FDD1DED00C180B4 /* Model */ = {
@@ -157,9 +171,10 @@
 			children = (
 				1568B1381FDD1E1500C180B4 /* FixerModel.swift */,
 				15C237251FDE3EC500597106 /* Currency.swift */,
+				155D8D7D1FE8CD1100C17300 /* YahooModel.swift */,
+				155D8D7F1FE8E4A700C17300 /* YahooChartModel.swift */,
 			);
-			name = Model;
-			path = ExchangeRate/Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1568B1441FDD9DD200C180B4 /* View */ = {
@@ -168,8 +183,7 @@
 				1568B14A1FDDA82D00C180B4 /* TableCell */,
 				1568B1451FDD9DD200C180B4 /* CollectionCell */,
 			);
-			name = View;
-			path = ExchangeRate/View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1568B1451FDD9DD200C180B4 /* CollectionCell */ = {
@@ -223,9 +237,6 @@
 		15E725F81FD3085500F6C7A9 = {
 			isa = PBXGroup;
 			children = (
-				1568B1441FDD9DD200C180B4 /* View */,
-				1568B1351FDD1DED00C180B4 /* Model */,
-				1568B1301FDBC59600C180B4 /* Network */,
 				15E726031FD3085500F6C7A9 /* ExchangeRate */,
 				15E726181FD3085500F6C7A9 /* ExchangeRateTests */,
 				15E726231FD3085500F6C7A9 /* ExchangeRateUITests */,
@@ -248,6 +259,10 @@
 		15E726031FD3085500F6C7A9 /* ExchangeRate */ = {
 			isa = PBXGroup;
 			children = (
+				155D8D811FE8F1FC00C17300 /* Cache */,
+				1568B1441FDD9DD200C180B4 /* View */,
+				1568B1351FDD1DED00C180B4 /* Model */,
+				1568B1301FDBC59600C180B4 /* Network */,
 				1568B12C1FDAD60A00C180B4 /* Basic */,
 				15C5AB2B1FDA95C200A81E0E /* Util */,
 				15C5AB241FDA8BA100A81E0E /* Calculator */,
@@ -259,6 +274,7 @@
 				15E7260B1FD3085500F6C7A9 /* Assets.xcassets */,
 				15E7260D1FD3085500F6C7A9 /* LaunchScreen.storyboard */,
 				15E726101FD3085500F6C7A9 /* Info.plist */,
+				155D8D831FE8F91200C17300 /* ExchangeRate-Bridging-Header.h */,
 			);
 			path = ExchangeRate;
 			sourceTree = "<group>";
@@ -369,6 +385,7 @@
 				TargetAttributes = {
 					15E726001FD3085500F6C7A9 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					15E726141FD3085500F6C7A9 = {
@@ -479,6 +496,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BEMSimpleLineGraph/BEMSimpleLineGraph.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
@@ -489,6 +507,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMSimpleLineGraph.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
@@ -513,7 +532,9 @@
 				1568B1421FDD87F700C180B4 /* CountryViewController.swift in Sources */,
 				1568B13B1FDD289B00C180B4 /* Moya+HandySwift.swift in Sources */,
 				15E726071FD3085500F6C7A9 /* ViewController.swift in Sources */,
+				155D8D7E1FE8CD1100C17300 /* YahooModel.swift in Sources */,
 				1568B14D1FDDA84B00C180B4 /* CurrencyTableViewCell.swift in Sources */,
+				155D8D801FE8E4A700C17300 /* YahooChartModel.swift in Sources */,
 				15C237261FDE3EC500597106 /* Currency.swift in Sources */,
 				1568B1391FDD1E1500C180B4 /* FixerModel.swift in Sources */,
 				1568B1481FDD9DF400C180B4 /* CurrencyCollectionViewCell.swift in Sources */,
@@ -521,6 +542,7 @@
 				153391F51FE81CBF00363B97 /* BaseUIControl.swift in Sources */,
 				15C5AB321FDA96D000A81E0E /* RateViewController.swift in Sources */,
 				1568B1341FDC239100C180B4 /* ExchangeRateAPI.swift in Sources */,
+				155D8D7A1FE8CB4600C17300 /* YahooRateAPI.swift in Sources */,
 				15E726051FD3085500F6C7A9 /* AppDelegate.swift in Sources */,
 				1568B12E1FDAD61600C180B4 /* BaseViewController.swift in Sources */,
 				156B28EA1FDED8B200E643A3 /* TimeTableViewController.swift in Sources */,
@@ -691,12 +713,15 @@
 			baseConfigurationReference = 06B550CAFF5D03023676E075 /* Pods-ExchangeRate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47Q6KQQW55;
 				INFOPLIST_FILE = ExchangeRate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lmcmz.ExchangeRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeRate/ExchangeRate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -707,12 +732,14 @@
 			baseConfigurationReference = 59581399B871DD4F00D854AA /* Pods-ExchangeRate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47Q6KQQW55;
 				INFOPLIST_FILE = ExchangeRate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lmcmz.ExchangeRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeRate/ExchangeRate-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
