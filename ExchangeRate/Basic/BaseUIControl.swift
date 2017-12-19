@@ -11,4 +11,30 @@ import UIKit
 
 class BaseControl: UIControl {
     
+    override var isHighlighted: Bool {
+        didSet {
+            if (isHighlighted) {
+                self.backgroundColor = UIColor(white: 0, alpha: 0.1)
+            }
+            else {
+                self.backgroundColor = UIColor(white: 0, alpha: 0.2)
+            }
+            
+        }
+    }
+}
+
+class BaseDarkControl: UIControl {
+    
+    override var isHighlighted: Bool {
+        didSet {
+            if (isHighlighted) {
+                self.backgroundColor = UIColor(white: 0, alpha: 0.2)
+            }
+            else {
+                self.backgroundColor = UIColor(white: 0, alpha: 0.3)
+            }
+            
+        }
+    }
 }

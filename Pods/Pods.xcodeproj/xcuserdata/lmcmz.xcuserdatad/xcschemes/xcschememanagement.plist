@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Charts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>HandyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,7 +24,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MSNumberScrollAnimatedView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Moya.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -45,6 +50,16 @@
 			<false/>
 		</dict>
 		<key>SkeletonView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>VBFPopFlatButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

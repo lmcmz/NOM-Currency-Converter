@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,6 +23,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLJ-21-Zsg">
+                                <rect key="frame" x="0.0" y="779" width="375" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="LMB-cK-Jt9"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lmcmz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoK-01-MPY">
                                 <rect key="frame" x="162" y="8" width="50.666666666666657" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -54,7 +61,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArK-Gz-XJt">
                                 <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54U-3Y-24i" customClass="UIControl">
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54U-3Y-24i" customClass="UIControl">
                                         <rect key="frame" x="125" y="0.0" width="125" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rate-home-small" highlightedImage="rate-home-small-highlight" translatesAutoresizingMaskIntoConstraints="NO" id="sQm-rN-Pth">
@@ -65,8 +72,11 @@
                                             <constraint firstItem="sQm-rN-Pth" firstAttribute="centerY" secondItem="54U-3Y-24i" secondAttribute="centerY" id="7wv-eq-vEg"/>
                                             <constraint firstItem="sQm-rN-Pth" firstAttribute="centerX" secondItem="54U-3Y-24i" secondAttribute="centerX" id="FCl-JV-2Zp"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="buttonClickedWithView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8sB-4I-bbm"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M98-w3-IEJ" customClass="UIControl">
+                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M98-w3-IEJ" customClass="UIControl">
                                         <rect key="frame" x="250" y="0.0" width="125" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-home-small" highlightedImage="calendar-home-small-highlight" translatesAutoresizingMaskIntoConstraints="NO" id="CFK-hS-oqS">
@@ -77,8 +87,11 @@
                                             <constraint firstItem="CFK-hS-oqS" firstAttribute="centerX" secondItem="M98-w3-IEJ" secondAttribute="centerX" id="8Ss-0V-7Jy"/>
                                             <constraint firstItem="CFK-hS-oqS" firstAttribute="centerY" secondItem="M98-w3-IEJ" secondAttribute="centerY" id="fOR-pQ-9UA"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="buttonClickedWithView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lMY-EF-kAK"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vb-Ek-gIs" customClass="UIControl">
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vb-Ek-gIs" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calculator-home-small" highlightedImage="calculator-home-small-highlight" translatesAutoresizingMaskIntoConstraints="NO" id="3hD-82-RwJ">
@@ -89,6 +102,9 @@
                                             <constraint firstItem="3hD-82-RwJ" firstAttribute="centerY" secondItem="3Vb-Ek-gIs" secondAttribute="centerY" id="0jr-GG-LcM"/>
                                             <constraint firstItem="3hD-82-RwJ" firstAttribute="centerX" secondItem="3Vb-Ek-gIs" secondAttribute="centerX" id="gCo-zA-auf"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="buttonClickedWithView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bIY-be-BzK"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -118,9 +134,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j6P-Iz-b7S" secondAttribute="trailing" id="HZH-BM-nSz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ArK-Gz-XJt" secondAttribute="trailing" id="L8j-rq-gen"/>
                             <constraint firstItem="hoK-01-MPY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lar-Kl-DED"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nLJ-21-Zsg" secondAttribute="bottom" constant="-34" id="Zfu-eA-aTx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="j6P-Iz-b7S" secondAttribute="bottom" id="et1-ja-0sO"/>
                             <constraint firstItem="j6P-Iz-b7S" firstAttribute="top" secondItem="ArK-Gz-XJt" secondAttribute="bottom" id="gLw-mp-UiD"/>
                             <constraint firstItem="j6P-Iz-b7S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kIK-l5-Jpa"/>
+                            <constraint firstItem="nLJ-21-Zsg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q1X-3h-wLs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nLJ-21-Zsg" secondAttribute="trailing" id="zZh-U2-ROE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

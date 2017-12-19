@@ -8,7 +8,6 @@
 
 import Foundation
 import HandyJSON
-import Charts
 
 class YahooChartResponseModel: HandyJSON {
     var chart: YahooChartResultModel?
@@ -68,15 +67,5 @@ class YahooChartModel: HandyJSON {
     var close:[NSNumber]?
     
     required init() {
-    }
-    
-    func changeToChartsData() -> [ChartDataEntry] {
-        var result = [ChartDataEntry]()
-        let count = self.close?.count as! Int
-        for index in (0..<count) {
-            let point = ChartDataEntry(x: Double(self.timestamp![index]), y: Double(truncating: self.close![index]))
-            result.append(point)
-        }
-        return result
     }
 }

@@ -11,6 +11,7 @@
 		155D8D7A1FE8CB4600C17300 /* YahooRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155D8D791FE8CB4600C17300 /* YahooRateAPI.swift */; };
 		155D8D7E1FE8CD1100C17300 /* YahooModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155D8D7D1FE8CD1100C17300 /* YahooModel.swift */; };
 		155D8D801FE8E4A700C17300 /* YahooChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155D8D7F1FE8E4A700C17300 /* YahooChartModel.swift */; };
+		155D8D8D1FE9308000C17300 /* LoadingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155D8D8C1FE9308000C17300 /* LoadingHelper.swift */; };
 		1568B12E1FDAD61600C180B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B12D1FDAD61600C180B4 /* BaseViewController.swift */; };
 		1568B1341FDC239100C180B4 /* ExchangeRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B1331FDC239100C180B4 /* ExchangeRateAPI.swift */; };
 		1568B1391FDD1E1500C180B4 /* FixerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568B1381FDD1E1500C180B4 /* FixerModel.swift */; };
@@ -66,6 +67,7 @@
 		155D8D7D1FE8CD1100C17300 /* YahooModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooModel.swift; sourceTree = "<group>"; };
 		155D8D7F1FE8E4A700C17300 /* YahooChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooChartModel.swift; sourceTree = "<group>"; };
 		155D8D831FE8F91200C17300 /* ExchangeRate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExchangeRate-Bridging-Header.h"; sourceTree = "<group>"; };
+		155D8D8C1FE9308000C17300 /* LoadingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHelper.swift; sourceTree = "<group>"; };
 		1568B12D1FDAD61600C180B4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1568B1331FDC239100C180B4 /* ExchangeRateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateAPI.swift; sourceTree = "<group>"; };
 		1568B1381FDD1E1500C180B4 /* FixerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerModel.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				15C5AB2C1FDA95C200A81E0E /* Constants.swift */,
 				15C5AB2D1FDA95C200A81E0E /* Extension.swift */,
 				1568B13A1FDD289B00C180B4 /* Moya+HandySwift.swift */,
+				155D8D8C1FE9308000C17300 /* LoadingHelper.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -497,23 +500,29 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BEMSimpleLineGraph/BEMSimpleLineGraph.framework",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/MSNumberScrollAnimatedView/MSNumberScrollAnimatedView.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
+				"${BUILT_PRODUCTS_DIR}/VBFPopFlatButton/VBFPopFlatButton.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMSimpleLineGraph.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSNumberScrollAnimatedView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VBFPopFlatButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -527,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				155D8D8D1FE9308000C17300 /* LoadingHelper.swift in Sources */,
 				1568B13E1FDD475A00C180B4 /* CalculatorViewController.swift in Sources */,
 				15C5AB2E1FDA95C200A81E0E /* Constants.swift in Sources */,
 				1568B1421FDD87F700C180B4 /* CountryViewController.swift in Sources */,

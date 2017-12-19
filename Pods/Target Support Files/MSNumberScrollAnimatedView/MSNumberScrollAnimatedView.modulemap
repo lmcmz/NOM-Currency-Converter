@@ -1,0 +1,6 @@
+framework module MSNumberScrollAnimatedView {
+  umbrella header "MSNumberScrollAnimatedView-umbrella.h"
+
+  export *
+  module * { export * }
+}

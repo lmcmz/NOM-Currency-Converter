@@ -343,7 +343,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="539-Ei-40s">
                                     <rect key="frame" x="282" y="0.0" width="93" height="420.5"/>
                                     <subviews>
-                                        <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OET-NY-o7B" customClass="BaseControl" customModule="ExchangeRate" customModuleProvider="target">
+                                        <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OET-NY-o7B" customClass="BaseDarkControl" customModule="ExchangeRate" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="93" height="104.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0q-41-BBa">
@@ -362,7 +362,7 @@
                                                 <action selector="buttonDidClickWithButton:" destination="-1" eventType="touchUpInside" id="cO5-LM-MIT"/>
                                             </connections>
                                         </view>
-                                        <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsF-Vl-RWB" customClass="BaseControl" customModule="ExchangeRate" customModuleProvider="target">
+                                        <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsF-Vl-RWB" customClass="BaseDarkControl" customModule="ExchangeRate" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="105.5" width="93" height="104.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EM-t4-cmd">
@@ -381,7 +381,7 @@
                                                 <action selector="buttonDidClickWithButton:" destination="-1" eventType="touchUpInside" id="MRs-Pp-2Zk"/>
                                             </connections>
                                         </view>
-                                        <view tag="14" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sId-Hc-O3W" customClass="BaseControl" customModule="ExchangeRate" customModuleProvider="target">
+                                        <view tag="14" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sId-Hc-O3W" customClass="BaseDarkControl" customModule="ExchangeRate" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="211" width="93" height="104.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="×" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdZ-uP-519">
@@ -400,7 +400,7 @@
                                                 <action selector="buttonDidClickWithButton:" destination="-1" eventType="touchUpInside" id="hUT-Bg-sUF"/>
                                             </connections>
                                         </view>
-                                        <view tag="15" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mc-0S-j14" customClass="BaseControl" customModule="ExchangeRate" customModuleProvider="target">
+                                        <view tag="15" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mc-0S-j14" customClass="BaseDarkControl" customModule="ExchangeRate" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="316.5" width="93" height="104"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="÷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuP-dX-BbW">

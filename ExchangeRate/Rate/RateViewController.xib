@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,17 +23,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateViewController" customModule="ExchangeRate" customModuleProvider="target">
             <connections>
-                <outlet property="chartView" destination="XXd-9B-D4K" id="o3i-6L-IXT"/>
+                <outlet property="animationButton" destination="x0X-ng-IYk" id="DlN-TH-US9"/>
+                <outlet property="chartView" destination="XXd-9B-D4K" id="bLW-U7-a84"/>
                 <outlet property="country1" destination="jkH-nB-JMR" id="HMp-dh-SfQ"/>
                 <outlet property="country1_image" destination="20t-iA-crf" id="02n-g7-fB2"/>
                 <outlet property="country1_label" destination="03p-3o-S1f" id="flA-bi-Fdo"/>
                 <outlet property="country2" destination="Cc8-jI-2hN" id="FVj-2s-92k"/>
                 <outlet property="country2_image" destination="j6r-bX-efk" id="Svf-MR-5o9"/>
                 <outlet property="country2_label" destination="NKK-wO-yvm" id="H7V-kV-bhK"/>
-                <outlet property="daily_rate_label" destination="cR2-pR-ibB" id="zY6-HF-fTQ"/>
+                <outlet property="daily_rate_label" destination="hk1-gP-MfV" id="qNh-dx-Win"/>
                 <outlet property="date_label" destination="X4F-N5-tvl" id="1al-qL-L0d"/>
                 <outlet property="exchangeButton" destination="zf6-Dn-zgs" id="vIb-WL-IPK"/>
-                <outlet property="up_down_image" destination="G2G-hF-9Xv" id="d5r-7x-CwY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -42,8 +42,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR2-pR-ibB">
-                    <rect key="frame" x="91" y="19" width="156" height="95.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hk1-gP-MfV" customClass="MSNumberScrollAnimatedView">
+                    <rect key="frame" x="94.5" y="19" width="150" height="95.5"/>
+                </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.96" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR2-pR-ibB">
+                    <rect key="frame" x="91.5" y="19" width="156" height="95.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="80"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -57,21 +60,54 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ8-9d-19M">
                     <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXd-9B-D4K" customClass="LineChartView" customModule="Charts">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXd-9B-D4K" customClass="BEMSimpleLineGraphView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="353.5"/>
+                            <color key="tintColor" red="0.49803921569999998" green="0.81176470590000005" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableBezierCurve" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableYAxisLabel" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableXAxisLabel" value="NO"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="colorPoint">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="colorTop">
+                                    <color key="value" red="0.13725490196078433" green="0.15686274509803921" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="colorLine">
+                                    <color key="value" red="0.49803921569999998" green="0.81176470590000005" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="colorBottom">
+                                    <color key="value" red="0.13725490200000001" green="0.15686274510000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="alphaTop">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="alphaBottom">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="alphaLine">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="widthLine">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="widthReferenceLines">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="sizePoint">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.20042273116438356" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="XXd-9B-D4K" secondAttribute="bottom" id="121-jE-XKZ"/>
+                        <constraint firstAttribute="bottom" secondItem="XXd-9B-D4K" secondAttribute="bottom" constant="-20" id="121-jE-XKZ"/>
                         <constraint firstItem="XXd-9B-D4K" firstAttribute="top" secondItem="pJ8-9d-19M" secondAttribute="top" id="CIr-w7-fMk"/>
                         <constraint firstItem="XXd-9B-D4K" firstAttribute="leading" secondItem="pJ8-9d-19M" secondAttribute="leading" id="KaC-2h-4PF"/>
                         <constraint firstAttribute="trailing" secondItem="XXd-9B-D4K" secondAttribute="trailing" id="ugh-Mu-jX0"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rate-up-blue" translatesAutoresizingMaskIntoConstraints="NO" id="G2G-hF-9Xv">
-                    <rect key="frame" x="259" y="49.5" width="30" height="35"/>
-                </imageView>
                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc8-jI-2hN" customClass="UIControl">
                     <rect key="frame" x="241.5" y="168.5" width="108.5" height="108"/>
                     <subviews>
@@ -168,26 +204,36 @@
                         <constraint firstItem="V3Y-5c-dEd" firstAttribute="centerX" secondItem="A4B-tC-bgT" secondAttribute="centerX" id="aaK-pw-1xb"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0X-ng-IYk" customClass="VBFPopFlatButton">
+                    <rect key="frame" x="255.5" y="43" width="41.5" height="47.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="x0X-ng-IYk" secondAttribute="height" multiplier="30:35" id="Nyb-j7-bMH"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="G2G-hF-9Xv" firstAttribute="leading" secondItem="cR2-pR-ibB" secondAttribute="trailing" constant="12" id="3Qx-2p-cPg"/>
                 <constraint firstItem="pJ8-9d-19M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3na-H0-GTU"/>
                 <constraint firstItem="zf6-Dn-zgs" firstAttribute="height" secondItem="jkH-nB-JMR" secondAttribute="height" id="7oH-lh-Rjk"/>
                 <constraint firstItem="cR2-pR-ibB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.9" id="8dQ-Gn-9IO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A4B-tC-bgT" secondAttribute="trailing" id="9nr-EX-y9u"/>
+                <constraint firstItem="hk1-gP-MfV" firstAttribute="height" secondItem="cR2-pR-ibB" secondAttribute="height" id="AgC-fl-VMM"/>
                 <constraint firstItem="jkH-nB-JMR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="BEq-ww-mTz"/>
                 <constraint firstItem="pJ8-9d-19M" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="CkA-X0-AVu"/>
-                <constraint firstItem="G2G-hF-9Xv" firstAttribute="centerY" secondItem="cR2-pR-ibB" secondAttribute="centerY" id="H7w-fH-PFy"/>
+                <constraint firstItem="hk1-gP-MfV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.9" id="FDZ-lI-YUc"/>
+                <constraint firstItem="x0X-ng-IYk" firstAttribute="height" secondItem="cR2-pR-ibB" secondAttribute="height" multiplier="0.5" id="HyV-TG-2TG"/>
                 <constraint firstItem="Cc8-jI-2hN" firstAttribute="height" secondItem="jkH-nB-JMR" secondAttribute="height" id="IY4-uR-E2J"/>
+                <constraint firstItem="hk1-gP-MfV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.2" id="JSP-mW-0j7"/>
                 <constraint firstItem="X4F-N5-tvl" firstAttribute="top" secondItem="cR2-pR-ibB" secondAttribute="bottom" constant="8" id="OgM-5r-3NW"/>
                 <constraint firstItem="pJ8-9d-19M" firstAttribute="top" secondItem="A4B-tC-bgT" secondAttribute="bottom" id="Q2X-dm-Pn5"/>
                 <constraint firstItem="Cc8-jI-2hN" firstAttribute="centerY" secondItem="zf6-Dn-zgs" secondAttribute="centerY" id="Shb-c7-K8D"/>
+                <constraint firstItem="x0X-ng-IYk" firstAttribute="centerY" secondItem="cR2-pR-ibB" secondAttribute="centerY" id="UH6-9v-Gxo"/>
                 <constraint firstItem="zf6-Dn-zgs" firstAttribute="width" secondItem="jkH-nB-JMR" secondAttribute="width" id="an2-u8-CUH"/>
                 <constraint firstItem="X4F-N5-tvl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="elG-cS-ovK"/>
                 <constraint firstItem="A4B-tC-bgT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fGV-H5-pEd"/>
                 <constraint firstItem="cR2-pR-ibB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.2" id="g6x-Ll-U3d"/>
                 <constraint firstItem="zf6-Dn-zgs" firstAttribute="leading" secondItem="jkH-nB-JMR" secondAttribute="trailing" id="h7D-xa-CMS"/>
+                <constraint firstItem="x0X-ng-IYk" firstAttribute="leading" secondItem="cR2-pR-ibB" secondAttribute="trailing" constant="8" id="jNy-oa-AFp"/>
                 <constraint firstItem="Cc8-jI-2hN" firstAttribute="leading" secondItem="zf6-Dn-zgs" secondAttribute="trailing" id="kVL-iU-COB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pJ8-9d-19M" secondAttribute="bottom" id="qOr-Xc-Qpq"/>
                 <constraint firstItem="zf6-Dn-zgs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ral-x8-nda"/>
@@ -196,6 +242,7 @@
                 <constraint firstItem="zf6-Dn-zgs" firstAttribute="top" secondItem="X4F-N5-tvl" secondAttribute="bottom" constant="25" id="wxN-nf-7Sy"/>
                 <constraint firstItem="jkH-nB-JMR" firstAttribute="centerY" secondItem="zf6-Dn-zgs" secondAttribute="centerY" id="ybM-HZ-NaJ"/>
                 <constraint firstItem="Cc8-jI-2hN" firstAttribute="width" secondItem="jkH-nB-JMR" secondAttribute="width" id="yc5-2b-R5X"/>
+                <constraint firstItem="hk1-gP-MfV" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.4" id="zLN-Rn-qM6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <userDefinedRuntimeAttributes>
@@ -208,6 +255,5 @@
         <image name="034-china" width="512" height="512"/>
         <image name="234-australia" width="512" height="512"/>
         <image name="home-exchange-button" width="102" height="93"/>
-        <image name="rate-up-blue" width="30" height="35"/>
     </resources>
 </document>

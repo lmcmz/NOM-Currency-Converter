@@ -74,5 +74,12 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
             self.calculatorImage.isHighlighted = true
         }
     }
+    
+     // MARK: Action
+    
+    @IBAction func buttonClicked(view: UIControl) {
+        let position = Constants.SCREEN_WIDTH * CGFloat(view.tag - 1)
+        self.scrollView.setContentOffset(CGPoint(x: position , y: 0), animated: true)
+    }
 }
 
