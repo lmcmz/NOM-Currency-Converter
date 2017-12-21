@@ -12,21 +12,61 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet var country1Label: UILabel!
     @IBOutlet var country2Label: UILabel!
+    
+    @IBOutlet var country1_nameLabel: UILabel!
+    @IBOutlet var country2_nameLabel: UILabel!
+    @IBOutlet var country1_image: UIImageView!
+    @IBOutlet var country2_image: UIImageView!
+    @IBOutlet var country1_symbol: UILabel!
+    @IBOutlet var country2_symbol: UILabel!
+    
     @IBOutlet var calculatorLabel: UILabel!
     
     var country1_currency: Currency!
     var country2_currency: Currency!
+    var isMainCurrency = true
     
     var haveOperation = true
+    var isInit = true
     var recentOperation:Character = "+"
     var rate = 5.07
     
+    var rateRef: RateViewController? = nil
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.updateWithCurency(notification:)), name: NSNotification.Name(rawValue: CountryViewController.changeCurrencyNotification), object: nil)
+//    }
+//    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //
+        country1_currency = Currency.EUR
+        country2_currency = Currency.CHF
+        //
+        
         self.country1Label.text = "1"
         self.country2Label.text = rate.clean
+        reloadData()
     }
     
+    func reloadData() {
+        country1_nameLabel.text = country1_currency.rawValue
+        country1_image.image = Currency.image(currency: country1_currency)
+        country1_symbol.text = Currency.symbol(currency: country1_currency)
+        
+        country2_nameLabel.text = country2_currency.rawValue
+        country2_image.image = Currency.image(currency: country2_currency)
+        country2_symbol.text = Currency.symbol(currency: country2_currency)
+        
+        if self.rateRef != nil {
+            rate = (rateRef?.getRateByCurrency(currency1: country1_currency, currency2: country2_currency))!
+        }
+        
+        country1Label.text = "1"
+        country2Label.text = rate.clean
+    }
     
     @IBAction func buttonDidClick(button:UIControl) {
         let tag = button.tag
@@ -34,6 +74,12 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
             notNumberButtonClick(tag: tag)
             return
         }
+        
+        if self.isInit {
+            notNumberButtonClick(tag: 11)
+        }
+        
+        self.isInit = false
         
         if self.haveOperation {
             let string = self.calculatorLabel.text
@@ -46,6 +92,7 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
         if string == "0" {
             string = ""
         }
+        
         self.country1Label.text = string! + String(tag)
         let country1String = self.country1Label.text
         let country1Num = Double(country1String!)
@@ -121,6 +168,32 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
         self.country1Label.text = result.clean
         let exchange = result * rate
         self.country2Label.text = exchange.clean
+    }
+    
+    // MARK: Action
+    
+    @IBAction func countryButtonClick(button: UIControl) {
+        let tag = button.tag
+        self.isMainCurrency = tag == 1
+        self.rateRef?.isMainCurrency = self.isMainCurrency
+        CountryViewController.showInController(controller: self.parent!)
+    }
+    
+    // MARK: Notification
+    
+    func updateCurrency(currency:Currency, isMainCurreny:Bool, rate:Double) {
+        if isMainCurreny {
+            self.country1_currency = currency
+        } else {
+            self.country2_currency = currency
+        }
+        self.rate = rate
+        self.reloadData()
+    }
+    
+    func swapeCurrency() {
+        swap(&self.country1_currency, &self.country2_currency)
+        self.reloadData()
     }
 
 }

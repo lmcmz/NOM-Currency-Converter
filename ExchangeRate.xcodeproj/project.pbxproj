@@ -33,6 +33,7 @@
 		15C5AB2F1FDA95C200A81E0E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2D1FDA95C200A81E0E /* Extension.swift */; };
 		15C5AB321FDA96D000A81E0E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB301FDA96D000A81E0E /* RateViewController.swift */; };
 		15C5AB331FDA96D000A81E0E /* RateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C5AB311FDA96D000A81E0E /* RateViewController.xib */; };
+		15CED3DE1FEC0A87002E0F11 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CED3DD1FEC0A87002E0F11 /* CacheManager.swift */; };
 		15E726051FD3085500F6C7A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E726041FD3085500F6C7A9 /* AppDelegate.swift */; };
 		15E726071FD3085500F6C7A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E726061FD3085500F6C7A9 /* ViewController.swift */; };
 		15E7260A1FD3085500F6C7A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E726081FD3085500F6C7A9 /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 		15C5AB2D1FDA95C200A81E0E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		15C5AB301FDA96D000A81E0E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		15C5AB311FDA96D000A81E0E /* RateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateViewController.xib; sourceTree = "<group>"; };
+		15CED3DD1FEC0A87002E0F11 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		15E726011FD3085500F6C7A9 /* ExchangeRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E726041FD3085500F6C7A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15E726061FD3085500F6C7A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		155D8D811FE8F1FC00C17300 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
+				15CED3DD1FEC0A87002E0F11 /* CacheManager.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				1568B1421FDD87F700C180B4 /* CountryViewController.swift in Sources */,
 				1568B13B1FDD289B00C180B4 /* Moya+HandySwift.swift in Sources */,
 				15E726071FD3085500F6C7A9 /* ViewController.swift in Sources */,
+				15CED3DE1FEC0A87002E0F11 /* CacheManager.swift in Sources */,
 				155D8D7E1FE8CD1100C17300 /* YahooModel.swift in Sources */,
 				1568B14D1FDDA84B00C180B4 /* CurrencyTableViewCell.swift in Sources */,
 				155D8D801FE8E4A700C17300 /* YahooChartModel.swift in Sources */,

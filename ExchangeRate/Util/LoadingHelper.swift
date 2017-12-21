@@ -12,14 +12,12 @@ import NVActivityIndicatorView
 class LodingHelper: NSObject, NVActivityIndicatorViewable {
     static let sharedHelper = LodingHelper()
     
-    func show() {
+    func show(view:UIView) {
         let size = CGSize(width: 40, height: 40)
         
-//        startAnimating(size, message: "", type: NVActivityIndicatorType(rawValue: sender.tag)!)
+        let data = ActivityData(size: size, message: "", messageFont: nil, messageSpacing: nil, type: .ballScaleRippleMultiple, color: nil, padding: nil, displayTimeThreshold: 2, minimumDisplayTime: 2, backgroundColor: nil, textColor: nil)
         
-        let data = ActivityData(size: size, message: "Updating", messageFont: nil, messageSpacing: nil, type: .ballScaleRippleMultiple, color: nil, padding: nil, displayTimeThreshold: 2, minimumDisplayTime: 2, backgroundColor: nil, textColor: nil)
-        
-         NVActivityIndicatorPresenter.sharedInstance.startAnimating(data)
+         NVActivityIndicatorPresenter.sharedInstance.startAnimating(view: view, data: data)
     }
     
     func remove()  {

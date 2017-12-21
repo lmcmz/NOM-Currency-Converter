@@ -72,7 +72,7 @@ public extension NVActivityIndicatorViewable where Self: UIViewController {
                                         backgroundColor: backgroundColor,
                                         textColor: textColor)
 
-        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(view: self.view, data: activityData)
     }
 
     /**

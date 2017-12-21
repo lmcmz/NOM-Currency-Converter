@@ -96,6 +96,9 @@
 - (void)configNumbersText
 {
     NSString *numberStr = [NSString stringWithFormat:@"%.2f", _number.doubleValue];
+    if ( fmod(_number.floatValue, 1.0) == 0) {
+        numberStr = [NSString stringWithFormat:@"%.0f", _number.doubleValue];
+    }
     // 如果 number 长度小于 最小长度就补0
     // 这里需要注意一下 minLength 和 length 都是NSUInteger类型 如果相减得负数的话会有问题
     for (NSInteger i = 0; i < (NSInteger)self.minLength - (NSInteger)numberStr.length; i++) {

@@ -140,7 +140,7 @@ public final class NVActivityIndicatorPresenter {
 
      - parameter data: Information package used to display UI blocker.
      */
-    public final func startAnimating(_ data: ActivityData) {
+    public final func startAnimating(view:UIView? ,data: ActivityData) {
         guard state == .hidden else { return }
 
         state = .waitingToShow
@@ -152,7 +152,7 @@ public final class NVActivityIndicatorPresenter {
                 return
             }
 
-            self.show(with: data)
+            self.show(view: view, activityData: data)
             self.startAnimatingGroup.leave()
         }
     }
@@ -181,8 +181,14 @@ public final class NVActivityIndicatorPresenter {
 
     // MARK: - Helpers
 
-    private func show(with activityData: ActivityData) {
+    private func show(view:UIView?, activityData: ActivityData) {
         let containerView = UIView(frame: UIScreen.main.bounds)
+        
+        guard let keyWindow = UIApplication.shared.keyWindow else { return }
+        
+        if view != nil {
+            containerView.frame = (view?.convert((view?.bounds)!, to: keyWindow))!
+        }
 
         containerView.backgroundColor = activityData.backgroundColor
         containerView.restorationIdentifier = restorationIdentifier
@@ -224,17 +230,17 @@ public final class NVActivityIndicatorPresenter {
             containerView.addConstraint(spacingConstraint)
         }())
 
-        guard let keyWindow = UIApplication.shared.keyWindow else { return }
-
-        keyWindow.addSubview(containerView)
+        
+        view?.addSubview(containerView)
+//        keyWindow.addSubview(containerView)
         state = .showed
 
         // Add constraints for `containerView`.
         ({
-            let leadingConstraint = NSLayoutConstraint(item: keyWindow, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1, constant: 0)
-            let trailingConstraint = NSLayoutConstraint(item: keyWindow, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: 0)
-            let topConstraint = NSLayoutConstraint(item: keyWindow, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1, constant: 0)
-            let bottomConstraint = NSLayoutConstraint(item: keyWindow, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: 0)
+            let leadingConstraint = NSLayoutConstraint(item: view!, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1, constant: 0)
+            let trailingConstraint = NSLayoutConstraint(item: view!, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: 0)
+            let topConstraint = NSLayoutConstraint(item: view!, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1, constant: 0)
+            let bottomConstraint = NSLayoutConstraint(item: view!, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: 0)
 
             keyWindow.addConstraints([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
         }())

@@ -89,7 +89,7 @@
                                     <real key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="widthLine">
-                                    <real key="value" value="5"/>
+                                    <real key="value" value="2"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="widthReferenceLines">
                                     <real key="value" value="0.0"/>

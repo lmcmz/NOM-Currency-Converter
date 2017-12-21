@@ -30,11 +30,13 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
         self.addChildViewController(calculatorVC)
         contentView.addSubview(calculatorVC.view)
         
-        //    scrollView.panGestureRecognizer.delegate = self
         let rateVC = RateViewController()
         rateVC.view.frame = CGRect(x: Constants.SCREEN_WIDTH, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.HomePageVCHeight - 112)
         self.addChildViewController(rateVC)
         contentView.addSubview(rateVC.view)
+        
+        rateVC.calculatorRef = calculatorVC
+        calculatorVC.rateRef = rateVC
         
         let timeTableVC = TimeTableViewController()
         timeTableVC.view.frame = CGRect(x: Constants.SCREEN_WIDTH*2, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.HomePageVCHeight - 112)

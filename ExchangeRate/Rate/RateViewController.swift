@@ -30,6 +30,8 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     
     @IBOutlet var animationButton: VBFPopFlatButton!
     
+    var calculatorRef: CalculatorViewController? = nil
+    
 //    var baseCountry: Currency!
     
     var gradient  : CGGradient?
@@ -122,11 +124,10 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         country2_label.text = country2_currency.rawValue
         country2_image.image = Currency.image(currency: country2_currency)
         
-        let rate1 = self.repo.getValue(currency: country1_currency!) == nil ? 1 : self.repo.getValue(currency: country1_currency!)
-        let rate2 = self.repo.getValue(currency: country2_currency!) == nil ? 1 : self.repo.getValue(currency: country2_currency!)
-        let value = String(format:"%.2f", rate2!/rate1!)
-        self.daily_rate_label.font = self.getFontSizeByCount(count: value.count)
-        self.daily_rate_label.number = NSNumber(value: Double(value)!)
+        let value = self.getRateByCurrency(currency1: country1_currency, currency2: country2_currency)
+        let valueString = value.clean
+        self.daily_rate_label.font = self.getFontSizeByCount(count: valueString.count)
+        self.daily_rate_label.number = NSNumber(value: value)
         self.daily_rate_label.startAnimation()
         
     }
@@ -138,6 +139,7 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         let type = self.animationButton.currentButtonType == FlatButtonType.buttonRewindType ? FlatButtonType.buttonFastForwardType : FlatButtonType.buttonRewindType
         self.animationButton.animate(to: type)
         reloadData()
+        self.calculatorRef?.swapeCurrency()
     }
     
     func checkTrend(data:YahooChartModel) {
@@ -159,13 +161,14 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         }) { (true) in
             self.exchangeButton.transform = original
         }
-        
         swithAnimation()
+        self.requestChartsData()
     }
     
     @IBAction func countryButtonClick(button: UIControl) {
         let tag = button.tag
         self.isMainCurrency = tag == 1
+        self.calculatorRef?.isMainCurrency = self.isMainCurrency
         CountryViewController.showInController(controller: self.parent!)
     }
     
@@ -188,10 +191,31 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     
     func requestData() {
         
-        LodingHelper.sharedHelper.show()
+
+//        LodingHelper.sharedHelper.show(view: (self.view))
         
         weak var weakSelf = self
-        yahooProvider.request(Yahoo.chart("AUDCNY", "1mo")) { (result) in
+        
+        requestChartsData()
+        
+        fixerProvider.request(fixer.latest(self.country1_label.text!)) { result in
+                if case let .success(response) = result {
+                    weakSelf?.gotFixerData = true
+                    weakSelf?.shouldRemoveLoading()
+                    let model = response.mapObject(FixerModel.self) as FixerModel!
+                    weakSelf?.repo = model
+                    weakSelf?.reloadData()
+                }
+        }
+    }
+    
+    func requestChartsData() {
+        
+        LodingHelper.sharedHelper.show(view: self.chartView)
+        
+        let query = country1_currency.rawValue + country2_currency.rawValue
+        weak var weakSelf = self
+        yahooProvider.request(Yahoo.chart(query, "1mo")) { (result) in
             if case let .success(response) = result {
                 self.gotYahooData = true
                 self.shouldRemoveLoading()
@@ -200,18 +224,7 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
                 weakSelf?.chartsData = data
                 weakSelf?.chartView.reloadGraph()
                 weakSelf?.checkTrend(data: data!)
-//                weakSelf?.setDataCount(data: data!)
             }
-        }
-        
-        fixerProvider.request(fixer.latest(self.country1_label.text!)) { result in
-                if case let .success(response) = result {
-                    self.gotFixerData = true
-                    self.shouldRemoveLoading()
-                    let model = response.mapObject(FixerModel.self) as FixerModel!
-                    self.repo = model
-                    self.reloadData()
-                }
         }
     }
     
@@ -253,7 +266,17 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         } else {
             self.country2_currency = currency
         }
+        let value = self.getRateByCurrency(currency1: country1_currency, currency2: country2_currency)
+        calculatorRef?.updateCurrency(currency: currency, isMainCurreny: self.isMainCurrency, rate: value)
         self.reloadData()
+        self.requestChartsData()
+    }
+    
+    func getRateByCurrency(currency1:Currency, currency2:Currency) -> Double {
+        let rate1 = self.repo.getValue(currency: currency1) == nil ? 1 : self.repo.getValue(currency: currency1)
+        let rate2 = self.repo.getValue(currency: currency2) == nil ? 1 : self.repo.getValue(currency: currency2)
+        let value = String(format:"%.2f", rate2!/rate1!)
+        return Double(value)!
     }
     
     
@@ -265,6 +288,10 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
             return UIFont(name: "HelveticaNeue-Bold", size: 60)!
         case 6:
             return UIFont(name: "HelveticaNeue-Bold", size: 50)!
+        case 7:
+            return UIFont(name: "HelveticaNeue-Bold", size: 45)!
+        case 8:
+            return UIFont(name: "HelveticaNeue-Bold", size: 40)!
             
         default:
             return UIFont(name: "HelveticaNeue-Bold", size: 88)!
