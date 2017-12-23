@@ -219,7 +219,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Dvg-UH-3qI" firstAttribute="top" secondItem="wz8-CG-YtL" secondAttribute="top" constant="24" id="5V7-4v-v4H"/>
                     <constraint firstAttribute="trailing" secondItem="LsT-b2-WIP" secondAttribute="trailing" constant="24" id="NUa-Ry-Nwy"/>
@@ -229,6 +229,7 @@
                     <constraint firstItem="LsT-b2-WIP" firstAttribute="leading" secondItem="wz8-CG-YtL" secondAttribute="leading" constant="24" id="zwK-hf-fOP"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="UJQ-uI-5MP"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="itemCount">

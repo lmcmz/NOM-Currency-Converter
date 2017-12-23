@@ -14,6 +14,8 @@ class CacheManager: NSObject {
     static let kCountry2Key = "Exchange.Rate.Country2.key"
     static let kRateKey = "Exchange.Rate.Currency.key"
     static let kChartKey = "Exchange.Rate.Chart.key"
+    static let kChartPeriodKey = "Exchange.Period.Chart.key"
+    static let kChartFrenquencyKey = "Exchange.Frenquency.Chart.key"
     
     class func setCountryCache(currency1: Currency, currency2: Currency) {
         CacheManager.shareManager.setValue(value: currency1.rawValue, key: kCountry1Key)
@@ -55,6 +57,35 @@ class CacheManager: NSObject {
             return YahooChartModel()
         }
         let data = YahooChartModel.deserialize(from: value)
+        return data!
+    }
+    
+    class func setPeriodCache(data:YahooPeriod) {
+        let value = String(data.rawValue)
+        CacheManager.shareManager.setValue(value: value, key: kChartPeriodKey)
+    }
+    
+    class func getPeriodCache() -> YahooPeriod {
+        if !CacheManager.shareManager.checkValue(key: kChartPeriodKey) {
+            return YahooPeriod.oneMO
+        }
+        
+        let value = CacheManager.shareManager.getValue(key: kChartPeriodKey)
+        let data = YahooPeriod(rawValue: Int(value!)!)
+        return data!
+    }
+    
+    class func setFrequencyCache(data:YahooFrequency) {
+        let value = String(data.rawValue)
+        CacheManager.shareManager.setValue(value: value, key: kChartFrenquencyKey)
+    }
+    
+    class func getFrequencyCache() -> YahooFrequency {
+        if !CacheManager.shareManager.checkValue(key: kChartFrenquencyKey) {
+            return YahooFrequency.oneDay
+        }
+        let value = CacheManager.shareManager.getValue(key: kChartFrenquencyKey)
+        let data = YahooFrequency(rawValue: Int(value!)!)
         return data!
     }
     

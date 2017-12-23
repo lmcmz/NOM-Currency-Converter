@@ -33,16 +33,42 @@
                         <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL1-B5-eIy">
+                        <rect key="frame" x="166.5" y="80.5" width="76" height="14.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Built by ">
+                                <attributes>
+                                    <color key="NSColor" white="1" alpha="0.4901273544520548" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="12" name="HelveticaNeue-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="lmcmz">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="0.8666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="12" name="HelveticaNeue-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
-                <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="aL1-B5-eIy" firstAttribute="centerX" secondItem="c3X-Ed-y1z" secondAttribute="centerX" id="22i-8s-x1P"/>
                     <constraint firstAttribute="bottom" secondItem="8s6-ru-Y6f" secondAttribute="bottom" id="Dmn-zL-Elw"/>
                     <constraint firstItem="8s6-ru-Y6f" firstAttribute="centerX" secondItem="c3X-Ed-y1z" secondAttribute="centerX" id="I8W-jH-uz7"/>
                     <constraint firstItem="aT1-d5-aAO" firstAttribute="centerX" secondItem="c3X-Ed-y1z" secondAttribute="centerX" id="aR1-R5-Kn3"/>
                     <constraint firstItem="aT1-d5-aAO" firstAttribute="top" secondItem="c3X-Ed-y1z" secondAttribute="top" constant="60" id="r7m-EJ-Eo6"/>
+                    <constraint firstItem="aL1-B5-eIy" firstAttribute="top" secondItem="aT1-d5-aAO" secondAttribute="bottom" constant="5" id="zje-fz-Xp0"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="vSm-Ty-ga3"/>
+            <connections>
+                <outlet property="monsterImage" destination="8s6-ru-Y6f" id="sd9-sD-GMw"/>
+            </connections>
             <point key="canvasLocation" x="-27" y="147"/>
         </tableViewCell>
     </objects>

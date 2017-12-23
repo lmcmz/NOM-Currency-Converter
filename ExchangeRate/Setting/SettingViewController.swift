@@ -39,7 +39,15 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = UIColor.clear
-
+        
+        let layer = CAGradientLayer()
+        let color1 = self.view.backgroundColor?.cgColor
+        let color2 = UIColor(hexString: "2D354F").cgColor
+        layer.frame = CGRect(x: 0, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.SCREEN_HEIGHT)
+        layer.colors = [color1, color2]
+        layer.startPoint = CGPoint(x: 0.5, y: 0)
+        layer.endPoint = CGPoint(x: 0.5, y: 1)
+        self.view.layer.insertSublayer(layer, at: 0)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,7 +109,12 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         guard case let cell as FoldingCell = tableView.cellForRow(at: indexPath) else {
             
             if indexPath.row == 3 {
-                UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id375380948?mt=8")!, options: [:], completionHandler: nil)
+                
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id375380948?mt=8")!, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(URL(string:"itms-apps://itunes.apple.com/us/app/apple-store/id375380948?mt=8")!)
+                }
             }
             
             if indexPath.row == 4 {

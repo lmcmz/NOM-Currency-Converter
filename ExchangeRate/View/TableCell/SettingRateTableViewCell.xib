@@ -64,13 +64,14 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="KqL-nt-tvj" firstAttribute="top" secondItem="KNZ-hU-lgL" secondAttribute="top" constant="24" id="8yh-RO-cWT"/>
                     <constraint firstItem="KqL-nt-tvj" firstAttribute="leading" secondItem="KNZ-hU-lgL" secondAttribute="leading" constant="24" id="Qlz-YM-7ub"/>
                     <constraint firstAttribute="trailing" secondItem="KqL-nt-tvj" secondAttribute="trailing" constant="24" id="alJ-9y-aC1"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="lvd-MG-vPU"/>
             <point key="canvasLocation" x="-44" y="-21"/>
         </tableViewCell>

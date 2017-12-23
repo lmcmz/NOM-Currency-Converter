@@ -93,13 +93,14 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="jJZ-zH-g1T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="HpJ-nf-FLb"/>
                     <constraint firstAttribute="trailing" secondItem="jJZ-zH-g1T" secondAttribute="trailing" constant="24" id="PSn-hm-GU7"/>
                     <constraint firstItem="jJZ-zH-g1T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="qtQ-dk-hb9"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="notiControl" destination="ayR-y1-1sO" id="04O-Gy-hvC"/>

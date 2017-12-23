@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,11 +24,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monster" translatesAutoresizingMaskIntoConstraints="NO" id="che-TT-K2h">
-                                <rect key="frame" x="114" y="403" width="148" height="264"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018 © All Rights Reserved." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43f-3a-Gow">
+                                <rect key="frame" x="114" y="559.5" width="146.5" height="14.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="0.78462114729999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Yvc-8d-G5H">
+                                <rect key="frame" x="62" y="108.5" width="250" height="250"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lmcmz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL7-f2-RaW">
-                                <rect key="frame" x="163.5" y="44" width="48.5" height="20"/>
+                                <rect key="frame" x="163" y="534.5" width="48.5" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -35,10 +42,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="che-TT-K2h" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RHn-KY-CyY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="che-TT-K2h" secondAttribute="bottom" id="b2v-wd-ICy"/>
-                            <constraint firstItem="OL7-f2-RaW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="iKi-Ve-7xi"/>
+                            <constraint firstItem="Yvc-8d-G5H" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.7" id="Imm-86-zOY"/>
+                            <constraint firstItem="Yvc-8d-G5H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ebb-DV-8Dc"/>
                             <constraint firstItem="OL7-f2-RaW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iWM-X7-7YR"/>
+                            <constraint firstItem="43f-3a-Gow" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qhb-sn-tQb"/>
+                            <constraint firstItem="43f-3a-Gow" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="1.7" id="qzm-Z9-WVd"/>
+                            <constraint firstItem="43f-3a-Gow" firstAttribute="top" secondItem="OL7-f2-RaW" secondAttribute="bottom" constant="5" id="xBk-Pn-FFV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -49,6 +58,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="monster" width="148" height="264"/>
+        <image name="launch-logo" width="250" height="250"/>
     </resources>
 </document>

@@ -28,12 +28,21 @@ class SettingAppTableViewCell: FoldingCell {
         return durations[itemIndex]
     }
     
+    @available(iOS 10.0, *)
     @IBAction func pureButtonClick() {
-        UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id375380948?mt=8")!, options: [:], completionHandler: nil)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/cn/app/pure-quotes/id988629611?mt=8")!, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(URL(string:"itms-apps://itunes.apple.com/cn/app/pure-quotes/id988629611?mt=8")!)
+        }
     }
     
     @IBAction func globalButtonClick() {
-        UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id375380948?mt=8")!, options: [:], completionHandler: nil)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/us/app/id982807671")!, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(URL(string:"itms-apps://itunes.apple.com/us/app/id982807671")!)
+        }
     }
     
     

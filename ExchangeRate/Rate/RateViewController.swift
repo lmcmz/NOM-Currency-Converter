@@ -46,10 +46,15 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     var country1_currency: Currency = Currency.AUD
     var country2_currency: Currency = Currency.CNY
     
+    var period: YahooPeriod = YahooPeriod.oneMO
+    var frequency: YahooFrequency = YahooFrequency.oneDay
+    
 //    static let sharedViewController = RateViewController()
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateWithCurency(notification:)), name: NSNotification.Name(rawValue: CountryViewController.changeCurrencyNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updatePeriod(notification:)), name: NSNotification.Name(rawValue: SettingChartTableViewCell.changePeriodNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateFrenquency(notification:)), name: NSNotification.Name(rawValue: SettingChartTableViewCell.changeFrenqencyNotification), object: nil)
     }
     
     
@@ -64,6 +69,8 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         country2_currency = Currency(rawValue: country2_label.text!)!
         self.repo = CacheManager.getRateCache()
         (country1_currency,country2_currency) = CacheManager.getCountryCache() as! (Currency, Currency)
+        self.period = CacheManager.getPeriodCache()
+        self.frequency = CacheManager.getFrequencyCache()
         requestData()
         
         if CacheManager.shareManager.checkValue(key: CacheManager.kChartKey) {
@@ -101,6 +108,8 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         chartView.enableTouchReport = true
         chartView.enablePopUpReport = true
         chartView.formatStringForValues = "%.3f";
+        
+        chartView.colorTouchInputLine = UIColor(hexString: "FFDD77")
         
         chartView.enableXAxisLabel = false
         chartView.enableBottomReferenceAxisFrameLine = false
@@ -248,13 +257,15 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         
         let query = country1_currency.rawValue + country2_currency.rawValue
         weak var weakSelf = self
-        yahooProvider.request(Yahoo.chart(query, "1mo")) { (result) in
+        yahooProvider.request(Yahoo.chart(query, YahooPeriod.getRequestString(period: self.period), YahooFrequency.getRequestString(frenquency: self.frequency))) { (result) in
             if case let .success(response) = result {
                 self.gotYahooData = true
                 self.shouldRemoveLoading()
                 let model = response.mapObject(YahooChartResponseModel.self)
                 let data = model?.makeModel()
-                CacheManager.setChartsCache(data: data!)
+                if (data?.close?.count)! < 500 {
+                    CacheManager.setChartsCache(data: data!)
+                }
                 weakSelf?.chartsData = data
                 weakSelf?.chartView.reloadGraph()
                 weakSelf?.checkTrend(data: data!)
@@ -302,6 +313,20 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         let value = self.getRateByCurrency(currency1: country1_currency, currency2: country2_currency)
         calculatorRef?.updateCurrency(currency: currency, isMainCurreny: self.isMainCurrency, rate: value)
         self.reloadData()
+        self.requestChartsData()
+    }
+    
+    @objc func updatePeriod(notification: NSNotification) {
+        let period = notification.object as! YahooPeriod
+        self.period = period
+        CacheManager.setPeriodCache(data: period)
+        self.requestChartsData()
+    }
+    
+    @objc func updateFrenquency(notification: NSNotification) {
+        let frenquency = notification.object as! YahooFrequency
+        self.frequency = frenquency
+        CacheManager.setFrequencyCache(data: frenquency)
         self.requestChartsData()
     }
     

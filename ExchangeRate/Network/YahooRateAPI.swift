@@ -35,7 +35,7 @@ private extension String {
 
 public enum Yahoo {
     case currency
-    case chart(String, String)
+    case chart(String, String, String)
 }
 
 extension Yahoo: TargetType {
@@ -44,7 +44,7 @@ extension Yahoo: TargetType {
         switch self {
         case .currency:
             return "finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote"
-        case .chart(let base, _):
+        case .chart(let base, _, _):
             return "query1.finance.yahoo.com/v7/finance/chart/\(base)=X"
         }
     }
@@ -55,8 +55,8 @@ extension Yahoo: TargetType {
         switch self {
         case .currency:
             return .requestParameters(parameters: ["format":"json"], encoding: URLEncoding.default)
-        case .chart(_, let range):
-            return .requestParameters(parameters: ["range": range, "interval": "1d", "indicators" : "close", "includeTimestamps":"true" , "includePrePost":"false", "corsDomain":"finance.yahoo.com"], encoding: URLEncoding.default)
+        case .chart(_, let range, let frequency):
+            return .requestParameters(parameters: ["range": range, "interval": frequency, "indicators" : "close", "includeTimestamps":"true" , "includePrePost":"false", "corsDomain":"finance.yahoo.com"], encoding: URLEncoding.default)
         }
     }
     public var validate: Bool {

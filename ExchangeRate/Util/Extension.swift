@@ -25,6 +25,7 @@ extension Date {
     public func printDateFromDate(formatter: String) -> String {
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = formatter
+        dateFormatterPrint.timeZone = NSTimeZone.local
         return dateFormatterPrint.string(from: self)
     }
 }
