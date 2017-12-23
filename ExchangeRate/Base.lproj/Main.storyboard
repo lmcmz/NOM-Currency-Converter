@@ -18,7 +18,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExchangeRate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NOM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,8 +30,8 @@
                                     <constraint firstAttribute="height" constant="33" id="LMB-cK-Jt9"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lmcmz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoK-01-MPY">
-                                <rect key="frame" x="162" y="8" width="50.666666666666657" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_(¦3」∠)_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoK-01-MPY">
+                                <rect key="frame" x="152.66666666666666" y="8" width="69.666666666666657" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                                         <rect key="frame" x="250" y="0.0" width="125" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-setting" highlightedImage="home-setting-highlight" translatesAutoresizingMaskIntoConstraints="NO" id="CFK-hS-oqS">
-                                                <rect key="frame" x="53.666666666666686" y="16" width="18" height="18"/>
+                                                <rect key="frame" x="52.666666666666686" y="15.666666666666664" width="20" height="19"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -148,6 +148,7 @@
                         <outlet property="contentHeight" destination="PhQ-LG-9EZ" id="xqU-Hw-pWz"/>
                         <outlet property="contentView" destination="oX6-oc-rBb" id="AIx-dq-scF"/>
                         <outlet property="contentWidth" destination="nNc-Xs-fI7" id="TS5-ld-wT1"/>
+                        <outlet property="headLabel" destination="hoK-01-MPY" id="dVe-xl-yqP"/>
                         <outlet property="rateImage" destination="sQm-rN-Pth" id="j82-mg-fKS"/>
                         <outlet property="scrollView" destination="j6P-Iz-b7S" id="Ekm-gg-G1x"/>
                         <outlet property="settingImage" destination="CFK-hS-oqS" id="HYS-kx-4BL"/>
@@ -161,8 +162,8 @@
     <resources>
         <image name="calculator-home-small" width="15" height="19"/>
         <image name="calculator-home-small-highlight" width="15" height="19"/>
-        <image name="home-setting" width="18" height="18"/>
-        <image name="home-setting-highlight" width="18" height="18"/>
+        <image name="home-setting" width="20" height="19"/>
+        <image name="home-setting-highlight" width="20" height="19"/>
         <image name="rate-home-small" width="19" height="16"/>
         <image name="rate-home-small-highlight" width="19" height="16"/>
     </resources>

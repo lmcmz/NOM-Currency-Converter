@@ -23,11 +23,10 @@ class SettingLanguageTableViewCell: FoldingCell {
         super.awakeFromNib()
         // Initialization code
         self.backViewColor = self.foregroundView.backgroundColor!
-        let width = ((Constants.SCREEN_WIDTH - 6 * Constants.padding)/3) * 0.9
-        englishButton.layer.cornerRadius = width / 2
-        chineseButton.layer.cornerRadius = width / 2
-        spanishButton.layer.cornerRadius = width / 2
-        gardientButton.layer.cornerRadius = width / 2
+        englishButton.layer.cornerRadius = 45.6
+        chineseButton.layer.cornerRadius = 45.6
+        spanishButton.layer.cornerRadius = 45.6
+        gardientButton.layer.cornerRadius = 45.6
         gardientButton.layer.masksToBounds = true
     }
 
@@ -56,8 +55,8 @@ class SettingLanguageTableViewCell: FoldingCell {
             frame = englishButton.convert(englishButton.bounds, to: self.buttonView)
         }
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
             self.gardientButton.frame = frame
-        }
+        }, completion: nil)
     }
 }

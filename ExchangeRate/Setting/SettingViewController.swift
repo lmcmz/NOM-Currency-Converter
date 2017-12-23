@@ -18,8 +18,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     let kAppsCellHeighet: CGFloat = 280
     let kVersionCellHeight: CGFloat = 440
     let kRowsCount = 10
-    
-    var dynamicHeight: CGFloat = 510
     var cellHeights: [CGFloat] = []
     
     @IBOutlet var tableView: UITableView!
@@ -111,9 +109,9 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             if indexPath.row == 3 {
                 
                 if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id375380948?mt=8")!, options: [:], completionHandler: nil)
+                    UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id1329241386?mt=8")!, options: [:], completionHandler: nil)
                 } else {
-                    UIApplication.shared.openURL(URL(string:"itms-apps://itunes.apple.com/us/app/apple-store/id375380948?mt=8")!)
+                    UIApplication.shared.openURL(URL(string:"itms-apps://itunes.apple.com/us/app/apple-store/id1329241386?mt=8")!)
                 }
             }
             
@@ -180,11 +178,11 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK: - Navigation
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let maxSet = scrollView.contentSize.height - scrollView.frame.height
         let offSet = scrollView.contentOffset.y
-        if offSet > 100 {
-        }
-        if offSet > 250 {
-            scrollView.contentOffset.y = 250
+        if offSet > maxSet {
+            scrollView.contentOffset.y = maxSet
         }
     }
     

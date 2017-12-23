@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="ArialRoundedMTBold.ttf">
+            <string>ArialRoundedMTBold</string>
+        </array>
         <array key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Light</string>
         </array>
@@ -39,10 +42,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmj-86-z8F">
+                                <rect key="frame" x="128" y="370.5" width="119.5" height="58"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="0.71572666949999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Dmj-86-z8F" firstAttribute="top" secondItem="Yvc-8d-G5H" secondAttribute="bottom" constant="12" id="2r5-IL-BOL"/>
                             <constraint firstItem="Yvc-8d-G5H" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.7" id="Imm-86-zOY"/>
+                            <constraint firstItem="Dmj-86-z8F" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="W0y-ea-iia"/>
                             <constraint firstItem="Yvc-8d-G5H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ebb-DV-8Dc"/>
                             <constraint firstItem="OL7-f2-RaW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iWM-X7-7YR"/>
                             <constraint firstItem="43f-3a-Gow" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qhb-sn-tQb"/>

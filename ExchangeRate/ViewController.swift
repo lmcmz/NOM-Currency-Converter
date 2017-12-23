@@ -21,10 +21,17 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
     @IBOutlet var calculatorImage: UIImageView!
     @IBOutlet var rateImage: UIImageView!
     
+    @IBOutlet var headLabel: UILabel!
+    
     func initView() {
         let width = UIScreen.main.bounds.width
         
+        contentWidth.constant = width * 3
+        scrollView.isPagingEnabled = true
+        
         contentView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
             make.width.equalTo(Constants.SCREEN_WIDTH*3)
             make.height.equalTo(scrollView.snp.height)
         }
@@ -66,7 +73,9 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
             self.scrollView.setContentOffset(CGPoint(x: Constants.SCREEN_WIDTH, y: 0), animated: false)
         }
         
-//        scrollView.isScrollEnabled = false
+        let array = ["ᕕ ( ᐛ ) ᕗ", "_(¦3」∠)_", "(๑╹◡╹๑)", "∠( ᐛ 」∠)_", "( º﹃º )", "இдஇ"]
+        let numberRoll = Int(arc4random_uniform(5))
+        self.headLabel.text = array[numberRoll]
     }
     
     override func viewDidLoad() {

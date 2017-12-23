@@ -126,10 +126,10 @@
 		15E7260B1FD3085500F6C7A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15E7260E1FD3085500F6C7A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15E726101FD3085500F6C7A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15E726151FD3085500F6C7A9 /* ExchangeRateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeRateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15E726151FD3085500F6C7A9 /* NOMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NOMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E726191FD3085500F6C7A9 /* ExchangeRateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateTests.swift; sourceTree = "<group>"; };
 		15E7261B1FD3085500F6C7A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15E726201FD3085500F6C7A9 /* ExchangeRateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeRateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15E726201FD3085500F6C7A9 /* NOMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NOMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E726241FD3085500F6C7A9 /* ExchangeRateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateUITests.swift; sourceTree = "<group>"; };
 		15E726261FD3085500F6C7A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59581399B871DD4F00D854AA /* Pods-ExchangeRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRate.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate.release.xcconfig"; sourceTree = "<group>"; };
@@ -306,8 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				15E726011FD3085500F6C7A9 /* ExchangeRate.app */,
-				15E726151FD3085500F6C7A9 /* ExchangeRateTests.xctest */,
-				15E726201FD3085500F6C7A9 /* ExchangeRateUITests.xctest */,
+				15E726151FD3085500F6C7A9 /* NOMTests.xctest */,
+				15E726201FD3085500F6C7A9 /* NOMUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -374,9 +374,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		15E726001FD3085500F6C7A9 /* ExchangeRate */ = {
+		15E726001FD3085500F6C7A9 /* NOM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15E726291FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "ExchangeRate" */;
+			buildConfigurationList = 15E726291FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "NOM" */;
 			buildPhases = (
 				A80F3C832A5FF3F19F6BC5B6 /* [CP] Check Pods Manifest.lock */,
 				15E725FD1FD3085500F6C7A9 /* Sources */,
@@ -390,14 +390,14 @@
 			);
 			dependencies = (
 			);
-			name = ExchangeRate;
+			name = NOM;
 			productName = ExchangeRate;
 			productReference = 15E726011FD3085500F6C7A9 /* ExchangeRate.app */;
 			productType = "com.apple.product-type.application";
 		};
-		15E726141FD3085500F6C7A9 /* ExchangeRateTests */ = {
+		15E726141FD3085500F6C7A9 /* NOMTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15E7262C1FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "ExchangeRateTests" */;
+			buildConfigurationList = 15E7262C1FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "NOMTests" */;
 			buildPhases = (
 				15E726111FD3085500F6C7A9 /* Sources */,
 				15E726121FD3085500F6C7A9 /* Frameworks */,
@@ -408,14 +408,14 @@
 			dependencies = (
 				15E726171FD3085500F6C7A9 /* PBXTargetDependency */,
 			);
-			name = ExchangeRateTests;
+			name = NOMTests;
 			productName = ExchangeRateTests;
-			productReference = 15E726151FD3085500F6C7A9 /* ExchangeRateTests.xctest */;
+			productReference = 15E726151FD3085500F6C7A9 /* NOMTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		15E7261F1FD3085500F6C7A9 /* ExchangeRateUITests */ = {
+		15E7261F1FD3085500F6C7A9 /* NOMUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15E7262F1FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "ExchangeRateUITests" */;
+			buildConfigurationList = 15E7262F1FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "NOMUITests" */;
 			buildPhases = (
 				15E7261C1FD3085500F6C7A9 /* Sources */,
 				15E7261D1FD3085500F6C7A9 /* Frameworks */,
@@ -426,9 +426,9 @@
 			dependencies = (
 				15E726221FD3085500F6C7A9 /* PBXTargetDependency */,
 			);
-			name = ExchangeRateUITests;
+			name = NOMUITests;
 			productName = ExchangeRateUITests;
-			productReference = 15E726201FD3085500F6C7A9 /* ExchangeRateUITests.xctest */;
+			productReference = 15E726201FD3085500F6C7A9 /* NOMUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -458,7 +458,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 15E725FC1FD3085500F6C7A9 /* Build configuration list for PBXProject "ExchangeRate" */;
+			buildConfigurationList = 15E725FC1FD3085500F6C7A9 /* Build configuration list for PBXProject "NOM" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -471,9 +471,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				15E726001FD3085500F6C7A9 /* ExchangeRate */,
-				15E726141FD3085500F6C7A9 /* ExchangeRateTests */,
-				15E7261F1FD3085500F6C7A9 /* ExchangeRateUITests */,
+				15E726001FD3085500F6C7A9 /* NOM */,
+				15E726141FD3085500F6C7A9 /* NOMTests */,
+				15E7261F1FD3085500F6C7A9 /* NOMUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -666,12 +666,12 @@
 /* Begin PBXTargetDependency section */
 		15E726171FD3085500F6C7A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 15E726001FD3085500F6C7A9 /* ExchangeRate */;
+			target = 15E726001FD3085500F6C7A9 /* NOM */;
 			targetProxy = 15E726161FD3085500F6C7A9 /* PBXContainerItemProxy */;
 		};
 		15E726221FD3085500F6C7A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 15E726001FD3085500F6C7A9 /* ExchangeRate */;
+			target = 15E726001FD3085500F6C7A9 /* NOM */;
 			targetProxy = 15E726211FD3085500F6C7A9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -855,7 +855,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExchangeRate.app/ExchangeRate";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NOM.app/NOM";
 			};
 			name = Debug;
 		};
@@ -872,7 +872,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExchangeRate.app/ExchangeRate";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NOM.app/NOM";
 			};
 			name = Release;
 		};
@@ -911,7 +911,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		15E725FC1FD3085500F6C7A9 /* Build configuration list for PBXProject "ExchangeRate" */ = {
+		15E725FC1FD3085500F6C7A9 /* Build configuration list for PBXProject "NOM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15E726271FD3085500F6C7A9 /* Debug */,
@@ -920,7 +920,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15E726291FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "ExchangeRate" */ = {
+		15E726291FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "NOM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15E7262A1FD3085500F6C7A9 /* Debug */,
@@ -929,7 +929,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15E7262C1FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "ExchangeRateTests" */ = {
+		15E7262C1FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "NOMTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15E7262D1FD3085500F6C7A9 /* Debug */,
@@ -938,7 +938,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15E7262F1FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "ExchangeRateUITests" */ = {
+		15E7262F1FD3085500F6C7A9 /* Build configuration list for PBXNativeTarget "NOMUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15E726301FD3085500F6C7A9 /* Debug */,

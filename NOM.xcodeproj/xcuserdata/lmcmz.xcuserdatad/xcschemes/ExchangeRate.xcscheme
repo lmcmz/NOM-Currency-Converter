@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "15E726001FD3085500F6C7A9"
-               BuildableName = "ExchangeRate.app"
-               BlueprintName = "ExchangeRate"
-               ReferencedContainer = "container:ExchangeRate.xcodeproj">
+               BuildableName = "NOM.app"
+               BlueprintName = "NOM"
+               ReferencedContainer = "container:NOM.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "15E726141FD3085500F6C7A9"
-               BuildableName = "ExchangeRateTests.xctest"
-               BlueprintName = "ExchangeRateTests"
-               ReferencedContainer = "container:ExchangeRate.xcodeproj">
+               BuildableName = "NOMTests.xctest"
+               BlueprintName = "NOMTests"
+               ReferencedContainer = "container:NOM.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "15E7261F1FD3085500F6C7A9"
-               BuildableName = "ExchangeRateUITests.xctest"
-               BlueprintName = "ExchangeRateUITests"
-               ReferencedContainer = "container:ExchangeRate.xcodeproj">
+               BuildableName = "NOMUITests.xctest"
+               BlueprintName = "NOMUITests"
+               ReferencedContainer = "container:NOM.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "15E726001FD3085500F6C7A9"
-            BuildableName = "ExchangeRate.app"
-            BlueprintName = "ExchangeRate"
-            ReferencedContainer = "container:ExchangeRate.xcodeproj">
+            BuildableName = "NOM.app"
+            BlueprintName = "NOM"
+            ReferencedContainer = "container:NOM.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,9 +78,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "15E726001FD3085500F6C7A9"
-            BuildableName = "ExchangeRate.app"
-            BlueprintName = "ExchangeRate"
-            ReferencedContainer = "container:ExchangeRate.xcodeproj">
+            BuildableName = "NOM.app"
+            BlueprintName = "NOM"
+            ReferencedContainer = "container:NOM.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,9 +97,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "15E726001FD3085500F6C7A9"
-            BuildableName = "ExchangeRate.app"
-            BlueprintName = "ExchangeRate"
-            ReferencedContainer = "container:ExchangeRate.xcodeproj">
+            BuildableName = "NOM.app"
+            BlueprintName = "NOM"
+            ReferencedContainer = "container:NOM.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
