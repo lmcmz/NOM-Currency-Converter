@@ -76,6 +76,13 @@ extension UITextField {
     }
 }
 
+extension UITableView {
+    func registerCell(nibName:String) {
+        let nib = UINib(nibName: nibName, bundle: nil)
+        self.register(nib, forCellReuseIdentifier: nibName)
+    }
+}
+
 public extension NSObject{
     public class var nameOfClass: String{
         return NSStringFromClass(self).components(separatedBy: ".").last!

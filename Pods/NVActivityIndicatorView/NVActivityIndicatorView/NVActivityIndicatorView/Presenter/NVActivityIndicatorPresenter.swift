@@ -207,7 +207,7 @@ public final class NVActivityIndicatorPresenter {
         // Add constraints for `activityIndicatorView`.
         ({
             let xConstraint = NSLayoutConstraint(item: containerView, attribute: .centerX, relatedBy: .equal, toItem: activityIndicatorView, attribute: .centerX, multiplier: 1, constant: 0)
-            let yConstraint = NSLayoutConstraint(item: containerView, attribute: .centerY, relatedBy: .equal, toItem: activityIndicatorView, attribute: .centerY, multiplier: 1, constant: 0)
+            let yConstraint = NSLayoutConstraint(item: containerView, attribute: .centerY, relatedBy: .equal, toItem: activityIndicatorView, attribute: .centerY, multiplier: 0.8, constant: 0)
 
             containerView.addConstraints([xConstraint, yConstraint])
         }())

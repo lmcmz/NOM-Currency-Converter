@@ -9,6 +9,54 @@
 import Foundation
 import HandyJSON
 
+enum YahooPeriod: String, HandyJSONEnum {
+    case
+    fiveD,oneMO,threeMO,oneY,fiveY
+    
+    static func supportNumber() -> Int {
+        return 5
+    }
+    
+    static func getString(period: YahooPeriod) -> String {
+        switch period {
+        case .fiveD:
+            return "5D"
+        case .oneMO:
+            return "1M"
+        case .threeMO:
+            return "3M"
+        case .oneY:
+            return "1Y"
+        case .fiveY:
+            return "5Y"
+        }
+    }
+}
+
+enum YahooFrenquency: String, HandyJSONEnum {
+    case
+    halfHour, oneHour, oneDay, oneWeek, threeMonth
+    
+    static func supportNumber() -> Int {
+        return 5
+    }
+    
+    static func getString(frenquency: YahooFrenquency) -> String {
+        switch frenquency {
+        case .halfHour:
+            return "½H"
+        case .oneHour:
+            return "1H"
+        case .oneDay:
+            return "1D"
+        case .oneWeek:
+            return "1W"
+        case .threeMonth:
+            return "3M"
+        }
+    }
+}
+
 class YahooAllResponseModel:HandyJSON {
     var list: YahooResponseModel?
     

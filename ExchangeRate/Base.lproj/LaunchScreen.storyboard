@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Regular</string>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
         </array>
     </customFonts>
     <scenes>
@@ -23,28 +23,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWL-mE-eux">
-                                <rect key="frame" x="148" y="315.5" width="80" height="37"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lmcmz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouh-5j-I7I">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="37"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="27"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Ouh-5j-I7I" secondAttribute="bottom" id="Ls2-G2-08B"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ouh-5j-I7I" secondAttribute="trailing" id="mLY-nL-SYJ"/>
-                                    <constraint firstItem="Ouh-5j-I7I" firstAttribute="top" secondItem="zWL-mE-eux" secondAttribute="top" id="w0D-0L-m4y"/>
-                                    <constraint firstItem="Ouh-5j-I7I" firstAttribute="leading" secondItem="zWL-mE-eux" secondAttribute="leading" id="xiy-Zv-ZKc"/>
-                                </constraints>
-                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monster" translatesAutoresizingMaskIntoConstraints="NO" id="che-TT-K2h">
+                                <rect key="frame" x="114" y="403" width="148" height="264"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lmcmz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL7-f2-RaW">
+                                <rect key="frame" x="163.5" y="44" width="48.5" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="zWL-mE-eux" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gvf-Uy-qxC"/>
-                            <constraint firstItem="zWL-mE-eux" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rqP-y1-AeN"/>
+                            <constraint firstItem="che-TT-K2h" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RHn-KY-CyY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="che-TT-K2h" secondAttribute="bottom" id="b2v-wd-ICy"/>
+                            <constraint firstItem="OL7-f2-RaW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="iKi-Ve-7xi"/>
+                            <constraint firstItem="OL7-f2-RaW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iWM-X7-7YR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -54,4 +48,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="monster" width="148" height="264"/>
+    </resources>
 </document>

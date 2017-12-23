@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SkeletonView
+import SnapKit
 
 class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecognizerDelegate {
     
@@ -17,31 +17,50 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
     @IBOutlet var contentHeight: NSLayoutConstraint!
     @IBOutlet var contentWidth: NSLayoutConstraint!
     
-    @IBOutlet var calendarImage: UIImageView!
+    @IBOutlet var settingImage: UIImageView!
     @IBOutlet var calculatorImage: UIImageView!
     @IBOutlet var rateImage: UIImageView!
     
     func initView() {
-        contentWidth.constant = Constants.SCREEN_WIDTH * 3
-        contentHeight.constant = Constants.HomePageVCHeight
+        let width = UIScreen.main.bounds.width
+        
+        contentView.snp.makeConstraints { (make) in
+            make.width.equalTo(Constants.SCREEN_WIDTH*3)
+            make.height.equalTo(scrollView.snp.height)
+        }
         
         let calculatorVC = CalculatorViewController()
-        calculatorVC.view.frame = CGRect(x: 0, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.HomePageVCHeight - 112)
         self.addChildViewController(calculatorVC)
         contentView.addSubview(calculatorVC.view)
+        calculatorVC.view.snp.makeConstraints { (make) in
+            make.top.equalTo(0)
+            make.left.equalTo(0)
+            make.width.equalTo(width)
+            make.height.equalTo(contentView.snp.height)
+        }
         
         let rateVC = RateViewController()
-        rateVC.view.frame = CGRect(x: Constants.SCREEN_WIDTH, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.HomePageVCHeight - 112)
         self.addChildViewController(rateVC)
         contentView.addSubview(rateVC.view)
+        rateVC.view.snp.makeConstraints { (make) in
+            make.top.equalTo(0)
+            make.left.equalTo(width)
+            make.width.equalTo(width)
+            make.height.equalTo(contentView.snp.height)
+        }
         
         rateVC.calculatorRef = calculatorVC
         calculatorVC.rateRef = rateVC
         
-        let timeTableVC = TimeTableViewController()
-        timeTableVC.view.frame = CGRect(x: Constants.SCREEN_WIDTH*2, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.HomePageVCHeight - 112)
-        self.addChildViewController(timeTableVC)
-        contentView.addSubview(timeTableVC.view)
+        let settingVC = SettingViewController()
+        self.contentView.addSubview(settingVC.view)
+        self.addChildViewController(settingVC)
+        settingVC.view.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(0)
+            make.left.equalTo(width*2)
+            make.width.equalTo(width)
+            make.height.equalTo(contentView.snp.height)
+        }
         
         DispatchQueue.main.async {
             self.scrollView.setContentOffset(CGPoint(x: Constants.SCREEN_WIDTH, y: 0), animated: false)
@@ -61,7 +80,7 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
         let distance = scrollView.contentOffset.x
         let page = floor(distance/Constants.SCREEN_WIDTH)
         
-        calendarImage.isHighlighted = false
+        settingImage.isHighlighted = false
         calculatorImage.isHighlighted = false
         rateImage.isHighlighted = false
         
@@ -71,7 +90,7 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
         case 1:
             self.rateImage.isHighlighted = true
         case 2:
-            self.calendarImage.isHighlighted = true
+            self.settingImage.isHighlighted = true
         default:
             self.calculatorImage.isHighlighted = true
         }

@@ -22,8 +22,8 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var calculatorLabel: UILabel!
     
-    var country1_currency: Currency!
-    var country2_currency: Currency!
+    var country1_currency: Currency = Currency.AUD
+    var country2_currency: Currency = Currency.CNY
     var isMainCurrency = true
     
     var haveOperation = true
@@ -41,10 +41,7 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //
-        country1_currency = Currency.EUR
-        country2_currency = Currency.CHF
-        //
+        (country1_currency, country2_currency) = CacheManager.getCountryCache() as! (Currency, Currency)
         
         self.country1Label.text = "1"
         self.country2Label.text = rate.clean
@@ -66,6 +63,8 @@ class CalculatorViewController: UIViewController,UITextFieldDelegate {
         
         country1Label.text = "1"
         country2Label.text = rate.clean
+        
+        CacheManager.setCountryCache(currency1: country1_currency, currency2: country2_currency)
     }
     
     @IBAction func buttonDidClick(button:UIControl) {

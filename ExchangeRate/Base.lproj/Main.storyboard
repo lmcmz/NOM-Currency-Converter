@@ -79,7 +79,7 @@
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M98-w3-IEJ" customClass="UIControl">
                                         <rect key="frame" x="250" y="0.0" width="125" height="50"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-home-small" highlightedImage="calendar-home-small-highlight" translatesAutoresizingMaskIntoConstraints="NO" id="CFK-hS-oqS">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-setting" highlightedImage="home-setting-highlight" translatesAutoresizingMaskIntoConstraints="NO" id="CFK-hS-oqS">
                                                 <rect key="frame" x="53.666666666666686" y="16" width="18" height="18"/>
                                             </imageView>
                                         </subviews>
@@ -145,12 +145,12 @@
                     </view>
                     <connections>
                         <outlet property="calculatorImage" destination="3hD-82-RwJ" id="9bI-8a-nDZ"/>
-                        <outlet property="calendarImage" destination="CFK-hS-oqS" id="TbP-6d-kPh"/>
                         <outlet property="contentHeight" destination="PhQ-LG-9EZ" id="xqU-Hw-pWz"/>
                         <outlet property="contentView" destination="oX6-oc-rBb" id="AIx-dq-scF"/>
                         <outlet property="contentWidth" destination="nNc-Xs-fI7" id="TS5-ld-wT1"/>
                         <outlet property="rateImage" destination="sQm-rN-Pth" id="j82-mg-fKS"/>
                         <outlet property="scrollView" destination="j6P-Iz-b7S" id="Ekm-gg-G1x"/>
+                        <outlet property="settingImage" destination="CFK-hS-oqS" id="HYS-kx-4BL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -161,8 +161,8 @@
     <resources>
         <image name="calculator-home-small" width="15" height="19"/>
         <image name="calculator-home-small-highlight" width="15" height="19"/>
-        <image name="calendar-home-small" width="18" height="18"/>
-        <image name="calendar-home-small-highlight" width="18" height="18"/>
+        <image name="home-setting" width="18" height="18"/>
+        <image name="home-setting-highlight" width="18" height="18"/>
         <image name="rate-home-small" width="19" height="16"/>
         <image name="rate-home-small-highlight" width="19" height="16"/>
     </resources>

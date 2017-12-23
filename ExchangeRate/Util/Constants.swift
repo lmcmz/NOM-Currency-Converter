@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 class Constants {
-    static let SCREEN_WIDTH = UIScreen.main.bounds.width
-    static let SCREEN_HEIGHT = UIScreen.main.bounds.height
+    static let SCREEN_WIDTH : CGFloat = UIScreen.main.bounds.width
+    static let SCREEN_HEIGHT: CGFloat = UIScreen.main.bounds.height
+    
+    static let padding : CGFloat = 12
     
     static let supportCurrency = 32 as Int
     static let NavigationBarHeightX = 44

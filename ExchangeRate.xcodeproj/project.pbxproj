@@ -28,12 +28,28 @@
 		1568B1521FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1568B1501FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib */; };
 		156B28EA1FDED8B200E643A3 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B28E81FDED8B200E643A3 /* TimeTableViewController.swift */; };
 		156B28EB1FDED8B200E643A3 /* TimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 156B28E91FDED8B200E643A3 /* TimeTableViewController.xib */; };
+		1583D83F1FEE6C6000787F2A /* SettingVersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1583D83D1FEE6C6000787F2A /* SettingVersionTableViewCell.swift */; };
+		1583D8401FEE6C6000787F2A /* SettingVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1583D83E1FEE6C6000787F2A /* SettingVersionTableViewCell.xib */; };
 		15C237261FDE3EC500597106 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C237251FDE3EC500597106 /* Currency.swift */; };
 		15C5AB2E1FDA95C200A81E0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2C1FDA95C200A81E0E /* Constants.swift */; };
 		15C5AB2F1FDA95C200A81E0E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2D1FDA95C200A81E0E /* Extension.swift */; };
 		15C5AB321FDA96D000A81E0E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB301FDA96D000A81E0E /* RateViewController.swift */; };
 		15C5AB331FDA96D000A81E0E /* RateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C5AB311FDA96D000A81E0E /* RateViewController.xib */; };
 		15CED3DE1FEC0A87002E0F11 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CED3DD1FEC0A87002E0F11 /* CacheManager.swift */; };
+		15DAB0A21FEE17E70003D695 /* SettingNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DAB0A01FEE17E70003D695 /* SettingNotificationTableViewCell.swift */; };
+		15DAB0A31FEE17E70003D695 /* SettingNotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15DAB0A11FEE17E70003D695 /* SettingNotificationTableViewCell.xib */; };
+		15DAB0A61FEE52220003D695 /* SettingRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DAB0A41FEE52220003D695 /* SettingRateTableViewCell.swift */; };
+		15DAB0A71FEE52220003D695 /* SettingRateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15DAB0A51FEE52220003D695 /* SettingRateTableViewCell.xib */; };
+		15DAB0AB1FEE53740003D695 /* SettingFeedbackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DAB0A91FEE53740003D695 /* SettingFeedbackTableViewCell.swift */; };
+		15DAB0AC1FEE53740003D695 /* SettingFeedbackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15DAB0AA1FEE53740003D695 /* SettingFeedbackTableViewCell.xib */; };
+		15DAB0AF1FEE57790003D695 /* SettingLanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DAB0AD1FEE57790003D695 /* SettingLanguageTableViewCell.swift */; };
+		15DAB0B01FEE57790003D695 /* SettingLanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15DAB0AE1FEE57790003D695 /* SettingLanguageTableViewCell.xib */; };
+		15DAB0B31FEE63390003D695 /* SettingAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DAB0B11FEE63390003D695 /* SettingAppTableViewCell.swift */; };
+		15DAB0B41FEE63390003D695 /* SettingAppTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15DAB0B21FEE63390003D695 /* SettingAppTableViewCell.xib */; };
+		15E5D3181FEC499E00C68DE9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E5D3161FEC499E00C68DE9 /* SettingViewController.swift */; };
+		15E5D3191FEC499E00C68DE9 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D3171FEC499E00C68DE9 /* SettingViewController.xib */; };
+		15E5D31C1FEC549100C68DE9 /* SettingChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E5D31A1FEC549100C68DE9 /* SettingChartTableViewCell.swift */; };
+		15E5D31D1FEC549100C68DE9 /* SettingChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D31B1FEC549100C68DE9 /* SettingChartTableViewCell.xib */; };
 		15E726051FD3085500F6C7A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E726041FD3085500F6C7A9 /* AppDelegate.swift */; };
 		15E726071FD3085500F6C7A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E726061FD3085500F6C7A9 /* ViewController.swift */; };
 		15E7260A1FD3085500F6C7A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E726081FD3085500F6C7A9 /* Main.storyboard */; };
@@ -85,12 +101,28 @@
 		1568B1501FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCollectionViewLongCell.xib; sourceTree = "<group>"; };
 		156B28E81FDED8B200E643A3 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		156B28E91FDED8B200E643A3 /* TimeTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewController.xib; sourceTree = "<group>"; };
+		1583D83D1FEE6C6000787F2A /* SettingVersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVersionTableViewCell.swift; sourceTree = "<group>"; };
+		1583D83E1FEE6C6000787F2A /* SettingVersionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingVersionTableViewCell.xib; sourceTree = "<group>"; };
 		15C237251FDE3EC500597106 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		15C5AB2C1FDA95C200A81E0E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		15C5AB2D1FDA95C200A81E0E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		15C5AB301FDA96D000A81E0E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		15C5AB311FDA96D000A81E0E /* RateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateViewController.xib; sourceTree = "<group>"; };
 		15CED3DD1FEC0A87002E0F11 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		15DAB0A01FEE17E70003D695 /* SettingNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		15DAB0A11FEE17E70003D695 /* SettingNotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNotificationTableViewCell.xib; sourceTree = "<group>"; };
+		15DAB0A41FEE52220003D695 /* SettingRateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRateTableViewCell.swift; sourceTree = "<group>"; };
+		15DAB0A51FEE52220003D695 /* SettingRateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingRateTableViewCell.xib; sourceTree = "<group>"; };
+		15DAB0A91FEE53740003D695 /* SettingFeedbackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFeedbackTableViewCell.swift; sourceTree = "<group>"; };
+		15DAB0AA1FEE53740003D695 /* SettingFeedbackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingFeedbackTableViewCell.xib; sourceTree = "<group>"; };
+		15DAB0AD1FEE57790003D695 /* SettingLanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLanguageTableViewCell.swift; sourceTree = "<group>"; };
+		15DAB0AE1FEE57790003D695 /* SettingLanguageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingLanguageTableViewCell.xib; sourceTree = "<group>"; };
+		15DAB0B11FEE63390003D695 /* SettingAppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAppTableViewCell.swift; sourceTree = "<group>"; };
+		15DAB0B21FEE63390003D695 /* SettingAppTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAppTableViewCell.xib; sourceTree = "<group>"; };
+		15E5D3161FEC499E00C68DE9 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		15E5D3171FEC499E00C68DE9 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		15E5D31A1FEC549100C68DE9 /* SettingChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingChartTableViewCell.swift; sourceTree = "<group>"; };
+		15E5D31B1FEC549100C68DE9 /* SettingChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingChartTableViewCell.xib; sourceTree = "<group>"; };
 		15E726011FD3085500F6C7A9 /* ExchangeRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E726041FD3085500F6C7A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15E726061FD3085500F6C7A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +239,20 @@
 			children = (
 				1568B14B1FDDA84B00C180B4 /* CurrencyTableViewCell.swift */,
 				1568B14C1FDDA84B00C180B4 /* CurrencyTableViewCell.xib */,
+				1583D83D1FEE6C6000787F2A /* SettingVersionTableViewCell.swift */,
+				1583D83E1FEE6C6000787F2A /* SettingVersionTableViewCell.xib */,
+				15DAB0B11FEE63390003D695 /* SettingAppTableViewCell.swift */,
+				15DAB0B21FEE63390003D695 /* SettingAppTableViewCell.xib */,
+				15DAB0AD1FEE57790003D695 /* SettingLanguageTableViewCell.swift */,
+				15DAB0AE1FEE57790003D695 /* SettingLanguageTableViewCell.xib */,
+				15E5D31A1FEC549100C68DE9 /* SettingChartTableViewCell.swift */,
+				15E5D31B1FEC549100C68DE9 /* SettingChartTableViewCell.xib */,
+				15DAB0A01FEE17E70003D695 /* SettingNotificationTableViewCell.swift */,
+				15DAB0A11FEE17E70003D695 /* SettingNotificationTableViewCell.xib */,
+				15DAB0A41FEE52220003D695 /* SettingRateTableViewCell.swift */,
+				15DAB0A51FEE52220003D695 /* SettingRateTableViewCell.xib */,
+				15DAB0A91FEE53740003D695 /* SettingFeedbackTableViewCell.swift */,
+				15DAB0AA1FEE53740003D695 /* SettingFeedbackTableViewCell.xib */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -240,6 +286,16 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		15E5D3151FEC497E00C68DE9 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				15E5D3161FEC499E00C68DE9 /* SettingViewController.swift */,
+				15E5D3171FEC499E00C68DE9 /* SettingViewController.xib */,
+			);
+			name = Setting;
+			path = ExchangeRate/Setting;
+			sourceTree = SOURCE_ROOT;
+		};
 		15E725F81FD3085500F6C7A9 = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +328,7 @@
 				1568B12C1FDAD60A00C180B4 /* Basic */,
 				15C5AB2B1FDA95C200A81E0E /* Util */,
 				15C5AB241FDA8BA100A81E0E /* Calculator */,
+				15E5D3151FEC497E00C68DE9 /* Setting */,
 				156B28E71FDED87400E643A3 /* TimeTable */,
 				1536E1DA1FDA8AF8009EA015 /* Rate */,
 				15E726041FD3085500F6C7A9 /* AppDelegate.swift */,
@@ -333,6 +390,7 @@
 				15E725FF1FD3085500F6C7A9 /* Resources */,
 				D1A64B6B05D0267B95F87C2C /* [CP] Embed Pods Frameworks */,
 				2A6A3D32179D37802EB8C136 /* [CP] Copy Pods Resources */,
+				1583D8411FEE8AAC00787F2A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -431,14 +489,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15DAB0A31FEE17E70003D695 /* SettingNotificationTableViewCell.xib in Resources */,
 				1568B1521FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib in Resources */,
+				15DAB0A71FEE52220003D695 /* SettingRateTableViewCell.xib in Resources */,
 				1568B14E1FDDA84B00C180B4 /* CurrencyTableViewCell.xib in Resources */,
+				15E5D31D1FEC549100C68DE9 /* SettingChartTableViewCell.xib in Resources */,
 				15E7260F1FD3085500F6C7A9 /* LaunchScreen.storyboard in Resources */,
 				15E7260C1FD3085500F6C7A9 /* Assets.xcassets in Resources */,
 				15C5AB331FDA96D000A81E0E /* RateViewController.xib in Resources */,
+				15DAB0B41FEE63390003D695 /* SettingAppTableViewCell.xib in Resources */,
 				15E7260A1FD3085500F6C7A9 /* Main.storyboard in Resources */,
 				1568B13F1FDD475A00C180B4 /* CalculatorViewController.xib in Resources */,
+				15DAB0AC1FEE53740003D695 /* SettingFeedbackTableViewCell.xib in Resources */,
+				15E5D3191FEC499E00C68DE9 /* SettingViewController.xib in Resources */,
+				15DAB0B01FEE57790003D695 /* SettingLanguageTableViewCell.xib in Resources */,
 				1568B1431FDD87F700C180B4 /* CountryViewController.xib in Resources */,
+				1583D8401FEE6C6000787F2A /* SettingVersionTableViewCell.xib in Resources */,
 				156B28EB1FDED8B200E643A3 /* TimeTableViewController.xib in Resources */,
 				1568B1491FDD9DF400C180B4 /* CurrencyCollectionViewCell.xib in Resources */,
 			);
@@ -461,6 +527,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1583D8411FEE8AAC00787F2A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 0b323bc7b688110acb8b87a883a7d1ea3102e739 12daf8db8451c05f76753ccbb9cbea3d8d23c66ffd03092a61b97948aafc5492";
+		};
 		2A6A3D32179D37802EB8C136 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -503,13 +582,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BEMSimpleLineGraph/BEMSimpleLineGraph.framework",
+				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/MSNumberScrollAnimatedView/MSNumberScrollAnimatedView.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
+				"${BUILT_PRODUCTS_DIR}/SJFluidSegmentedControl/SJFluidSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/VBFPopFlatButton/VBFPopFlatButton.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
@@ -517,13 +597,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMSimpleLineGraph.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSNumberScrollAnimatedView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJFluidSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VBFPopFlatButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -540,11 +621,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				155D8D8D1FE9308000C17300 /* LoadingHelper.swift in Sources */,
+				15DAB0A21FEE17E70003D695 /* SettingNotificationTableViewCell.swift in Sources */,
 				1568B13E1FDD475A00C180B4 /* CalculatorViewController.swift in Sources */,
 				15C5AB2E1FDA95C200A81E0E /* Constants.swift in Sources */,
+				15DAB0AB1FEE53740003D695 /* SettingFeedbackTableViewCell.swift in Sources */,
 				1568B1421FDD87F700C180B4 /* CountryViewController.swift in Sources */,
 				1568B13B1FDD289B00C180B4 /* Moya+HandySwift.swift in Sources */,
+				15DAB0A61FEE52220003D695 /* SettingRateTableViewCell.swift in Sources */,
 				15E726071FD3085500F6C7A9 /* ViewController.swift in Sources */,
+				15E5D31C1FEC549100C68DE9 /* SettingChartTableViewCell.swift in Sources */,
 				15CED3DE1FEC0A87002E0F11 /* CacheManager.swift in Sources */,
 				155D8D7E1FE8CD1100C17300 /* YahooModel.swift in Sources */,
 				1568B14D1FDDA84B00C180B4 /* CurrencyTableViewCell.swift in Sources */,
@@ -556,11 +641,15 @@
 				153391F51FE81CBF00363B97 /* BaseUIControl.swift in Sources */,
 				15C5AB321FDA96D000A81E0E /* RateViewController.swift in Sources */,
 				1568B1341FDC239100C180B4 /* ExchangeRateAPI.swift in Sources */,
+				15DAB0B31FEE63390003D695 /* SettingAppTableViewCell.swift in Sources */,
 				155D8D7A1FE8CB4600C17300 /* YahooRateAPI.swift in Sources */,
+				15E5D3181FEC499E00C68DE9 /* SettingViewController.swift in Sources */,
 				15E726051FD3085500F6C7A9 /* AppDelegate.swift in Sources */,
 				1568B12E1FDAD61600C180B4 /* BaseViewController.swift in Sources */,
 				156B28EA1FDED8B200E643A3 /* TimeTableViewController.swift in Sources */,
+				15DAB0AF1FEE57790003D695 /* SettingLanguageTableViewCell.swift in Sources */,
 				1568B1511FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.swift in Sources */,
+				1583D83F1FEE6C6000787F2A /* SettingVersionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

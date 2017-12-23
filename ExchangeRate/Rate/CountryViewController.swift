@@ -27,6 +27,13 @@ class CountryViewController: UIViewController ,UICollectionViewDelegate, UIColle
         return vc
     }
     
+    class func showInWindow(controller: UIViewController) {
+        
+        guard let keyWindow = UIApplication.shared.keyWindow else { return }
+        let vc = CountryViewController()
+        vc.view.frame = CGRect(x: 0, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.SCREEN_HEIGHT)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib.init(nibName: CurrencyCollectionViewCell.nameOfClass, bundle: nil)

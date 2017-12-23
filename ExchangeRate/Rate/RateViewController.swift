@@ -43,8 +43,8 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     var gotYahooData: Bool = false
     var isMainCurrency: Bool = true
     
-    var country1_currency: Currency!
-    var country2_currency: Currency!
+    var country1_currency: Currency = Currency.AUD
+    var country2_currency: Currency = Currency.CNY
     
 //    static let sharedViewController = RateViewController()
     
@@ -57,6 +57,22 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         super.viewDidLoad()
         initData()
         initView()
+    }
+    
+    func initData() {
+        country1_currency = Currency(rawValue: country1_label.text!)!
+        country2_currency = Currency(rawValue: country2_label.text!)!
+        self.repo = CacheManager.getRateCache()
+        (country1_currency,country2_currency) = CacheManager.getCountryCache() as! (Currency, Currency)
+        requestData()
+        
+        if CacheManager.shareManager.checkValue(key: CacheManager.kChartKey) {
+            self.chartsData = CacheManager.getChatsCache()
+        }
+        
+        if self.repo.date != nil {
+            reloadData()
+        }
     }
     
     func initView() {
@@ -103,14 +119,17 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         daily_rate_label.duration  = 0.8
         daily_rate_label.durationOffset = 0.2
         daily_rate_label.isAscending = true
-        daily_rate_label.number = NSNumber(value: 0.0)
-//        daily_rate_label.startAnimation()
-    }
-    
-    func initData() {
-        country1_currency = Currency(rawValue: country1_label.text!)!
-        country2_currency = Currency(rawValue: country2_label.text!)!
-        requestData()
+        
+        var number = 0.0
+        
+        if self.repo.date != nil {
+            number = self.getRateByCurrency(currency1: country1_currency, currency2: country2_currency)
+            daily_rate_label.font = self.getFontSizeByCount(count: String(number).count)
+        }
+        daily_rate_label.number = NSNumber(value: number)
+        
+        guard let data = self.chartsData else { return }
+        chartView.reloadGraph()
     }
     
     func reloadData() {
@@ -130,6 +149,7 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         self.daily_rate_label.number = NSNumber(value: value)
         self.daily_rate_label.startAnimation()
         
+        CacheManager.setCountryCache(currency1: country1_currency, currency2: country2_currency)
     }
     
     func switchData() {
@@ -143,13 +163,26 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     }
     
     func checkTrend(data:YahooChartModel) {
+        if (data.close?.count)! < 2  {
+            self.animationButton.currentButtonType = .buttonPausedType
+            return
+        }
+        
         let todayData = data.close!.last!.doubleValue
         let yesterdayData = data.close![(data.close?.count)! - 2].doubleValue
         if todayData > yesterdayData {
+            animationButton.tintColor = UIColor(hexString: "FFDC7B")
             self.animationButton.animate(to: .buttonFastForwardType)
-        } else {
-            self.animationButton.animate(to: .buttonRewindType)
+            return
         }
+        
+        animationButton.tintColor = UIColor(hexString: "85D7E2")
+        
+        if todayData < yesterdayData {
+            self.animationButton.animate(to: .buttonRewindType)
+            return
+        }
+        animationButton.currentButtonType = .buttonPausedType
     }
     
     // MARK: Action
@@ -191,7 +224,6 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     
     func requestData() {
         
-
 //        LodingHelper.sharedHelper.show(view: (self.view))
         
         weak var weakSelf = self
@@ -204,6 +236,7 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
                     weakSelf?.shouldRemoveLoading()
                     let model = response.mapObject(FixerModel.self) as FixerModel!
                     weakSelf?.repo = model
+                    CacheManager.setRateCache(data: model!)
                     weakSelf?.reloadData()
                 }
         }
@@ -221,6 +254,7 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
                 self.shouldRemoveLoading()
                 let model = response.mapObject(YahooChartResponseModel.self)
                 let data = model?.makeModel()
+                CacheManager.setChartsCache(data: data!)
                 weakSelf?.chartsData = data
                 weakSelf?.chartView.reloadGraph()
                 weakSelf?.checkTrend(data: data!)
@@ -241,7 +275,6 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         if self.chartsData != nil {
             return (self.chartsData.close?.count)!
         }
-        
         return 0
     }
     

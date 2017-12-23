@@ -210,6 +210,9 @@
                         <constraint firstAttribute="width" secondItem="x0X-ng-IYk" secondAttribute="height" multiplier="30:35" id="Nyb-j7-bMH"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="update-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Eo7-EN-jmo">
+                    <rect key="frame" x="239" y="123.5" width="19" height="19"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -226,6 +229,8 @@
                 <constraint firstItem="hk1-gP-MfV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.2" id="JSP-mW-0j7"/>
                 <constraint firstItem="X4F-N5-tvl" firstAttribute="top" secondItem="cR2-pR-ibB" secondAttribute="bottom" constant="8" id="OgM-5r-3NW"/>
                 <constraint firstItem="pJ8-9d-19M" firstAttribute="top" secondItem="A4B-tC-bgT" secondAttribute="bottom" id="Q2X-dm-Pn5"/>
+                <constraint firstItem="Eo7-EN-jmo" firstAttribute="centerY" secondItem="X4F-N5-tvl" secondAttribute="centerY" id="QDf-Q5-pur"/>
+                <constraint firstItem="Eo7-EN-jmo" firstAttribute="leading" secondItem="X4F-N5-tvl" secondAttribute="trailing" constant="6" id="Rq9-ml-F9Q"/>
                 <constraint firstItem="Cc8-jI-2hN" firstAttribute="centerY" secondItem="zf6-Dn-zgs" secondAttribute="centerY" id="Shb-c7-K8D"/>
                 <constraint firstItem="x0X-ng-IYk" firstAttribute="centerY" secondItem="cR2-pR-ibB" secondAttribute="centerY" id="UH6-9v-Gxo"/>
                 <constraint firstItem="zf6-Dn-zgs" firstAttribute="width" secondItem="jkH-nB-JMR" secondAttribute="width" id="an2-u8-CUH"/>
@@ -255,5 +260,6 @@
         <image name="034-china" width="512" height="512"/>
         <image name="234-australia" width="512" height="512"/>
         <image name="home-exchange-button" width="102" height="93"/>
+        <image name="update-arrow" width="19" height="19"/>
     </resources>
 </document>
