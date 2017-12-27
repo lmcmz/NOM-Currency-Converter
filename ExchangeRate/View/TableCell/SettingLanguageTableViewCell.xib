@@ -32,7 +32,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qc1-tH-f2Y">
                                 <rect key="frame" x="50" y="20" width="84" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="0.78462114729999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="59G-X4-rhS">
@@ -245,7 +245,9 @@
                 <outlet property="foregroundView" destination="Dvg-UH-3qI" id="9RU-zs-gKO"/>
                 <outlet property="foregroundViewTop" destination="5V7-4v-v4H" id="R1m-s1-PXU"/>
                 <outlet property="gardientButton" destination="I5b-9r-oPN" id="6wK-y4-t2R"/>
+                <outlet property="label" destination="Qc1-tH-f2Y" id="Arc-DJ-kIU"/>
                 <outlet property="spanishButton" destination="wyH-hi-lEy" id="iKX-E0-Pny"/>
+                <outlet property="subLabel" destination="PB5-ry-Sqv" id="VYU-C9-DXo"/>
             </connections>
             <point key="canvasLocation" x="95" y="276"/>
         </tableViewCell>

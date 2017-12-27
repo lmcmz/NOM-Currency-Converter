@@ -32,6 +32,8 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     
     var calculatorRef: CalculatorViewController? = nil
     
+    var lastIndex = 0
+    
 //    var baseCountry: Currency!
     
     var gradient  : CGGradient?
@@ -143,8 +145,7 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     
     func reloadData() {
         let model = self.repo
-        let date_rate = model?.date?.readDateFromString(formatter: "yyy-mm-dd")
-        self.date_label.text = date_rate?.printDateFromDate(formatter: "yyyy-MM-dd")
+        self.date_label.text = model?.date
         
         country1_label.text = country1_currency.rawValue
         country1_image.image = Currency.image(currency: country1_currency)
@@ -221,7 +222,7 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         let transition = CATransition()
         transition.duration = 0.3
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        transition.type = kCATransitionPush
+        transition.type = "cube"
         transition.subtype = kCATransitionFromBottom
         country1.layer.add(transition, forKey: "country1_animation")
         transition.subtype = kCATransitionFromTop
@@ -353,6 +354,19 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
             
         default:
             return UIFont(name: "HelveticaNeue-Bold", size: 88)!
+        }
+    }
+    
+    func lineGraph(_ graph: BEMSimpleLineGraphView, didTouchGraphWithClosestIndex index: Int) {
+        if index == lastIndex {
+            return
+        }
+        
+        lastIndex = index
+        
+        if #available(iOS 10.0, *) {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
         }
     }
 }

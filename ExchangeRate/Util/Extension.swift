@@ -30,6 +30,29 @@ extension Date {
     }
 }
 
+extension UIView {
+    func snpshot() -> UIImage? {
+        var image: UIImage?
+        
+        if #available(iOS 10.0, *) {
+            let format = UIGraphicsImageRendererFormat()
+            format.opaque = isOpaque
+            let renderer = UIGraphicsImageRenderer(size: frame.size, format: format)
+            image = renderer.image { context in
+                drawHierarchy(in: frame, afterScreenUpdates: true)
+            }
+        } else {
+            UIGraphicsBeginImageContextWithOptions(frame.size, isOpaque, UIScreen.main.scale)
+            drawHierarchy(in: frame, afterScreenUpdates: true)
+            image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+        }
+        
+        return image
+    }
+}
+
+
 extension UIViewController {
     func showChildViewController(childController: UIViewController) {
         self.showChildViewControllerInView(childController: childController, contianerView: self.view)

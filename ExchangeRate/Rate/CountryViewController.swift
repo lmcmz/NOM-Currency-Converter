@@ -40,7 +40,11 @@ class CountryViewController: UIViewController ,UICollectionViewDelegate, UIColle
         collectionView.register(nib, forCellWithReuseIdentifier: CurrencyCollectionViewCell.nameOfClass)
         
         let layer  = CAGradientLayer()
-        layer.frame = CGRect(x: 0, y: 0, width: self.containerView.frame.width, height: self.containerView.frame.height)
+        
+        let width = Constants.SCREEN_WIDTH - 4 * Constants.padding
+        let height = width * (2.0 / 1.3)
+        
+        layer.frame = CGRect(x: 0, y: 0, width: width, height: height)
         
         let color1 = UIColor(white: 0, alpha: 0.9)
         let color2 = UIColor(white: 0, alpha: 0.7)
@@ -106,7 +110,7 @@ class CountryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width / 2 - 1
+        let width = (Constants.SCREEN_WIDTH - 4*Constants.padding) / 2 - 1
         return CGSize(width: width, height: width)
     }
     

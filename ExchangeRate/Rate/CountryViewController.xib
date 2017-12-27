@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryViewController" customModule="ExchangeRate" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryViewController" customModule="NOM" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="5zc-mA-rwC" id="DOO-3F-OlQ"/>
                 <outlet property="containerView" destination="42e-q0-Ds3" id="fPd-5j-zdX"/>
@@ -32,11 +32,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdR-Vw-UtX" customClass="UIControl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42e-q0-Ds3">
-                                        <rect key="frame" x="25" y="73.5" width="325" height="500"/>
+                                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42e-q0-Ds3">
+                                        <rect key="frame" x="24" y="72" width="327" height="503"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5zc-mA-rwC">
-                                                <rect key="frame" x="0.0" y="0.0" width="325" height="500"/>
+                                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5zc-mA-rwC">
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="503"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="VKZ-1o-DqX">
                                                     <size key="itemSize" width="150" height="150"/>
@@ -50,6 +50,7 @@
                                                 </connections>
                                             </collectionView>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="42e-q0-Ds3" secondAttribute="height" multiplier="1.3:2" id="2Op-uf-2WS"/>
                                             <constraint firstItem="5zc-mA-rwC" firstAttribute="leading" secondItem="42e-q0-Ds3" secondAttribute="leading" id="QJ1-zO-AYm"/>
@@ -62,7 +63,7 @@
                                 <constraints>
                                     <constraint firstItem="42e-q0-Ds3" firstAttribute="centerY" secondItem="cdR-Vw-UtX" secondAttribute="centerY" id="4Dj-s2-X5d"/>
                                     <constraint firstItem="42e-q0-Ds3" firstAttribute="centerX" secondItem="cdR-Vw-UtX" secondAttribute="centerX" id="ZD8-rW-xfi"/>
-                                    <constraint firstItem="42e-q0-Ds3" firstAttribute="leading" secondItem="cdR-Vw-UtX" secondAttribute="leading" constant="25" id="mzA-MB-7Y0"/>
+                                    <constraint firstItem="42e-q0-Ds3" firstAttribute="leading" secondItem="cdR-Vw-UtX" secondAttribute="leading" constant="24" id="mzA-MB-7Y0"/>
                                 </constraints>
                                 <connections>
                                     <action selector="backButtonClick" destination="-1" eventType="touchUpInside" id="6ly-dU-p2h"/>

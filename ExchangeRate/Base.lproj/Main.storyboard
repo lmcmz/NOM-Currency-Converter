@@ -31,7 +31,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_(¦3」∠)_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoK-01-MPY">
-                                <rect key="frame" x="152.66666666666666" y="8" width="69.666666666666657" height="20"/>
+                                <rect key="frame" x="152.66666666666666" y="4" width="69.666666666666657" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                         <color key="backgroundColor" red="0.17254901959999999" green="0.1960784314" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ArK-Gz-XJt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Ox-QN-7dw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="hoK-01-MPY" secondAttribute="bottom" constant="16" id="5Pl-zg-haI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="hoK-01-MPY" secondAttribute="bottom" constant="20" id="5Pl-zg-haI"/>
                             <constraint firstItem="ArK-Gz-XJt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Pu-7U-dN8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j6P-Iz-b7S" secondAttribute="trailing" id="HZH-BM-nSz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ArK-Gz-XJt" secondAttribute="trailing" id="L8j-rq-gen"/>

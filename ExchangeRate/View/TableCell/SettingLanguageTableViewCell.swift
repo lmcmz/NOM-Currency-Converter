@@ -9,15 +9,25 @@
 import UIKit
 import FoldingCell
 
-class SettingLanguageTableViewCell: FoldingCell {
+class SettingLanguageTableViewCell: FoldingCell, CAAnimationDelegate {
 
-    @IBOutlet var buttonView:UIView!
+    static let languageNotification = "languageNotification"
     
+    @IBOutlet var label:UILabel!
+    @IBOutlet var subLabel:UILabel!
+    
+    @IBOutlet var buttonView:UIView!
     @IBOutlet var englishButton:UIControl!
     @IBOutlet var chineseButton:UIControl!
     @IBOutlet var spanishButton:UIControl!
     
     @IBOutlet var gardientButton:UIImageView!
+    
+    fileprivate var previousStyleViewSnapshot: UIView?
+    
+    var refrenceVC:SettingViewController!
+    let maskLayer = CAShapeLayer()
+    let view = UIImageView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +44,18 @@ class SettingLanguageTableViewCell: FoldingCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure(language:Language) {
+        switch language {
+        case .Chinese:
+            label.text = "语言"
+        case .English:
+            label.text = "Language"
+        case .Spanish:
+            label.text = "Idiomas"
+        }
+        subLabel.text = label.text
     }
     
     override func animationDuration(_ itemIndex: NSInteger, type: FoldingCell.AnimationType) -> TimeInterval {
@@ -55,8 +77,57 @@ class SettingLanguageTableViewCell: FoldingCell {
             frame = englishButton.convert(englishButton.bounds, to: self.buttonView)
         }
         
+        let noti = Notification(name: Notification.Name(rawValue: SettingLanguageTableViewCell.languageNotification), object: tag, userInfo: nil)
+        NotificationCenter.default.post(noti)
+        
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
             self.gardientButton.frame = frame
         }, completion: nil)
+        
+        let testFrame = button.convert(button.bounds, to: refrenceVC.parent?.view)
+        let originPath = UIBezierPath(ovalIn: testFrame)
+//        let extremePoint = CGPoint(x: button.center.x, y: button.center.y)
+//        let radius = sqrt(extremePoint.x * extremePoint.x + extremePoint.y * extremePoint.y)
+        
+        let finalPath = UIBezierPath(ovalIn: button.frame.insetBy(dx: -Constants.SCREEN_HEIGHT, dy: -Constants.SCREEN_HEIGHT))
+        
+//        let window = refrenceVC.tableView.window
+//        previousStyleViewSnapshot = window?.snapshotView(afterScreenUpdates: false)
+//        window?.addSubview(previousStyleViewSnapshot!)
+//        window?.bringSubview(toFront: previousStyleViewSnapshot!)
+//
+//        let snapshotMaskLayer = CAShapeLayer()
+//        snapshotMaskLayer.path = UIBezierPath(rect: (window?.bounds)!).cgPath
+//        snapshotMaskLayer.fillColor = UIColor.black.cgColor
+//        previousStyleViewSnapshot?.layer.mask = snapshotMaskLayer
+        
+        
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        
+        maskLayer.path = finalPath.cgPath
+        
+        refrenceVC.parent?.view.layer.mask = maskLayer
+//        let image = refrenceVC.parent?.view.snpshot()
+//        refrenceVC.parent?.view.addSubview(view)
+//        view.layer.mask = maskLayer
+//        maskLayer.contents = image?.cgImage
+//        maskLayer.opacity = 0.2
+//        maskLayer.
+        
+        let animation = CABasicAnimation(keyPath: "path")
+        animation.fromValue = originPath.cgPath
+        animation.toValue = finalPath.cgPath
+        animation.duration = 1.0
+        animation.delegate = self
+        maskLayer.add(animation, forKey: "path")
+        
+        CATransaction.commit()
+    }
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if flag {
+            self.previousStyleViewSnapshot?.removeFromSuperview()
+        }
     }
 }

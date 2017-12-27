@@ -35,7 +35,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Apps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADd-Vl-xOZ">
                                 <rect key="frame" x="50" y="20" width="68" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="0.78462114729999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="8G0-Jm-Axk">
@@ -241,8 +241,12 @@
             <connections>
                 <outlet property="containerView" destination="zJ2-9B-IcX" id="Rbz-b7-KK8"/>
                 <outlet property="containerViewTop" destination="XE0-ig-nJy" id="cf2-rS-zcG"/>
+                <outlet property="descLabel_1" destination="moB-2Z-DDh" id="FGy-So-7Sd"/>
+                <outlet property="descLabel_2" destination="uCS-J9-0Fp" id="dDi-Eg-pSF"/>
                 <outlet property="foregroundView" destination="3AV-ii-dHq" id="gN9-lM-Ps3"/>
                 <outlet property="foregroundViewTop" destination="HQJ-xW-JfB" id="UbS-3K-hNC"/>
+                <outlet property="label" destination="ADd-Vl-xOZ" id="cON-s5-WSm"/>
+                <outlet property="subLabel" destination="qHi-N3-Oq6" id="Pxh-lK-3f9"/>
             </connections>
             <point key="canvasLocation" x="95" y="246.5"/>
         </tableViewCell>

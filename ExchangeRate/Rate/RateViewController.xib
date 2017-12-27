@@ -23,7 +23,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateViewController" customModule="ExchangeRate" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateViewController" customModule="NOM" customModuleProvider="target">
             <connections>
                 <outlet property="animationButton" destination="x0X-ng-IYk" id="DlN-TH-US9"/>
                 <outlet property="chartView" destination="XXd-9B-D4K" id="bLW-U7-a84"/>

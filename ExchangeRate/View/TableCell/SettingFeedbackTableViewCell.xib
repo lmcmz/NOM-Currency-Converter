@@ -17,7 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SettingFeedbackTableViewCell" rowHeight="95" id="ScT-l2-c6h" customClass="SettingFeedbackTableViewCell" customModule="ExchangeRate" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SettingFeedbackTableViewCell" rowHeight="95" id="ScT-l2-c6h" customClass="SettingFeedbackTableViewCell" customModule="NOM" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="373" height="96"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ScT-l2-c6h" id="Tjp-lh-cu9">
@@ -73,6 +73,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="3Ih-9A-svP"/>
+            <connections>
+                <outlet property="label" destination="eUa-jm-32V" id="77r-Kf-scx"/>
+            </connections>
             <point key="canvasLocation" x="-44" y="-21"/>
         </tableViewCell>
     </objects>

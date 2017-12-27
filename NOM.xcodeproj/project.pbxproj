@@ -28,6 +28,7 @@
 		156B28EB1FDED8B200E643A3 /* TimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 156B28E91FDED8B200E643A3 /* TimeTableViewController.xib */; };
 		1583D83F1FEE6C6000787F2A /* SettingVersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1583D83D1FEE6C6000787F2A /* SettingVersionTableViewCell.swift */; };
 		1583D8401FEE6C6000787F2A /* SettingVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1583D83E1FEE6C6000787F2A /* SettingVersionTableViewCell.xib */; };
+		15AB28EE1FF3F409007E2204 /* default.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 15AB28ED1FF3F409007E2204 /* default.aiff */; };
 		15C237261FDE3EC500597106 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C237251FDE3EC500597106 /* Currency.swift */; };
 		15C5AB2E1FDA95C200A81E0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2C1FDA95C200A81E0E /* Constants.swift */; };
 		15C5AB2F1FDA95C200A81E0E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5AB2D1FDA95C200A81E0E /* Extension.swift */; };
@@ -97,8 +98,10 @@
 		1568B1501FDDA86D00C180B4 /* CurrencyCollectionViewLongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCollectionViewLongCell.xib; sourceTree = "<group>"; };
 		156B28E81FDED8B200E643A3 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		156B28E91FDED8B200E643A3 /* TimeTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewController.xib; sourceTree = "<group>"; };
+		157819241FF3DB8400BB13A1 /* NOM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NOM.entitlements; sourceTree = "<group>"; };
 		1583D83D1FEE6C6000787F2A /* SettingVersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVersionTableViewCell.swift; sourceTree = "<group>"; };
 		1583D83E1FEE6C6000787F2A /* SettingVersionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingVersionTableViewCell.xib; sourceTree = "<group>"; };
+		15AB28ED1FF3F409007E2204 /* default.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = default.aiff; sourceTree = "<group>"; };
 		15C237251FDE3EC500597106 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		15C5AB2C1FDA95C200A81E0E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		15C5AB2D1FDA95C200A81E0E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -119,7 +122,7 @@
 		15E5D3171FEC499E00C68DE9 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		15E5D31A1FEC549100C68DE9 /* SettingChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingChartTableViewCell.swift; sourceTree = "<group>"; };
 		15E5D31B1FEC549100C68DE9 /* SettingChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingChartTableViewCell.xib; sourceTree = "<group>"; };
-		15E726011FD3085500F6C7A9 /* ExchangeRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15E726011FD3085500F6C7A9 /* ExchangeRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ExchangeRate.app; path = NOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E726041FD3085500F6C7A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15E726061FD3085500F6C7A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		15E726091FD3085500F6C7A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -293,6 +296,7 @@
 		15E725F81FD3085500F6C7A9 = {
 			isa = PBXGroup;
 			children = (
+				157819241FF3DB8400BB13A1 /* NOM.entitlements */,
 				15E726031FD3085500F6C7A9 /* ExchangeRate */,
 				15E726181FD3085500F6C7A9 /* ExchangeRateTests */,
 				15E726231FD3085500F6C7A9 /* ExchangeRateUITests */,
@@ -331,6 +335,7 @@
 				15E7260B1FD3085500F6C7A9 /* Assets.xcassets */,
 				15E7260D1FD3085500F6C7A9 /* LaunchScreen.storyboard */,
 				15E726101FD3085500F6C7A9 /* Info.plist */,
+				15AB28ED1FF3F409007E2204 /* default.aiff */,
 				155D8D831FE8F91200C17300 /* ExchangeRate-Bridging-Header.h */,
 			);
 			path = ExchangeRate;
@@ -445,6 +450,11 @@
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					15E726141FD3085500F6C7A9 = {
 						CreatedOnToolsVersion = 9.1;
@@ -492,6 +502,7 @@
 				15C5AB331FDA96D000A81E0E /* RateViewController.xib in Resources */,
 				15DAB0B41FEE63390003D695 /* SettingAppTableViewCell.xib in Resources */,
 				15E7260A1FD3085500F6C7A9 /* Main.storyboard in Resources */,
+				15AB28EE1FF3F409007E2204 /* default.aiff in Resources */,
 				1568B13F1FDD475A00C180B4 /* CalculatorViewController.xib in Resources */,
 				15DAB0AC1FEE53740003D695 /* SettingFeedbackTableViewCell.xib in Resources */,
 				15E5D3191FEC499E00C68DE9 /* SettingViewController.xib in Resources */,
@@ -809,6 +820,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = NOM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47Q6KQQW55;
 				INFOPLIST_FILE = ExchangeRate/Info.plist;
@@ -829,6 +841,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = NOM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47Q6KQQW55;
 				INFOPLIST_FILE = ExchangeRate/Info.plist;

@@ -16,6 +16,9 @@ class SettingChartTableViewCell: FoldingCell, SJFluidSegmentedControlDelegate, S
     @IBOutlet weak var frequencyControl: SJFluidSegmentedControl!
     
     @IBOutlet var errorLabel: UILabel!
+    @IBOutlet var label: UILabel!
+    @IBOutlet var subLabel_1: UILabel!
+    @IBOutlet var subLabel_2: UILabel!
     
     static let changePeriodNotification = "changePeriodNotification"
     static let changeFrenqencyNotification = "changeFrenqencyNotification"
@@ -35,6 +38,27 @@ class SettingChartTableViewCell: FoldingCell, SJFluidSegmentedControlDelegate, S
         
         errorLabel.alpha = 0
     }
+    
+    func configure(language:Language) {
+        switch language {
+        case .Chinese:
+            label.text = "数据图"
+            subLabel_1.text = "区间"
+            subLabel_2.text = "频率"
+            errorLabel.text = "不支持"
+        case .English:
+            label.text = "Charts Data"
+            subLabel_1.text = "Period"
+            subLabel_2.text = "Frequency"
+            errorLabel.text = "Not support"
+        case .Spanish:
+            label.text = "Datos de gráficos"
+            subLabel_1.text = "Período"
+            subLabel_2.text = "Frecuencia"
+            errorLabel.text = "No apoyo"
+        }
+    }
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

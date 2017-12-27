@@ -19,8 +19,14 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     let kVersionCellHeight: CGFloat = 440
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
+    var isSleeping: Bool = true
+    var language: Language = Language.English
     
     @IBOutlet var tableView: UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateLanguage(notification:)), name: NSNotification.Name(rawValue: SettingLanguageTableViewCell.languageNotification), object: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +48,13 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let color1 = self.view.backgroundColor?.cgColor
         let color2 = UIColor(hexString: "2D354F").cgColor
         layer.frame = CGRect(x: 0, y: 0, width: Constants.SCREEN_WIDTH, height: Constants.SCREEN_HEIGHT)
-        layer.colors = [color1, color2]
+        layer.colors = [color1!, color2]
         layer.startPoint = CGPoint(x: 0.5, y: 0)
         layer.endPoint = CGPoint(x: 0.5, y: 1)
         self.view.layer.insertSublayer(layer, at: 0)
+        
+        let numberRoll = Int(arc4random_uniform(5))
+        isSleeping = numberRoll > 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,37 +63,45 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SettingChartTableViewCell.nameOfClass, for: indexPath) as! FoldingCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingChartTableViewCell.nameOfClass, for: indexPath) as! SettingChartTableViewCell
+            cell.configure(language: self.language)
             return cell
         }
         
         if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SettingLanguageTableViewCell.nameOfClass, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingLanguageTableViewCell.nameOfClass, for: indexPath) as! SettingLanguageTableViewCell
+            cell.refrenceVC = self
+            cell.configure(language: self.language)
             return cell
         }
         
         if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingNotificationTableViewCell.nameOfClass, for: indexPath) as! SettingNotificationTableViewCell
+            cell.configure(language: self.language)
             return cell
         }
         
         if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingRateTableViewCell.nameOfClass, for: indexPath) as! SettingRateTableViewCell
+            cell.configure(language: self.language)
             return cell
         }
         
         if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingFeedbackTableViewCell.nameOfClass, for: indexPath) as! SettingFeedbackTableViewCell
+            cell.configure(language: self.language)
             return cell
         }
         
         if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingAppTableViewCell.nameOfClass, for: indexPath) as! SettingAppTableViewCell
+            cell.configure(language: self.language)
             return cell
         }
         
         if indexPath.row == 6 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingVersionTableViewCell.nameOfClass, for: indexPath) as! SettingVersionTableViewCell
+            cell.configure(isSleeping: self.isSleeping)
             return cell
         }
         
@@ -188,5 +205,11 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+    
+    @objc func updateLanguage (notification: Notification) {
+        let tag = notification.object as! Int
+        self.language = Language(rawValue: tag)!
+        self.tableView.reloadData()
     }
 }

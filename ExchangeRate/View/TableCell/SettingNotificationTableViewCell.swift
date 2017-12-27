@@ -11,6 +11,9 @@ import SJFluidSegmentedControl
 
 class SettingNotificationTableViewCell: UITableViewCell, SJFluidSegmentedControlDelegate, SJFluidSegmentedControlDataSource {
 
+    @IBOutlet var label:UILabel!
+    var cellLanguage:Language = Language.English
+    
      @IBOutlet weak var notiControl: SJFluidSegmentedControl!
     
     override func awakeFromNib() {
@@ -23,6 +26,18 @@ class SettingNotificationTableViewCell: UITableViewCell, SJFluidSegmentedControl
 
         // Configure the view for the selected state
     }
+    
+    func configure(language:Language) {
+        switch language {
+        case .Chinese:
+            label.text = "推送"
+        case .English:
+            label.text = "Notification"
+        case .Spanish:
+            label.text = "Notificación"
+        }
+    }
+
     
     func segmentedControl(_ segmentedControl: SJFluidSegmentedControl,
                             gradientColorsForBounce bounce: SJFluidSegmentedControlBounce) -> [UIColor] {
@@ -56,8 +71,15 @@ class SettingNotificationTableViewCell: UITableViewCell, SJFluidSegmentedControl
     func segmentedControl(_ segmentedControl: SJFluidSegmentedControl,
                           titleForSegmentAtIndex index: Int) -> String? {
         if index == 0 {
-            return "OFF"
+            return cellLanguage == Language.English ? "OFF" : "关"
         }
-        return "ON"
+        return cellLanguage == Language.English ? "ON" : "开"
+    }
+    
+    func segmentedControl(_ segmentedControl: SJFluidSegmentedControl, didChangeFromSegmentAtIndex fromIndex: Int, toSegmentAtIndex toIndex: Int) {
+        if #available(iOS 10.0, *) {
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
+        }
     }
 }

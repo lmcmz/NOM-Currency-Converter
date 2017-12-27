@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     Fabric.with([Crashlytics.self])
+    registerPushNotifications()
     return true
   }
 
@@ -32,17 +33,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationWillEnterForeground(_ application: UIApplication) {
-    UIApplication.shared.statusBarStyle = .lightContent
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
   }
 
   func applicationDidBecomeActive(_ application: UIApplication) {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    UIApplication.shared.applicationIconBadgeNumber = 0
   }
 
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
+    //Mark: Notification
+    
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        if notificationSettings.types != UIUserNotificationType() {
+            application.registerForRemoteNotifications()
+        }
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("----- UserInfo -----")
+        print(userInfo)
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let characterSet = CharacterSet(charactersIn: "<>")
+        let nsdataStr = NSData.init(data: deviceToken)
+        let deviceStr = nsdataStr.description.trimmingCharacters(in: characterSet).replacingOccurrences(of: " ", with: "")
+        print("----- Token -----")
+        print(deviceStr)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Registration failed!")
+    }
+    
+    func registerPushNotifications() {
+        DispatchQueue.main.async {
+            let settings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(settings)
+        }
+    }
 }
 
