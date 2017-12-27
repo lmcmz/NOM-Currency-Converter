@@ -55,6 +55,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let numberRoll = Int(arc4random_uniform(5))
         isSleeping = numberRoll > 2
+        language = CacheManager.getLanguage()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -210,6 +211,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     @objc func updateLanguage (notification: Notification) {
         let tag = notification.object as! Int
         self.language = Language(rawValue: tag)!
+        CacheManager.setLanguages(language: language)
         self.tableView.reloadData()
     }
 }

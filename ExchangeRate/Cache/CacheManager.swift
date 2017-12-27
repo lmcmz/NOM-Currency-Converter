@@ -16,6 +16,7 @@ class CacheManager: NSObject {
     static let kChartKey = "Exchange.Rate.Chart.key"
     static let kChartPeriodKey = "Exchange.Period.Chart.key"
     static let kChartFrenquencyKey = "Exchange.Frenquency.Chart.key"
+    static let kLanguageKey = "Exchange.Language.key"
     
     class func setCountryCache(currency1: Currency, currency2: Currency) {
         CacheManager.shareManager.setValue(value: currency1.rawValue, key: kCountry1Key)
@@ -86,6 +87,20 @@ class CacheManager: NSObject {
         }
         let value = CacheManager.shareManager.getValue(key: kChartFrenquencyKey)
         let data = YahooFrequency(rawValue: Int(value!)!)
+        return data!
+    }
+    
+    class func setLanguages(language:Language) {
+        let value = String(language.rawValue)
+        CacheManager.shareManager.setValue(value: value, key: kLanguageKey)
+    }
+    
+    class func getLanguage() -> Language {
+        if !CacheManager.shareManager.checkValue(key: kLanguageKey) {
+            return Language.English
+        }
+        let value = CacheManager.shareManager.getValue(key: kLanguageKey)
+        let data = Language(rawValue: Int(value!)!)
         return data!
     }
     

@@ -8,6 +8,7 @@
 
 import UIKit
 import FoldingCell
+import SnapKit
 
 class SettingLanguageTableViewCell: FoldingCell, CAAnimationDelegate {
 
@@ -21,7 +22,9 @@ class SettingLanguageTableViewCell: FoldingCell, CAAnimationDelegate {
     @IBOutlet var chineseButton:UIControl!
     @IBOutlet var spanishButton:UIControl!
     
-    @IBOutlet var gardientButton:UIImageView!
+    @IBOutlet var gardientButton_1:UIImageView!
+    @IBOutlet var gardientButton_2:UIImageView!
+    @IBOutlet var gardientButton_3:UIImageView!
     
     fileprivate var previousStyleViewSnapshot: UIView?
     
@@ -36,8 +39,25 @@ class SettingLanguageTableViewCell: FoldingCell, CAAnimationDelegate {
         englishButton.layer.cornerRadius = 45.6
         chineseButton.layer.cornerRadius = 45.6
         spanishButton.layer.cornerRadius = 45.6
-        gardientButton.layer.cornerRadius = 45.6
-        gardientButton.layer.masksToBounds = true
+        gardientButton_1.layer.cornerRadius = 45.6
+        gardientButton_1.layer.masksToBounds = true
+        gardientButton_2.layer.cornerRadius = 45.6
+        gardientButton_2.layer.masksToBounds = true
+        gardientButton_3.layer.cornerRadius = 45.6
+        gardientButton_3.layer.masksToBounds = true
+        
+        let language = CacheManager.getLanguage()
+        self.gardientButton_1.isHidden = true
+        self.gardientButton_2.isHidden = true
+        self.gardientButton_3.isHidden = true
+        switch language {
+        case .Chinese:
+            self.gardientButton_1.isHidden = false
+        case .English:
+            self.gardientButton_2.isHidden = false
+        case .Spanish:
+            self.gardientButton_3.isHidden = false
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -47,16 +67,24 @@ class SettingLanguageTableViewCell: FoldingCell, CAAnimationDelegate {
     }
     
     func configure(language:Language) {
+        self.gardientButton_1.isHidden = true
+        self.gardientButton_2.isHidden = true
+        self.gardientButton_3.isHidden = true
         switch language {
         case .Chinese:
+            self.gardientButton_1.isHidden = false
             label.text = "语言"
         case .English:
+            self.gardientButton_2.isHidden = false
             label.text = "Language"
         case .Spanish:
+            self.gardientButton_3.isHidden = false
             label.text = "Idiomas"
         }
         subLabel.text = label.text
     }
+    
+    
     
     override func animationDuration(_ itemIndex: NSInteger, type: FoldingCell.AnimationType) -> TimeInterval {
         let durations = [0.33, 0.26, 0.26] // timing animation for each view
@@ -65,24 +93,24 @@ class SettingLanguageTableViewCell: FoldingCell, CAAnimationDelegate {
     
     @IBAction func buttonClick(button:UIControl) {
         let tag = button.tag
-        var frame = CGRect()
-        switch tag {
-        case 1:
-            frame = chineseButton.convert(chineseButton.bounds, to: self.buttonView)
-        case 2:
-            frame = englishButton.convert(englishButton.bounds, to: self.buttonView)
-        case 3:
-            frame = spanishButton.convert(spanishButton.bounds, to: self.buttonView)
-        default:
-            frame = englishButton.convert(englishButton.bounds, to: self.buttonView)
-        }
+//        var frame = CGRect()
+//        switch tag {
+//        case 1:
+//            frame = chineseButton.convert(chineseButton.bounds, to: self.buttonView)
+//        case 2:
+//            frame = englishButton.convert(englishButton.bounds, to: self.buttonView)
+//        case 3:
+//            frame = spanishButton.convert(spanishButton.bounds, to: self.buttonView)
+//        default:
+//            frame = englishButton.convert(englishButton.bounds, to: self.buttonView)
+//        }
+//        
+//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
+//            self.gardientButton.frame = frame
+//        }, completion: nil)
         
         let noti = Notification(name: Notification.Name(rawValue: SettingLanguageTableViewCell.languageNotification), object: tag, userInfo: nil)
         NotificationCenter.default.post(noti)
-        
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
-            self.gardientButton.frame = frame
-        }, completion: nil)
         
         let testFrame = button.convert(button.bounds, to: refrenceVC.parent?.view)
         let originPath = UIBezierPath(ovalIn: testFrame)
