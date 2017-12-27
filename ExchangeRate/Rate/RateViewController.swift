@@ -29,6 +29,7 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     @IBOutlet var daily_rate_label: MSNumberScrollAnimatedView!
     
     @IBOutlet var animationButton: VBFPopFlatButton!
+    @IBOutlet var dailyRateWidthRatio:NSLayoutConstraint!
     
     var calculatorRef: CalculatorViewController? = nil
     
@@ -87,6 +88,8 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     func initView() {
         chartView.delegate = self
         chartView.dataSource = self
+        
+//        dailyRateWidthRatio.multiplier = Constants.isIPad() ? 0.3 : 0.4
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         
@@ -341,7 +344,25 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     
     func getFontSizeByCount(count: Int) -> UIFont {
         
-        if Constants.SCREEN_WIDTH == 320 {
+        if Constants.isIPad() {
+            switch count {
+            case 0..<5:
+                return UIFont(name: "HelveticaNeue-Bold", size: 120)!
+            case 5:
+                return UIFont(name: "HelveticaNeue-Bold", size: 100)!
+            case 6:
+                return UIFont(name: "HelveticaNeue-Bold", size: 70)!
+            case 7:
+                return UIFont(name: "HelveticaNeue-Bold", size: 65)!
+            case 8:
+                return UIFont(name: "HelveticaNeue-Bold", size: 60)!
+            
+            default:
+                return UIFont(name: "HelveticaNeue-Bold", size: 120)!
+            }
+        }
+        
+        if Constants.isIPhone5() {
             switch count {
             case 0..<5:
                 return UIFont(name: "HelveticaNeue-Bold", size: 68)!

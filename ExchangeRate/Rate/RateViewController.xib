@@ -33,6 +33,7 @@
                 <outlet property="country2" destination="Cc8-jI-2hN" id="FVj-2s-92k"/>
                 <outlet property="country2_image" destination="j6r-bX-efk" id="Svf-MR-5o9"/>
                 <outlet property="country2_label" destination="NKK-wO-yvm" id="H7V-kV-bhK"/>
+                <outlet property="dailyRateWidthRatio" destination="zLN-Rn-qM6" id="RWX-Bb-zNo"/>
                 <outlet property="daily_rate_label" destination="hk1-gP-MfV" id="qNh-dx-Win"/>
                 <outlet property="date_label" destination="X4F-N5-tvl" id="1al-qL-L0d"/>
                 <outlet property="exchangeButton" destination="zf6-Dn-zgs" id="vIb-WL-IPK"/>
@@ -46,6 +47,9 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hk1-gP-MfV" customClass="MSNumberScrollAnimatedView">
                     <rect key="frame" x="94.5" y="19" width="150" height="95.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="uuN-7s-fZu"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDi-jY-wtW">
                     <rect key="frame" x="141" y="117.5" width="94" height="28"/>
@@ -245,13 +249,13 @@
                 <constraint firstItem="Eo7-EN-jmo" firstAttribute="leading" secondItem="X4F-N5-tvl" secondAttribute="trailing" constant="6" id="Rq9-ml-F9Q"/>
                 <constraint firstItem="Cc8-jI-2hN" firstAttribute="centerY" secondItem="zf6-Dn-zgs" secondAttribute="centerY" id="Shb-c7-K8D"/>
                 <constraint firstItem="x0X-ng-IYk" firstAttribute="centerY" secondItem="cR2-pR-ibB" secondAttribute="centerY" id="UH6-9v-Gxo"/>
+                <constraint firstItem="x0X-ng-IYk" firstAttribute="leading" secondItem="hk1-gP-MfV" secondAttribute="trailing" constant="11" id="afm-E9-OVh"/>
                 <constraint firstItem="zf6-Dn-zgs" firstAttribute="width" secondItem="jkH-nB-JMR" secondAttribute="width" id="an2-u8-CUH"/>
                 <constraint firstItem="LDi-jY-wtW" firstAttribute="trailing" secondItem="X4F-N5-tvl" secondAttribute="trailing" constant="8" id="bDo-KP-cow"/>
                 <constraint firstItem="X4F-N5-tvl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="elG-cS-ovK"/>
                 <constraint firstItem="A4B-tC-bgT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fGV-H5-pEd"/>
                 <constraint firstItem="cR2-pR-ibB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.2" id="g6x-Ll-U3d"/>
                 <constraint firstItem="zf6-Dn-zgs" firstAttribute="leading" secondItem="jkH-nB-JMR" secondAttribute="trailing" id="h7D-xa-CMS"/>
-                <constraint firstItem="x0X-ng-IYk" firstAttribute="leading" secondItem="cR2-pR-ibB" secondAttribute="trailing" constant="8" id="jNy-oa-AFp"/>
                 <constraint firstItem="Cc8-jI-2hN" firstAttribute="leading" secondItem="zf6-Dn-zgs" secondAttribute="trailing" id="kVL-iU-COB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pJ8-9d-19M" secondAttribute="bottom" id="qOr-Xc-Qpq"/>
                 <constraint firstItem="zf6-Dn-zgs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ral-x8-nda"/>
@@ -261,7 +265,7 @@
                 <constraint firstItem="zf6-Dn-zgs" firstAttribute="top" secondItem="X4F-N5-tvl" secondAttribute="bottom" constant="25" id="wxN-nf-7Sy"/>
                 <constraint firstItem="jkH-nB-JMR" firstAttribute="centerY" secondItem="zf6-Dn-zgs" secondAttribute="centerY" id="ybM-HZ-NaJ"/>
                 <constraint firstItem="Cc8-jI-2hN" firstAttribute="width" secondItem="jkH-nB-JMR" secondAttribute="width" id="yc5-2b-R5X"/>
-                <constraint firstItem="hk1-gP-MfV" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.4" id="zLN-Rn-qM6"/>
+                <constraint firstItem="hk1-gP-MfV" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.4" priority="999" id="zLN-Rn-qM6"/>
                 <constraint firstItem="LDi-jY-wtW" firstAttribute="bottom" secondItem="X4F-N5-tvl" secondAttribute="bottom" constant="5" id="zS2-RT-bT4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

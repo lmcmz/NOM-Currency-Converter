@@ -25,5 +25,13 @@ class Constants {
     
     static let HomePageVCHeight = UIScreen.main.bounds.height - 50 - 44 - 34
     
-//    static let isPhoneSE:Bool = UIScreen.main.bounds.height == 
+//    static let isPhoneSE:Bool = UIScreen.main.bounds.height ==
+    
+    class func isIPhone5() -> Bool{
+       return Constants.SCREEN_WIDTH == 320
+    }
+    
+    class func isIPad() -> Bool{
+        return Constants.SCREEN_HEIGHT >= 812
+    }
 }

@@ -125,7 +125,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         guard case let cell as FoldingCell = tableView.cellForRow(at: indexPath) else {
             
             if indexPath.row == 3 {
-                
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id1329241386?mt=8")!, options: [:], completionHandler: nil)
                 } else {
