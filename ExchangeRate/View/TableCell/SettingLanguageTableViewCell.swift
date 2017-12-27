@@ -36,16 +36,6 @@ class SettingLanguageTableViewCell: FoldingCell, CAAnimationDelegate {
         super.awakeFromNib()
         // Initialization code
         self.backViewColor = self.foregroundView.backgroundColor!
-        englishButton.layer.cornerRadius = 45.6
-        chineseButton.layer.cornerRadius = 45.6
-        spanishButton.layer.cornerRadius = 45.6
-        gardientButton_1.layer.cornerRadius = 45.6
-        gardientButton_1.layer.masksToBounds = true
-        gardientButton_2.layer.cornerRadius = 45.6
-        gardientButton_2.layer.masksToBounds = true
-        gardientButton_3.layer.cornerRadius = 45.6
-        gardientButton_3.layer.masksToBounds = true
-        
         let language = CacheManager.getLanguage()
         self.gardientButton_1.isHidden = true
         self.gardientButton_2.isHidden = true
@@ -58,6 +48,21 @@ class SettingLanguageTableViewCell: FoldingCell, CAAnimationDelegate {
         case .Spanish:
             self.gardientButton_3.isHidden = false
         }
+        
+        var cornerRadius:CGFloat = 44
+        if Constants.SCREEN_WIDTH == 320 {
+            cornerRadius = 35
+        }
+        
+        englishButton.layer.cornerRadius = cornerRadius
+        chineseButton.layer.cornerRadius = cornerRadius
+        spanishButton.layer.cornerRadius = cornerRadius
+        gardientButton_1.layer.cornerRadius = cornerRadius
+        gardientButton_1.layer.masksToBounds = true
+        gardientButton_2.layer.cornerRadius = cornerRadius
+        gardientButton_2.layer.masksToBounds = true
+        gardientButton_3.layer.cornerRadius = cornerRadius
+        gardientButton_3.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

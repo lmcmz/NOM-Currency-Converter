@@ -340,6 +340,25 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     
     
     func getFontSizeByCount(count: Int) -> UIFont {
+        
+        if Constants.SCREEN_WIDTH == 320 {
+            switch count {
+            case 0..<5:
+                return UIFont(name: "HelveticaNeue-Bold", size: 68)!
+            case 5:
+                return UIFont(name: "HelveticaNeue-Bold", size: 50)!
+            case 6:
+                return UIFont(name: "HelveticaNeue-Bold", size: 40)!
+            case 7:
+                return UIFont(name: "HelveticaNeue-Bold", size: 35)!
+            case 8:
+                return UIFont(name: "HelveticaNeue-Bold", size: 30)!
+                
+            default:
+                return UIFont(name: "HelveticaNeue-Bold", size: 68)!
+            }
+        }
+        
         switch count {
         case 0..<5:
             return UIFont(name: "HelveticaNeue-Bold", size: 80)!

@@ -25,4 +25,5 @@ class Constants {
     
     static let HomePageVCHeight = UIScreen.main.bounds.height - 50 - 44 - 34
     
+//    static let isPhoneSE:Bool = UIScreen.main.bounds.height == 
 }
