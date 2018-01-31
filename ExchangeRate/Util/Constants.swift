@@ -32,6 +32,6 @@ class Constants {
     }
     
     class func isIPad() -> Bool{
-        return Constants.SCREEN_HEIGHT >= 812
+        return Constants.SCREEN_HEIGHT > 812
     }
 }
