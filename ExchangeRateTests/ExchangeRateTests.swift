@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import ExchangeRate
+@testable import NOM
 
 class ExchangeRateTests: XCTestCase {
     

@@ -41,7 +41,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.registerCell(nibName: SettingVersionTableViewCell.nameOfClass)
         cellHeights = Array(repeating: kCloseCellHeight, count: kRowsCount)
         tableView.estimatedRowHeight = kCloseCellHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = UIColor.clear
         
         let layer = CAGradientLayer()

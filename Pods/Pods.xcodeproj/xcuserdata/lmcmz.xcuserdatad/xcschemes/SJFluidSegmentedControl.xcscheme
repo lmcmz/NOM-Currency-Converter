@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9ACD60DE3436F54A15FF5D67F3FC0BE7'
-               BlueprintName = 'SJFluidSegmentedControl'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SJFluidSegmentedControl.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "155ECA1DB440120F80A3C01486D002F4"
+               BlueprintName = "SJFluidSegmentedControl"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SJFluidSegmentedControl.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

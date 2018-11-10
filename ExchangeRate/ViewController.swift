@@ -37,7 +37,7 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
         }
         
         let calculatorVC = CalculatorViewController()
-        self.addChildViewController(calculatorVC)
+        self.addChild(calculatorVC)
         contentView.addSubview(calculatorVC.view)
         calculatorVC.view.snp.makeConstraints { (make) in
             make.top.equalTo(0)
@@ -47,7 +47,7 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
         }
         
         let rateVC = RateViewController()
-        self.addChildViewController(rateVC)
+        self.addChild(rateVC)
         contentView.addSubview(rateVC.view)
         rateVC.view.snp.makeConstraints { (make) in
             make.top.equalTo(0)
@@ -61,7 +61,7 @@ class ViewController: BaseViewController, UIScrollViewDelegate,UIGestureRecogniz
         
         let settingVC = SettingViewController()
         self.contentView.addSubview(settingVC.view)
-        self.addChildViewController(settingVC)
+        self.addChild(settingVC)
         settingVC.view.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(0)
             make.left.equalTo(width*2)

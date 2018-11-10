@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8A421C6298CB3DF5D749193BD6FD0B38'
-               BlueprintName = 'BEMSimpleLineGraph'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'BEMSimpleLineGraph.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8EEC99C7AAA3920AB64754057A0A0DDF"
+               BlueprintName = "BEMSimpleLineGraph"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "BEMSimpleLineGraph.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -59,14 +59,14 @@ extension UIViewController {
     }
     
     func showChildViewControllerInView(childController: UIViewController, contianerView: UIView) {
-        self.addChildViewController(childController)
+        self.addChild(childController)
         childController.view.frame = contianerView.bounds
         contianerView.addSubview(childController.view)
-        childController.didMove(toParentViewController: self)
+        childController.didMove(toParent: self)
     }
     
     func removeFromParentViewController() {
-        self.willMove(toParentViewController: nil)
+        self.willMove(toParent: nil)
         if self.view.superview == nil {
             self.removeFromParentViewController()
         } else {
@@ -75,7 +75,7 @@ extension UIViewController {
     }
     
     func moveToTopInParentViewController() {
-        self.view.superview?.bringSubview(toFront: self.view)
+        self.view.superview?.bringSubviewToFront(self.view)
     }
 }
 
@@ -88,12 +88,12 @@ extension UIView {
 extension UITextField {
     @IBInspectable var placeholderColor: UIColor {
         get {
-            guard let currentAttributedPlaceholderColor = attributedPlaceholder?.attribute(NSAttributedStringKey.foregroundColor, at: 0, effectiveRange: nil) as? UIColor else { return UIColor.clear }
+            guard let currentAttributedPlaceholderColor = attributedPlaceholder?.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: nil) as? UIColor else { return UIColor.clear }
             return currentAttributedPlaceholderColor
         }
         set {
             guard let currentAttributedString = attributedPlaceholder else { return }
-            let attributes = [NSAttributedStringKey.foregroundColor : newValue]
+            let attributes = [NSAttributedString.Key.foregroundColor : newValue]
             
             attributedPlaceholder = NSAttributedString(string: currentAttributedString.string, attributes: attributes)
         }

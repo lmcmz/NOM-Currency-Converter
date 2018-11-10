@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FB57A11CB55A8A58666109AB2230AF5C'
-               BlueprintName = 'MSNumberScrollAnimatedView'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'MSNumberScrollAnimatedView.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6174C68C38D8E3655EE8F5D42591417B"
+               BlueprintName = "MSNumberScrollAnimatedView"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "MSNumberScrollAnimatedView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

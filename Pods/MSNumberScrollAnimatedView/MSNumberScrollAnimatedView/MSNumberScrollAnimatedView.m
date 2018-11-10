@@ -95,10 +95,7 @@
 
 - (void)configNumbersText
 {
-    NSString *numberStr = [NSString stringWithFormat:@"%.2f", _number.doubleValue];
-    if ( fmod(_number.floatValue, 1.0) == 0) {
-        numberStr = [NSString stringWithFormat:@"%.0f", _number.doubleValue];
-    }
+    NSString *numberStr = [_number stringValue];
     // 如果 number 长度小于 最小长度就补0
     // 这里需要注意一下 minLength 和 length 都是NSUInteger类型 如果相减得负数的话会有问题
     for (NSInteger i = 0; i < (NSInteger)self.minLength - (NSInteger)numberStr.length; i++) {
@@ -115,33 +112,10 @@
     // 平均分配宽度
     CGFloat width = CGRectGetWidth(self.frame) / _numbersText.count;
     CGFloat height = CGRectGetHeight(self.frame);
-    CGFloat dotWidth = 0;
-    
-    if ([_numbersText containsObject:@"."]) {
-        width = CGRectGetWidth(self.frame) / (_numbersText.count - 0.5);
-        dotWidth = width/2;
-    }
-    
-    CGFloat sumWidth = 0.0;
     // 创建和配置 scrollLayer
     for (NSUInteger i = 0; i < _numbersText.count; i++) {
-        
-        if ([_numbersText[i]  isEqual: @"."]) {
-            sumWidth += dotWidth;
-            CAScrollLayer *layer = [CAScrollLayer layer];
-            layer.frame = CGRectMake(i*width, 0, dotWidth, height);
-            [_scrollLayers addObject:layer];
-            [self.layer addSublayer:layer];
-            
-            NSString *numberText = _numbersText[i];
-            [self configScrollLayer:layer numberText:numberText];
-            continue;
-        }
-        
-        sumWidth += width;
-        
         CAScrollLayer *layer = [CAScrollLayer layer];
-        layer.frame = CGRectMake(sumWidth - width, 0, width, height);
+        layer.frame = CGRectMake(i*width, 0, width, height);
         [_scrollLayers addObject:layer];
         [self.layer addSublayer:layer];
         

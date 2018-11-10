@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D382A7B90B59D72908CC21054785B020'
-               BlueprintName = 'Moya'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Moya.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D2D881E2C18F2FB55F8B75D64E79E0B9"
+               BlueprintName = "Moya"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "Moya.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

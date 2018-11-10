@@ -17,11 +17,12 @@ class LodingHelper: NSObject, NVActivityIndicatorViewable {
         
         let data = ActivityData(size: size, message: "", messageFont: nil, messageSpacing: nil, type: .ballScaleRippleMultiple, color: nil, padding: nil, displayTimeThreshold: 2, minimumDisplayTime: 2, backgroundColor: nil, textColor: nil)
         
-         NVActivityIndicatorPresenter.sharedInstance.startAnimating(view: view, data: data)
+//        NVActivityIndicatorPresenter.sharedInstance.startAnimating(view, data)
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(data, NVActivityIndicatorView.DEFAULT_FADE_IN_ANIMATION)
     }
     
     func remove()  {
-        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(NVActivityIndicatorView.DEFAULT_FADE_OUT_ANIMATION)
     }
     
 }

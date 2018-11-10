@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AD0ECB29B436A636470901E5C2FA3BB6'
-               BlueprintName = 'VBFPopFlatButton'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'VBFPopFlatButton.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "46CA7E1E5C4B56F103C3F73FEC845432"
+               BlueprintName = "VBFPopFlatButton"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "VBFPopFlatButton.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

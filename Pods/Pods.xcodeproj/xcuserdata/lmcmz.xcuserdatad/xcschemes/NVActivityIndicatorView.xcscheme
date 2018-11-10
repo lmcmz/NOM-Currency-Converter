@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '123F89F7E8DB3444EAD2F61E835952E2'
-               BlueprintName = 'NVActivityIndicatorView'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'NVActivityIndicatorView.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "978D35F2E84D7D745602FFB2E17B1021"
+               BlueprintName = "NVActivityIndicatorView"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "NVActivityIndicatorView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

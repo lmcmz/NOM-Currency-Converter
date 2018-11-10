@@ -1,57 +1,82 @@
 PODS:
-  - Alamofire (4.6.0)
+  - Alamofire (4.7.3)
   - BEMSimpleLineGraph (4.1)
-  - Crashlytics (3.9.3):
-    - Fabric (~> 1.7.2)
-  - Fabric (1.7.2)
-  - FoldingCell (3.0.0)
-  - HandyJSON (4.0.0-beta.1)
-  - Moya (10.0.1):
-    - Moya/Core (= 10.0.1)
-  - Moya/Core (10.0.1):
+  - Crashlytics (3.11.1):
+    - Fabric (~> 1.8.1)
+  - Fabric (1.8.2)
+  - FoldingCell (4.0.2)
+  - HandyJSON (4.2.1)
+  - Moya (10.0.2):
+    - Moya/Core (= 10.0.2)
+  - Moya/Core (10.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - MSNumberScrollAnimatedView (0.0.2)
-  - NVActivityIndicatorView (4.1.0):
-    - NVActivityIndicatorView/Presenter (= 4.1.0)
-  - NVActivityIndicatorView/Presenter (4.1.0)
-  - pop (1.0.10)
+  - NVActivityIndicatorView (4.4.0):
+    - NVActivityIndicatorView/Presenter (= 4.4.0)
+  - NVActivityIndicatorView/Presenter (4.4.0)
+  - pop (1.0.12)
   - Result (3.2.4)
   - SJFluidSegmentedControl (1.1.2)
-  - SnapKit (4.0.0)
+  - SnapKit (4.0.1)
   - VBFPopFlatButton (0.0.7):
     - pop
 
 DEPENDENCIES:
-  - Alamofire (~> 4.5)
+  - Alamofire (~> 4.7)
   - BEMSimpleLineGraph
   - Crashlytics
   - Fabric
   - FoldingCell
-  - HandyJSON (~> 4.0.0-beta.1)
+  - HandyJSON (~> 4.2.0)
   - Moya (~> 10.0)
   - MSNumberScrollAnimatedView
   - NVActivityIndicatorView
-  - SJFluidSegmentedControl (~> 1.0)
+  - SJFluidSegmentedControl (from `https://github.com/adornoventura/SJFluidSegmentedControl.git`)
   - SnapKit (~> 4.0.0)
   - VBFPopFlatButton
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - BEMSimpleLineGraph
+    - Crashlytics
+    - Fabric
+    - FoldingCell
+    - HandyJSON
+    - Moya
+    - MSNumberScrollAnimatedView
+    - NVActivityIndicatorView
+    - pop
+    - Result
+    - SnapKit
+    - VBFPopFlatButton
+
+EXTERNAL SOURCES:
+  SJFluidSegmentedControl:
+    :git: https://github.com/adornoventura/SJFluidSegmentedControl.git
+
+CHECKOUT OPTIONS:
+  SJFluidSegmentedControl:
+    :commit: f247c43766e9ec67c36174e8669fef7d8b9c7086
+    :git: https://github.com/adornoventura/SJFluidSegmentedControl.git
+
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   BEMSimpleLineGraph: 44fd451f27f8e9cf96f2da5bea27603093576dd1
-  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
-  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
-  FoldingCell: 55e9fcac546acc2c8f110f210af892aa90032160
-  HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
-  Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
+  Crashlytics: ca7ab4bc304aa216bdc2e4c1a96389ee77252203
+  Fabric: d2b22f443ba195d8a7cc204da230977c72733b40
+  FoldingCell: 352f0211a53f957b885a1b37d5ffa875da90bca5
+  HandyJSON: d0c5fc80204f29056d59d3e5c4587fa0b16b60a8
+  Moya: 2b0531a9fef318e0bc484030c3db1e6f279ccb66
   MSNumberScrollAnimatedView: 28c0cb5d10cb0b93b4b9aa421455c22157ac0ed5
-  NVActivityIndicatorView: dc4726052dc24e89fa8576d43acf9e96f61d49db
-  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  SJFluidSegmentedControl: efd26ea5f0832c715e2750314a2dc0cc81e39ae5
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SJFluidSegmentedControl: 75ca518e35fd27afd1e648bdc275110e8dfbc651
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   VBFPopFlatButton: 39e48ab56277f3d056734a9b5ec5d0cc60d69778
 
-PODFILE CHECKSUM: 840e5d2c49e2d02c59749e6607031b79bf9f39bb
+PODFILE CHECKSUM: e3ef025aedb0fe2acc93024f7f0e970b8c09debd
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.6.0.beta.2

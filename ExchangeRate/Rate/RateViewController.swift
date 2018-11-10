@@ -14,6 +14,7 @@ import MSNumberScrollAnimatedView
 
 class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSimpleLineGraphDataSource {
     
+    
     @IBOutlet var chartView: BEMSimpleLineGraphView!
     @IBOutlet var exchangeButton: UIControl!
     @IBOutlet var country1: UIControl!
@@ -224,11 +225,11 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
     func swithAnimation() {
         let transition = CATransition()
         transition.duration = 0.3
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        transition.type = "cube"
-        transition.subtype = kCATransitionFromBottom
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        transition.type = CATransitionType(rawValue: "cube")
+        transition.subtype = CATransitionSubtype.fromBottom
         country1.layer.add(transition, forKey: "country1_animation")
-        transition.subtype = kCATransitionFromTop
+        transition.subtype = CATransitionSubtype.fromTop
         country2.layer.add(transition, forKey: "country2_animation")
         switchData()
     }
@@ -292,11 +293,11 @@ class RateViewController: BaseViewController, BEMSimpleLineGraphDelegate, BEMSim
         }
         return 0
     }
-    
+
     func lineGraph(_ graph: BEMSimpleLineGraphView, valueForPointAt index: Int) -> CGFloat {
         return CGFloat(self.chartsData.close![index].floatValue)
     }
-    
+
     func popUpSuffixForlineGraph(_ graph: BEMSimpleLineGraphView, at index: UInt) -> String {
         let time = self.chartsData.timestamp![Int(index)]
         let date = Date(timeIntervalSince1970: TimeInterval(time))
